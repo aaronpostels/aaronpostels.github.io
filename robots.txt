@@ -1,3 +1,38 @@
+# robots.txt for ducklin.de
+
+# General search engines: allow portfolio and case studies, disallow raw project demos
 User-agent: *
-Disallow: /projects/motion-platform/
+Disallow: /projects/
 Sitemap: https://ducklin.de/sitemap.xml
+
+# Explicit reservation of rights against Text and Data Mining (TDM) / AI Training
+# pursuant to § 44b Abs. 3 UrhG and Article 4 of EU Directive 2019/790:
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /

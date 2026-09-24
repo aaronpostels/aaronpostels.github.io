@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap'); /* Poppins bold und semi-bold */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600 700;
+    font-display: swap;
+    src: url('/fonts/poppins-700-latin.woff2') format('woff2');
+}
 
 body {
     font-family: 'Poppins', sans-serif; /* Fette Schriftart */

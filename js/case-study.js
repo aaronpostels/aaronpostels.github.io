@@ -37,4 +37,24 @@ document.addEventListener("DOMContentLoaded", () => {
       closeLightbox();
     }
   });
+
+  // 2-Click YouTube Facade (DSGVO / GDPR compliant - loads zero external data until clicked)
+  const videoFacades = document.querySelectorAll(".video-facade");
+  videoFacades.forEach((facade) => {
+    facade.addEventListener("click", () => {
+      const videoId = facade.getAttribute("data-video-id");
+      const title = facade.getAttribute("data-video-title") || "YouTube video player";
+      if (!videoId) return;
+
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
+      iframe.title = title;
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+
+      facade.innerHTML = "";
+      facade.classList.remove("video-facade");
+      facade.appendChild(iframe);
+    });
+  });
 });

@@ -40,8 +40,16 @@
 
         <section class="case-study-video">
             <h2>Animation</h2>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/yjbkyOfcu10" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-container video-facade" data-video-id="yjbkyOfcu10" data-video-title="Unstable Diffusion Animation" style="background-image: url('/images/unstable-diffusion_0.webp');">
+                <div class="video-facade-overlay">
+                    <button class="video-facade-play-btn" aria-label="Play Animation">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                    <p class="video-facade-notice">
+                        Click to load video from YouTube.<br>
+                        <span>Data will be transmitted to YouTube/Google.</span>
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -49,7 +57,7 @@
         
         <section><h2>Key Features</h2><ul><li><strong>Abstract Animation:</strong> An abstract, continuously deforming 3D sculpture was created and animated in Blender to serve as the motion source.</li><li><strong>Depth Map Generation:</strong> The animation was rendered as a sequence of depth map images, creating a video that encodes spatial information without recognizable features.</li><li><strong>AI Interpretation with ControlNet:</strong> The depth map video was fed into a Stable Diffusion model using ControlNet, which forced the AI to adhere to the structure and motion of the depth map.</li><li><strong>Final Animation:</strong> By prompting the AI to generate human faces and figures, the process resulted in a surreal animation where abstract shapes fluidly resolve into recognizable, yet constantly shifting, human-like forms.</li></ul></section>
     </main>
-    <footer>&copy; 2025 Aaron Postels @ Ducklin &mdash;<a href="https://github.com/aaronpostels" target="_blank" rel="noopener noreferrer">GitHub</a> &mdash;<a href="/imprint.html">Legal Notice</a></footer>
+    <footer>&copy; 2025 Aaron Postels @ Ducklin &mdash;<a href="https://github.com/aaronpostels" target="_blank" rel="noopener noreferrer">GitHub</a> &mdash;<a href="/impressum.html">Impressum</a> &mdash;<a href="/datenschutz.html">Datenschutz</a></footer>
 
     <div class="lightbox-overlay" id="lightbox">
         <div class="lightbox-content">

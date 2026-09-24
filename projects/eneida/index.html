@@ -10,8 +10,10 @@
         <link rel="icon" href="/favicon.svg" type="image/svg+xml">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+        <style>
+          @font-face { font-family: 'Fira Code'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('/fonts/firacode.woff2') format('woff2'); }
+          @font-face { font-family: 'Audiowide'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/audiowide.woff2') format('woff2'); }
+        </style>
     </head>
     <body>
         <!-- Particle Background -->
@@ -110,7 +112,6 @@
         
         <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics-compat.js"></script>
 
         <script>
           const firebaseConfig = {
@@ -119,18 +120,10 @@
             projectId: "eneida-tetris-leaderboard",
             storageBucket: "eneida-tetris-leaderboard.firebasestorage.app",
             messagingSenderId: "557485070697",
-            appId: "1:557485070697:web:020fbfb1e56b394d5685f8",
-            measurementId: "G-LRV2PB1JMG"
+            appId: "1:557485070697:web:020fbfb1e56b394d5685f8"
           };
           const app = firebase.initializeApp(firebaseConfig);
           const db = firebase.firestore();
-          try {
-             if (typeof firebase.analytics === 'function') {
-                 const analytics = firebase.analytics();
-             }
-          } catch (e) {
-             console.warn("Could not initialize Firebase Analytics (compat):", e);
-          }
         </script>
         
         <script type="module" src="js/main.js"></script>

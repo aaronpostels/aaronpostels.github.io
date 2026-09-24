@@ -11,7 +11,7 @@
       content="Generate a customized Hytale plugin template with your own project data. Download a ready-to-use template including Gradle setup, manifest.json, and Java boilerplate."
     />
     <link rel="canonical" href="https://ducklin.de/projects/hytale" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="noindex, nofollow" />
     <meta name="author" content="Aaron Postels" />
 
     <!-- Open Graph (Discord/Facebook/LinkedIn) -->
@@ -69,13 +69,10 @@
       }
     </script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <style>
+      @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('/fonts/inter-latin.woff2') format('woff2'); }
+      @font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('/fonts/jetbrainsmono.woff2') format('woff2'); }
+    </style>
 
     <!-- Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
@@ -306,6 +303,14 @@
         </button>
       </div>
     </main>
+    <footer style="text-align: center; padding: 2rem 1rem; font-size: 0.85rem; color: #888; max-width: 600px; margin: 0 auto;">
+      <p>This is an unofficial community project and is not affiliated with, endorsed by, or associated with Hypixel Studios or Riot Games. Hytale is a registered trademark of Hypixel Studios.</p>
+      <p style="margin-top: 0.5rem;">
+        <a href="/" style="color: inherit;">&larr; Portfolio</a> &nbsp;|&nbsp;
+        <a href="/impressum.html" style="color: inherit;">Impressum</a> &nbsp;|&nbsp;
+        <a href="/datenschutz.html" style="color: inherit;">Datenschutz</a>
+      </p>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

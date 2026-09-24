@@ -17,7 +17,7 @@
   <div class="imprint-container">
     <h1>Legal Notice (Imprint)</h1>
     
-    <h2>Information pursuant to § 5 TMG</h2>
+    <h2>Information pursuant to § 5 DDG</h2>
     <p>
       Aaron Postels<br />
       Kreuzberg 6<br />
@@ -27,7 +27,30 @@
 
     <h2>Contact</h2>
     <p>
-      Email: postels.aaron@gmail.com
+      Email: <span class="secure-email" data-u="cG9zdGVscy5hYXJvbg==" data-d="Z21haWwuY29t"><noscript>postels [dot] aaron [at] gmail [dot] com</noscript></span>
+    </p>
+
+    <h2>Responsible for editorial content (§ 18 Abs. 2 MStV)</h2>
+    <p>
+      Aaron Postels<br />
+      Kreuzberg 6<br />
+      27404 Weertzen
+    </p>
+    
+    <h2>Dispute Resolution</h2>
+    <p>
+      We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.
+    </p>
+
+    <h2>Liability for Content and Links</h2>
+    <p>
+      As a service provider, we are responsible for our own content on these pages under § 7(1) DDG according to general statutory laws. Our site contains links to external third-party websites over whose content we have no influence; the respective operator is solely responsible for linked content.
+    </p>
+
+    <h2>Copyright & AI Training Opt-Out</h2>
+    <p>
+      The content, code, and works published on this website are protected under German copyright law.<br /><br />
+      <strong>Reservation of Rights (§ 44b UrhG):</strong> The operator of this website expressly reserves all rights against the use, extraction, or scraping of any content, code, text, or imagery for text and data mining (TDM) or the training of Artificial Intelligence (AI) and Machine Learning models.
     </p>
     
     <p style="margin-top: 2rem; font-style: italic;">
@@ -35,8 +58,18 @@
     </p>
 
     <p style="margin-top: 3rem;">
-      <a href="/">&larr; Back to Portfolio</a>
+      <a href="/">&larr; Back to Portfolio</a> &nbsp;|&nbsp; <a href="/privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="/impressum.html">Impressum</a>
     </p>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll(".secure-email").forEach(function(el) {
+        var u = atob(el.getAttribute("data-u"));
+        var d = atob(el.getAttribute("data-d"));
+        var a = u + "@" + d;
+        el.innerHTML = '<a href="mailto:' + a + '">' + a + '</a>';
+      });
+    });
+  </script>
 </body>
 </html>

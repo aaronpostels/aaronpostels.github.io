@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap");
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/cinzel.woff2') format('woff2');
+}
 
 :root {
   --font-primary: "Cinzel", serif;
