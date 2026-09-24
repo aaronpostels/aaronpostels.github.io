@@ -4,14 +4,40 @@
 
 const MAX_ENTRIES_PER_MODE = 10;
 
-// Helper to get Firestore DB instance (remains the same)
-function getDb() {
-    if (typeof db === 'undefined') {
-        console.error("Firestore DB instance (db) is not defined globally!");
-        alert("Error: Leaderboard database connection failed. Please reload.");
+// Firebase is loaded on first leaderboard use, so Google is not contacted on page load.
+const FIREBASE_SDK = "https://www.gstatic.com/firebasejs/9.15.0/";
+const firebaseConfig = {
+    apiKey: "AIzaSyAuR7FBPQNSekCIU_nS7N-w5rVn1slYizE",
+    authDomain: "eneida-tetris-leaderboard.firebaseapp.com",
+    projectId: "eneida-tetris-leaderboard",
+    storageBucket: "eneida-tetris-leaderboard.firebasestorage.app",
+    messagingSenderId: "557485070697",
+    appId: "1:557485070697:web:020fbfb1e56b394d5685f8"
+};
+let dbPromise = null;
+
+function loadScript(src) {
+    return new Promise((resolve, reject) => {
+        const el = document.createElement("script");
+        el.src = src;
+        el.onload = resolve;
+        el.onerror = () => reject(new Error("Failed to load " + src));
+        document.head.appendChild(el);
+    });
+}
+
+async function getDb() {
+    dbPromise ??= (async () => {
+        await loadScript(FIREBASE_SDK + "firebase-app-compat.js");
+        await loadScript(FIREBASE_SDK + "firebase-firestore-compat.js");
+        firebase.initializeApp(firebaseConfig);
+        return firebase.firestore();
+    })().catch(err => {
+        dbPromise = null;
+        console.error("Firestore init failed:", err);
         return null;
-    }
-    return db;
+    });
+    return dbPromise;
 }
 
 // --- Helper functions (escapeHTML, formatTime) remain the same ---
@@ -34,7 +60,7 @@ export function formatTime(milliseconds) {
 }
 
 export async function saveGameScore(gameName, modeName, username, value, isTimeValue) {
-    const firestoreDb = getDb();
+    const firestoreDb = await getDb();
     if (!firestoreDb || !gameName || !modeName || !username || typeof value !== 'number') {
         console.error("Invalid data or DB connection for saveGameScore:", { gameName, modeName, username, value, isTimeValue, firestoreDb });
         return false;
@@ -74,7 +100,7 @@ export async function saveGameScore(gameName, modeName, username, value, isTimeV
 
 
 export async function fetchLeaderboardData(gameName, modeName, gameModesInfo) {
-    const firestoreDb = getDb();
+    const firestoreDb = await getDb();
     if (!firestoreDb) {
         throw new Error("Leaderboard database connection failed.");
     }
