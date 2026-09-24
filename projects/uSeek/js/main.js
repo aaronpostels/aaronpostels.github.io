@@ -1,29 +1,30 @@
-import { Application } from "@splinetool/runtime";
+// Spline scenes load only after a click: the runtime contacts Spline (USA) and Google Fonts.
+const scenes = {
+  canvas3d: "https://prod.spline.design/Ep4TGhpwkc-U3k9Z/scene.splinecode",
+  "canvas3d-globe": "https://prod.spline.design/ge9-WQvAhORVziZw/scene.splinecode",
+  "canvas3d-chest": "https://prod.spline.design/EPsID204XcJih6aY/scene.splinecode",
+  "canvas3d-book": "https://prod.spline.design/V8jocpL6oSzSOu-H/scene.splinecode",
+};
 
-const canvas_lock = document.getElementById("canvas3d");
-if (canvas_lock) {
-  const app = new Application(canvas_lock);
-  app.load("https://prod.spline.design/Ep4TGhpwkc-U3k9Z/scene.splinecode");
-}
+for (const [id, url] of Object.entries(scenes)) {
+  const canvas = document.getElementById(id);
+  if (!canvas) continue;
 
-const canvas_globe = document.getElementById("canvas3d-globe");
-if (canvas_globe) {
-  const app_globe = new Application(canvas_globe);
-  app_globe.load(
-    "https://prod.spline.design/ge9-WQvAhORVziZw/scene.splinecode"
-  );
-}
+  const wrap = document.createElement("div");
+  wrap.className = "spline-wrap";
+  canvas.replaceWith(wrap);
 
-const canvas_chest = document.getElementById("canvas3d-chest");
-if (canvas_chest) {
-  const app_chest = new Application(canvas_chest);
-  app_chest.load(
-    "https://prod.spline.design/EPsID204XcJih6aY/scene.splinecode"
-  );
-}
+  const facade = document.createElement("div");
+  facade.className = "spline-consent";
+  facade.innerHTML =
+    '<button type="button">3D-Szene laden</button>' +
+    "<p>Beim Laden werden Daten (u.&nbsp;a. Ihre IP-Adresse) an Spline (USA) und Google Fonts übertragen. " +
+    '<a href="/datenschutz.html">Datenschutz</a></p>';
+  wrap.append(canvas, facade);
 
-const canvas_book = document.getElementById("canvas3d-book");
-if (canvas_book) {
-  const app_book = new Application(canvas_book);
-  app_book.load("https://prod.spline.design/V8jocpL6oSzSOu-H/scene.splinecode");
+  facade.querySelector("button").addEventListener("click", async () => {
+    facade.remove();
+    const { Application } = await import("@splinetool/runtime");
+    new Application(canvas).load(url);
+  });
 }

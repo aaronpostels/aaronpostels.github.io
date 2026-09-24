@@ -156,6 +156,9 @@
     <p>
       Auf den Hauptseiten dieses Portfolios werden <strong>keine Cookies</strong> und keine Tracking-Mechanismen zur Wiedererkennung von Nutzern eingesetzt. Es werden keine Profilbildungs- oder Analyse-Cookies gesetzt.
     </p>
+    <p>
+      Einzelne Demo-Anwendungen speichern Einstellungen oder Spielstände im lokalen Speicher Ihres Browsers (localStorage), z.&nbsp;B. den gewählten Terminal-Namen in „Eneida“, das Farbschema der Artisan-Dokumentation oder Einträge in „PhaseUp“. Diese Daten verlassen Ihr Gerät nicht und können jederzeit über die Browser-Einstellungen gelöscht werden. Die Speicherung ist für die von Ihnen ausdrücklich gewünschte Funktion unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG).
+    </p>
 
     <h3>Kontaktaufnahme per E-Mail</h3>
     <p>
@@ -167,7 +170,7 @@
 
     <h2>5. Externe Dienste & Inhalte Dritter</h2>
 
-    <h3>YouTube-Videos (Zwei-Klick-Lösung / Erweitertes Datenschutz)</h3>
+    <h3>YouTube-Videos (Zwei-Klick-Lösung / erweiterter Datenschutzmodus)</h3>
     <p>
       Auf einzelnen Projekt- und Case-Study-Seiten sind Videos der Plattform YouTube eingebunden. Betreiber ist die <strong>Google Ireland Limited</strong>, Gordon House, Barrow Street, Dublin 4, Irland.
     </p>
@@ -175,21 +178,34 @@
       Um Ihre Privatsphäre zu schützen, werden externe Videos standardmäßig nicht automatisch geladen. Erst wenn Sie aktiv auf das Video-Vorschaubild bzw. den Abspiel-Button klicken, wird eine Verbindung zu den Servern von YouTube aufgebaut. Dabei wird YouTube mitgeteilt, welche Seite Sie besuchen, und es können Cookies auf Ihrem Endgerät abgelegt werden. Zudem kann Ihre IP-Adresse an Server der Google LLC in den USA übertragen werden.
     </p>
     <p>
-      <strong>Rechtsgrundlage:</strong> Die Aktivierung und Einbindung des Videos erfolgt ausschließlich nach Ihrer ausdrücklichen Einwilligung durch Klick auf das Video gemäß Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG.
+      <strong>Rechtsgrundlage:</strong> Die Aktivierung und Einbindung des Videos erfolgt ausschließlich nach Ihrer ausdrücklichen Einwilligung durch Klick auf das Video gemäß Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Die Übermittlung in die USA stützt sich auf das EU-US Data Privacy Framework, unter dem Google LLC zertifiziert ist.
     </p>
 
     <h3>Google Firebase / Firestore (Eneida Demo)</h3>
     <p>
-      Für die Demo-Anwendung „Eneida“ wird zur Bereitstellung der Spielstand-Bestenliste (Leaderboard) der Datenbankdienst Firebase Firestore der <strong>Google Ireland Limited</strong> genutzt. Bei der Übermittlung eines Highscores werden der gewählte Nickname, der erreichte Punktestand sowie technische Zugriffsdaten an Google übermittelt.
+      Für die Demo-Anwendung „Eneida“ wird zur Bereitstellung der Spielstand-Bestenliste (Leaderboard) der Datenbankdienst Firebase Firestore von Google (<strong>Google Ireland Limited</strong>, Gordon House, Barrow Street, Dublin 4, Irland, bzw. Google LLC, USA) genutzt. Bereits beim Aufruf der Eneida-Seite werden die Firebase-Programmbibliotheken von Servern von Google (www.gstatic.com) geladen; dabei wird Ihre IP-Adresse an Google übermittelt. Beim Anzeigen der Bestenliste werden Daten von Firestore abgerufen, beim Speichern eines Highscores werden der gewählte Nickname (max. 14 Zeichen), der Punktestand, ein Zeitstempel sowie technische Zugriffsdaten an Google übermittelt. Der Nickname ist anschließend für andere Besucher in der Bestenliste sichtbar. Bitte verwenden Sie daher nicht Ihren echten Namen.
     </p>
     <p>
-      <strong>Rechtsgrundlage:</strong> Die Verarbeitung beruht auf unserem berechtigten Interesse an der Bereitstellung interaktiver Funktionalitäten für das Portfolio-Projekt (Art. 6 Abs. 1 lit. f DSGVO).
+      <strong>Rechtsgrundlage:</strong> Die Verarbeitung beruht auf unserem berechtigten Interesse an der Bereitstellung interaktiver Funktionalitäten für das Portfolio-Projekt (Art. 6 Abs. 1 lit. f DSGVO). Eine Übermittlung in die USA ist möglich und stützt sich auf das EU-US Data Privacy Framework. Einträge in der Bestenliste werden gespeichert, bis die Bestenliste zurückgesetzt wird oder Sie die Löschung verlangen.
+    </p>
+
+    <h3>Externe Programmbibliotheken (CDN) in Demo-Projekten</h3>
+    <p>
+      Einige Demo-Projekte unter <code>/projects/</code> (z.&nbsp;B. „uSeek“, „Particles“, „Scroll Scrub“, „Hytale“) laden JavaScript- und CSS-Bibliotheken direkt von Content-Delivery-Networks: jsDelivr (cdn.jsdelivr.net), cdnjs (cdnjs.cloudflare.com, Cloudflare Inc., USA) und unpkg (unpkg.com). Beim Aufruf dieser Demos wird Ihre IP-Adresse an den jeweiligen Anbieter übermittelt, damit die Dateien ausgeliefert werden können. Eine Übermittlung in die USA ist dabei möglich.
+    </p>
+    <p>
+      Die Demo „uSeek“ enthält 3D-Szenen von <strong>Spline</strong> (Spline Design Inc., USA). Diese werden standardmäßig nicht geladen. Erst wenn Sie auf „3D-Szene laden“ klicken, werden die Spline-Laufzeitumgebung (unpkg.com), die 3D-Szene (prod.spline.design) sowie Schriftarten und Hilfsdateien von Google (fonts.gstatic.com, www.gstatic.com) geladen; dabei wird Ihre IP-Adresse an diese Anbieter übermittelt, auch in die USA. Rechtsgrundlage hierfür ist Ihre Einwilligung durch den Klick (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG), die Sie durch Neuladen der Seite jederzeit für die Zukunft beenden können.
+    </p>
+    <p>
+      <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der funktionsfähigen Darstellung der Demo-Projekte. Die Hauptseiten und Case Studies dieses Portfolios laden keine Inhalte von diesen Anbietern.
     </p>
 
     <h3>Verlinkungen zu sozialen Netzwerken & Plattformen</h3>
     <p>
       Auf dieser Website befinden sich Links zu unseren Profilen auf externen Plattformen (GitHub, LinkedIn, Instagram). Es handelt sich hierbei um normale Hyperlinks und nicht um Social-Media-Plugins, die bereits beim Laden der Seite Daten an Dritte übertragen. Erst wenn Sie auf einen dieser Links klicken, verlassen Sie diese Website und werden zum jeweiligen Anbieter weitergeleitet.
     </p>
+
+    <p style="margin-top: 2rem;"><em>Stand: September 2026</em></p>
 
     <p style="margin-top: 3rem;">
       <a href="/">&larr; Zurück zum Portfolio</a> &nbsp;|&nbsp; <a href="/impressum.html">Zum Impressum</a>

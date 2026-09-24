@@ -1,10 +1,4 @@
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url('/fonts/poppins-500-latin.woff2') format('woff2');
-}
+@import url("/fonts/poppins.css");
 
 :root {
   /* Define numbers */
@@ -1094,4 +1088,52 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+.spline-wrap {
+  position: relative;
+  display: inline-block;
+  min-width: min(100%, 320px);
+  min-height: 240px;
+}
+
+.spline-consent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-color);
+}
+
+.spline-consent button {
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--primary-color);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.spline-consent button:hover {
+  background: var(--primary-color);
+  color: var(--background-color);
+}
+
+.spline-consent p {
+  max-width: 28ch;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.spline-consent a {
+  color: var(--primary-color);
 }

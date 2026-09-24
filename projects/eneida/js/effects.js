@@ -46,10 +46,6 @@ export function stop_chaos() {
     deactivateCompromise(true); // Call internal function with message enabled
 }
 
-export function locate_me() {
-    fetchIpInfo();
-}
-
 export function sys_info() {
     displayDeviceInfo();
 }
@@ -428,68 +424,6 @@ function stopForcedTyping() {
     }
 }
 
-
-async function fetchIpInfo() {
-    if (!context) return;
-    context.displayOutput("Attempting to trace connection origin via external resolver...", "response-info");
-    context.logTrace('locate_me', 'INITIATED');
-    // Disable input using the context's reference
-    if (context.commandInputElement) context.commandInputElement.disabled = true;
-
-    try {
-        // Consider adding a cache-buster or checking referrer policy if issues persist
-        const response = await fetch('https://ip-api.com/json/?fields=status,message,country,regionName,city,lat,lon,isp,org,query');
-
-        if (!response.ok) {
-            // Provide more specific feedback for common errors like 403
-            if (response.status === 403) {
-                throw new Error(`API Error ${response.status}: Forbidden. Possible rate limiting or network block.`);
-            } else if (response.status === 429) {
-                 throw new Error(`API Error ${response.status}: Too Many Requests. Please wait before trying again.`);
-            }
-            throw new Error(`API Error: ${response.status} ${response.statusText || ''}`);
-        }
-        const data = await response.json();
-
-        if (data.status === 'success') {
-            context.logTrace('locate_me', `SUCCESS (${data.query})`);
-            let info = `<strong style='color: var(--accent-color);'>Connection Trace Results:</strong>\n\n`; // Add title
-            // Use consistent label styling
-            const labelStyle = "color: var(--prompt-color); display: inline-block; width: 120px;";
-            info += `  <span style="${labelStyle}">Public IP:</span> <span style="color:var(--warning-color);">${escapeHTML(data.query || 'N/A')}</span>\n`;
-            info += `  <span style="${labelStyle}">ISP:</span> ${escapeHTML(data.isp || 'N/A')}\n`;
-            info += `  <span style="${labelStyle}">Organization:</span> ${escapeHTML(data.org || 'N/A')}\n`; // Added Org
-            const lat = data.lat !== undefined ? parseFloat(data.lat).toFixed(4) : 'N/A';
-            const lon = data.lon !== undefined ? parseFloat(data.lon).toFixed(4) : 'N/A';
-            info += `  <span style="${labelStyle}">Est. Location:</span> ${escapeHTML(data.city || 'N/A')}, ${escapeHTML(data.regionName || 'N/A')}, ${escapeHTML(data.country || 'N/A')}\n`;
-            info += `  <span style="${labelStyle}">Coordinates:</span> Lat ${escapeHTML(lat)}, Lon ${escapeHTML(lon)}\n`;
-
-
-            if (context.getState('isSystemCompromised')) {
-                info += `\n<span class="hacked-message glitch">WARNING: Geo-location data potentially compromised. Position logged by unknown entity.</span>`;
-            }
-            // Use typewriter for the results block
-            context.typewriterResponse(info, () => {
-                context.displayOutput(context.getState('isSystemCompromised') ? "Trace logged remotely." : "<span style='color: var(--success-color);'>Trace complete.</span>", context.getState('isSystemCompromised') ? "hacked-message" : "");
-                 // Re-enable input via context reference only if NOT fullscreen locked
-                 const fsLockActive = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
-                 if (context.commandInputElement && !fsLockActive) context.commandInputElement.disabled = false;
-                 context.focusCommandInput();
-            });
-        } else {
-            // Handle API-level failure reported in the JSON
-            throw new Error(data.message || 'API reported failure');
-        }
-    } catch (error) {
-        console.error("Error fetching IP info:", error);
-        context.logTrace('locate_me', `ERROR (${error.message})`);
-        context.displayOutput(`Error tracing connection: ${escapeHTML(error.message)}`, "response-error");
-         // Re-enable input via context reference only if NOT fullscreen locked
-         const fsLockActive = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
-         if (context.commandInputElement && !fsLockActive) context.commandInputElement.disabled = false;
-         context.focusCommandInput();
-    }
-}
 
 function displayDeviceInfo() {
     if (!context) return;

@@ -29,7 +29,6 @@ This interactive portfolio showcases the skills and projects of Aaron Postels, a
 **System Integrity (Use with Caution!):**
 *   `compromise` - WARNING: Introduces system instability effects.
 *   `stop_chaos` - Attempt to remove instability effects.
-*   `locate_me` - Attempt to trace connection origin.
 *   `sys_info` - Display simulated system/browser info.
 *   `panic` - Trigger multiple instability effects at once.
 
