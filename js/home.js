@@ -49,7 +49,7 @@ soc.innerHTML = socials; fsoc.innerHTML = P.socials.map(s => `<a href="${s.url}"
 
 /* ---------- showcase ---------- */
 feat.innerHTML = featured.map(p => `<article class="fr">
-  <a class="frame" href="${p.href}" aria-label="Open ${p.name}"><img src="${p.image}" alt="" loading="lazy"></a>
+  <a class="frame" href="${p.href}" aria-label="Open ${p.name}"><img src="${p.image}" alt="" loading="lazy" decoding="async"></a>
   <div class="txt"><h3>${p.name}</h3>
     <div class="st"><i class="${p.statusSlug}"></i><span>${p.status}</span><span>${p.date}</span></div>
     <p>${p.desc}</p>
@@ -57,7 +57,7 @@ feat.innerHTML = featured.map(p => `<article class="fr">
     ${acts(p)}</div>
 </article>`).join('');
 const badge = p => p.href ? (mob(p) ? '<span class="tag ok">Works on phone</span>' : '<span class="tag warn">Best on desktop</span>') : '<span class="tag">Write-up</span>';
-const card = p => `<article class="card"><a class="im" href="${p.href || p.doc}" tabindex="-1" aria-hidden="true"><img src="${p.image}" alt="" loading="lazy">${badge(p)}</a><div class="b"><div class="h"><h3 class="nm">${p.name}</h3><span class="y">${p.year || ''}</span></div><p>${p.desc}</p></div>${acts(p)}</article>`;
+const card = p => `<article class="card"><a class="im" href="${p.href || p.doc}" tabindex="-1" aria-hidden="true"><img src="${p.image}" alt="" loading="lazy" decoding="async">${badge(p)}</a><div class="b"><div class="h"><h3 class="nm">${p.name}</h3><span class="y">${p.year || ''}</span></div><p>${p.desc}</p></div>${acts(p)}</article>`;
 document.getElementById('demos').innerHTML = demos.map(card).join('');
 strip.innerHTML = archive.map(card).join('');
 dc.textContent = demos.length; mc.textContent = archive.length;

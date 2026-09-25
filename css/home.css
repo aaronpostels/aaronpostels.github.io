@@ -63,7 +63,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 @keyframes fade{to{opacity:1}}
 
 /* ---------- compact bar (appears after the hero) ---------- */
-.dock{position:fixed;inset:0 0 auto;z-index:40;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--ln);padding-top:env(safe-area-inset-top);transform:translateY(-101%);transition:transform .35s var(--ease)}
+.dock{position:fixed;inset:0 0 auto;z-index:40;background:var(--bg);border-bottom:1px solid var(--ln);padding-top:env(safe-area-inset-top);transform:translateY(-101%);transition:transform .35s var(--ease)}
 .dock.on{transform:none}
 .dock .wrap{display:flex;align-items:center;gap:16px;min-height:56px}
 .dock p{font-size:18px;font-weight:600;letter-spacing:-.02em;white-space:nowrap}
@@ -214,12 +214,17 @@ html:has(.doodle[open]){overflow:hidden}
 .foot .legal a:hover{color:var(--ink)}
 
 /* ---------- scroll-driven motion (compositor-only; static where unsupported) ---------- */
+/* frosted top bar only on desktop: a live blur behind a fixed bar is expensive on phones while scrolling */
+@media (hover:hover) and (pointer:fine){.dock{background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px)}}
+
 @supports (animation-timeline: view()){
   .hero .body{animation:heroOut linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
   @keyframes heroOut{to{opacity:0;transform:translateY(-56px) scale(.97)}}
+  @media (min-width:760px){ /* per-element scroll effects: desktop only, phones scroll plain */
   .fr .frame img{animation:settle linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
   @keyframes settle{from{scale:1.1}}
   .fr .txt,.card{animation:enter linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
+  }
   @keyframes enter{from{opacity:0;transform:translateY(20px)}}
 }
 
