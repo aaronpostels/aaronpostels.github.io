@@ -9,7 +9,7 @@
 
 ## Project Overview
 
-This semester-long project demonstrates a comprehensive understanding of the entire 3D digital content creation pipeline. It follows the journey of a single concept—a whimsical traffic light on wheels—from a simple sketch to two distinct final products: a realistic visual effects composite and a playable game prototype. This showcases the ability to take an idea from a basic drawing to a fully realized, interactive experience.
+This semester-long project demonstrates a comprehensive understanding of the entire 3D digital content creation pipeline. It follows the journey of a single concept (a whimsical traffic light on wheels) from a simple sketch to two distinct final products: a realistic visual effects composite and a playable game prototype. This showcases the ability to take an idea from a basic drawing to a fully realized, interactive experience.
 
 ## Tech Stack
 

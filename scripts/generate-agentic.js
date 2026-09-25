@@ -213,7 +213,7 @@ fs.writeFileSync(path.join(repoRoot, 'projects.json'), JSON.stringify(cleanProje
 
 // 5. Write llms.txt
 const llmsTxtLines = [];
-llmsTxtLines.push('# Aaron Postels – Systems, Web & Graphics Engineer');
+llmsTxtLines.push('# Aaron Postels - Systems, Web & Graphics Engineer');
 llmsTxtLines.push('');
 llmsTxtLines.push('> Portfolio and engineering knowledge base of Aaron Postels (Ducklin). Specializes in Rust, WebAssembly, WebGPU, React Three Fiber, physics simulations, 6-DoF Stewart platform kinematics, game engines, and full-stack software development.');
 llmsTxtLines.push('');
@@ -277,7 +277,7 @@ fs.writeFileSync(path.join(wellKnownDir, 'llms.txt'), llmsTxtLines.join('\n'), '
 
 // 6. Write llms-full.txt
 const fullLines = [];
-fullLines.push('# Aaron Postels (Ducklin) — Complete Engineering Portfolio & Knowledge Base');
+fullLines.push('# Aaron Postels (Ducklin) - Complete Engineering Portfolio & Knowledge Base');
 fullLines.push('');
 fullLines.push('> Systems, Web & Graphics Engineer specializing in Rust, WebAssembly, WebGPU, React Three Fiber, physics simulations, 6-DoF Stewart platform kinematics, game engines, and full-stack software development.');
 fullLines.push('');
@@ -373,9 +373,9 @@ for (const p of archiveProjects) {
 }
 indexMdLines.push('');
 indexMdLines.push('### Machine-Readable & Agent Endpoints');
-indexMdLines.push('- [llms.txt](https://ducklin.de/llms.txt) — LLM table of contents');
-indexMdLines.push('- [llms-full.txt](https://ducklin.de/llms-full.txt) — Consolidated single-file prompt context');
-indexMdLines.push('- [projects.json](https://ducklin.de/projects.json) — Full structured JSON dataset');
+indexMdLines.push('- [llms.txt](https://ducklin.de/llms.txt) - LLM table of contents');
+indexMdLines.push('- [llms-full.txt](https://ducklin.de/llms-full.txt) - Consolidated single-file prompt context');
+indexMdLines.push('- [projects.json](https://ducklin.de/projects.json) - Full structured JSON dataset');
 
 fs.writeFileSync(path.join(repoRoot, 'index.md'), indexMdLines.join('\n'), 'utf8');
 

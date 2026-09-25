@@ -6,7 +6,7 @@
     "featured": true,
     "relevance": 100,
     "date": "2026-08-11",
-    "status": "Completed",
+    "status": "In Development",
     "deviceSupport": [
       "desktop",
       "mobile"
@@ -617,7 +617,7 @@
     "caseStudyHtmlUrl": "https://ducklin.de/case-studies/flashdash.html",
     "caseStudyMarkdownUrl": "https://ducklin.de/case-studies/flashdash.md",
     "githubUrl": null,
-    "overview": "The vision for Flash Dash was to transform a communal space with an engaging, physical, and plug-and-play gaming experience. Developed as a personal project with [Andrii (@and_lsk)](https://www.instagram.com/and_lsk/), the goal was to create a game that is immediately intuitive—a simple game of 1D ping-pong—but with enough depth through dynamic speed and audio feedback to encourage friendly competition and social interaction. It serves as an ambient, interactive art piece for the classroom at HfK Bremen.",
+    "overview": "The vision for Flash Dash was to transform a communal space with an engaging, physical, and plug-and-play gaming experience. Developed as a personal project with [Andrii (@and_lsk)](https://www.instagram.com/and_lsk/), the goal was to create a game that is immediately intuitive, a simple game of 1D ping-pong, but with enough depth through dynamic speed and audio feedback to encourage friendly competition and social interaction. It serves as an ambient, interactive art piece for the classroom at HfK Bremen.",
     "features": [
       "**Complete Gameplay Loop:** A complete and playable 1D ping-pong game is implemented on the 15-meter LED strip.",
       "**Dynamic Difficulty:** The 'ball' of light dynamically changes speed during play, increasing the challenge and excitement.",
@@ -764,7 +764,7 @@
     "caseStudyHtmlUrl": "https://ducklin.de/case-studies/unstable-diffusion.html",
     "caseStudyMarkdownUrl": "https://ducklin.de/case-studies/unstable-diffusion.md",
     "githubUrl": null,
-    "overview": "The vision for \"Unstable Diffusion\" was to explore the creative potential of generative AI as an interpretive tool. As a group project for a university class, it tests the AI's ability to perceive and construct recognizable forms—specifically human faces and figures—from purely abstract and ambiguous motion data provided by a depth map. The goal was to generate a unique, fluid animation where human-like forms appear to emerge and dissolve from a chaotic source.",
+    "overview": "The vision for \"Unstable Diffusion\" was to explore the creative potential of generative AI as an interpretive tool. As a group project for a university class, it tests the AI's ability to perceive and construct recognizable forms, specifically human faces and figures, from purely abstract and ambiguous motion data provided by a depth map. The goal was to generate a unique, fluid animation where human-like forms appear to emerge and dissolve from a chaotic source.",
     "features": [
       "**Abstract Animation:** An abstract, continuously deforming 3D sculpture was created and animated in Blender to serve as the motion source.",
       "**Depth Map Generation:** The animation was rendered as a sequence of depth map images, creating a video that encodes spatial information without recognizable features.",
@@ -818,7 +818,7 @@
     "caseStudyHtmlUrl": "https://ducklin.de/case-studies/mi2-3d-integration.html",
     "caseStudyMarkdownUrl": "https://ducklin.de/case-studies/mi2-3d-integration.md",
     "githubUrl": null,
-    "overview": "This semester-long project demonstrates a comprehensive understanding of the entire 3D digital content creation pipeline. It follows the journey of a single concept—a whimsical traffic light on wheels—from a simple sketch to two distinct final products: a realistic visual effects composite and a playable game prototype. This showcases the ability to take an idea from a basic drawing to a fully realized, interactive experience.",
+    "overview": "This semester-long project demonstrates a comprehensive understanding of the entire 3D digital content creation pipeline. It follows the journey of a single concept (a whimsical traffic light on wheels) from a simple sketch to two distinct final products: a realistic visual effects composite and a playable game prototype. This showcases the ability to take an idea from a basic drawing to a fully realized, interactive experience.",
     "features": [
       "**Concept & Sketching:** The project began with initial concept sketches, establishing the design for the mobile traffic light character.",
       "**3D Modeling:** A detailed 3D model of the \"Ampel Racer\" character was created from scratch in Blender.",
@@ -929,7 +929,7 @@
     "caseStudyHtmlUrl": "https://ducklin.de/case-studies/neosliders.html",
     "caseStudyMarkdownUrl": "https://ducklin.de/case-studies/neosliders.md",
     "githubUrl": null,
-    "overview": "The vision for Neo Sliders is to create a skill-based arcade game that is easy to learn but difficult to master. By reducing player control to a single mechanic—flipping gravity—the gameplay focuses entirely on mastering momentum to speedrun through challenging, curved levels.",
+    "overview": "The vision for Neo Sliders is to create a skill-based arcade game that is easy to learn but difficult to master. By reducing player control to a single mechanic (flipping gravity), the gameplay focuses entirely on mastering momentum to speedrun through challenging, curved levels.",
     "features": [
       "**Core Gravity Mechanic:** A one-touch control system allows the player to instantly change the direction of gravity.",
       "**Physics-Based Movement:** The ball's movement is physics-driven, requiring the player to build and maintain momentum to navigate tracks efficiently.",

@@ -50,6 +50,6 @@
 - **[Scribes](https://ducklin.de/case-studies/scribes.md)**: A minimalist documentation site generator for Markdown/MDX with an extensive, hot-swappable theming system.
 
 ### Machine-Readable & Agent Endpoints
-- [llms.txt](https://ducklin.de/llms.txt) — LLM table of contents
-- [llms-full.txt](https://ducklin.de/llms-full.txt) — Consolidated single-file prompt context
-- [projects.json](https://ducklin.de/projects.json) — Full structured JSON dataset
+- [llms.txt](https://ducklin.de/llms.txt) - LLM table of contents
+- [llms-full.txt](https://ducklin.de/llms-full.txt) - Consolidated single-file prompt context
+- [projects.json](https://ducklin.de/projects.json) - Full structured JSON dataset

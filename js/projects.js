@@ -6,7 +6,7 @@ const projects = [
       "A web-first game engine built on an archetype ECS in Rust, compiled to WebAssembly and rendered with WebGPU, with a written paper and six live demos.",
     href: "./projects/artisan-paper/demos.html",
     image: "./images/artisan_thumbnail.webp",
-    status: "Completed",
+    status: "In Development",
     docHref: "./case-studies/artisan.html",
     featured: true,
     relevance: 100,

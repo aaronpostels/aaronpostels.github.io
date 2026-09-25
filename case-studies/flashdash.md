@@ -9,7 +9,7 @@
 
 ## Project Overview
 
-The vision for Flash Dash was to transform a communal space with an engaging, physical, and plug-and-play gaming experience. Developed as a personal project with [Andrii (@and_lsk)](https://www.instagram.com/and_lsk/), the goal was to create a game that is immediately intuitive—a simple game of 1D ping-pong—but with enough depth through dynamic speed and audio feedback to encourage friendly competition and social interaction. It serves as an ambient, interactive art piece for the classroom at HfK Bremen.
+The vision for Flash Dash was to transform a communal space with an engaging, physical, and plug-and-play gaming experience. Developed as a personal project with [Andrii (@and_lsk)](https://www.instagram.com/and_lsk/), the goal was to create a game that is immediately intuitive, a simple game of 1D ping-pong, but with enough depth through dynamic speed and audio feedback to encourage friendly competition and social interaction. It serves as an ambient, interactive art piece for the classroom at HfK Bremen.
 
 ## Tech Stack
 

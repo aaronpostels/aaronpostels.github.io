@@ -1,4 +1,4 @@
-# Aaron Postels – Systems, Web & Graphics Engineer
+# Aaron Postels - Systems, Web & Graphics Engineer
 
 > Portfolio and engineering knowledge base of Aaron Postels (Ducklin). Specializes in Rust, WebAssembly, WebGPU, React Three Fiber, physics simulations, 6-DoF Stewart platform kinematics, game engines, and full-stack software development.
 

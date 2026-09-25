@@ -1,4 +1,4 @@
-# Aaron Postels (Ducklin) — Complete Engineering Portfolio & Knowledge Base
+# Aaron Postels (Ducklin) - Complete Engineering Portfolio & Knowledge Base
 
 > Systems, Web & Graphics Engineer specializing in Rust, WebAssembly, WebGPU, React Three Fiber, physics simulations, 6-DoF Stewart platform kinematics, game engines, and full-stack software development.
 
@@ -24,7 +24,7 @@
 
 *An archetype ECS game engine for the browser, in Rust, WebAssembly and WebGPU*
 
-- **Status**: Completed
+- **Status**: In Development
 - **Date**: 2026-08-11
 - **Featured**: Yes
 - **Categories**: Web, 3D
@@ -511,7 +511,7 @@ The mod has been fully migrated and updated to remain compatible with **Hytale v
   - [Case Study (Markdown)](https://ducklin.de/case-studies/flashdash.md)
 
 #### Overview
-The vision for Flash Dash was to transform a communal space with an engaging, physical, and plug-and-play gaming experience. Developed as a personal project with [Andrii (@and_lsk)](https://www.instagram.com/and_lsk/), the goal was to create a game that is immediately intuitive—a simple game of 1D ping-pong—but with enough depth through dynamic speed and audio feedback to encourage friendly competition and social interaction. It serves as an ambient, interactive art piece for the classroom at HfK Bremen.
+The vision for Flash Dash was to transform a communal space with an engaging, physical, and plug-and-play gaming experience. Developed as a personal project with [Andrii (@and_lsk)](https://www.instagram.com/and_lsk/), the goal was to create a game that is immediately intuitive, a simple game of 1D ping-pong, but with enough depth through dynamic speed and audio feedback to encourage friendly competition and social interaction. It serves as an ambient, interactive art piece for the classroom at HfK Bremen.
 
 #### Key Features & Architecture
 - **Complete Gameplay Loop:** A complete and playable 1D ping-pong game is implemented on the 15-meter LED strip.
@@ -629,7 +629,7 @@ As a project for a first-semester HfK course, the vision was to explore emergent
   - [Case Study (Markdown)](https://ducklin.de/case-studies/unstable-diffusion.md)
 
 #### Overview
-The vision for "Unstable Diffusion" was to explore the creative potential of generative AI as an interpretive tool. As a group project for a university class, it tests the AI's ability to perceive and construct recognizable forms—specifically human faces and figures—from purely abstract and ambiguous motion data provided by a depth map. The goal was to generate a unique, fluid animation where human-like forms appear to emerge and dissolve from a chaotic source.
+The vision for "Unstable Diffusion" was to explore the creative potential of generative AI as an interpretive tool. As a group project for a university class, it tests the AI's ability to perceive and construct recognizable forms, specifically human faces and figures, from purely abstract and ambiguous motion data provided by a depth map. The goal was to generate a unique, fluid animation where human-like forms appear to emerge and dissolve from a chaotic source.
 
 #### Key Features & Architecture
 - **Abstract Animation:** An abstract, continuously deforming 3D sculpture was created and animated in Blender to serve as the motion source.
@@ -674,7 +674,7 @@ The vision for Hue Together is to create a delightful and engaging two-player co
   - [Case Study (Markdown)](https://ducklin.de/case-studies/mi2-3d-integration.md)
 
 #### Overview
-This semester-long project demonstrates a comprehensive understanding of the entire 3D digital content creation pipeline. It follows the journey of a single concept—a whimsical traffic light on wheels—from a simple sketch to two distinct final products: a realistic visual effects composite and a playable game prototype. This showcases the ability to take an idea from a basic drawing to a fully realized, interactive experience.
+This semester-long project demonstrates a comprehensive understanding of the entire 3D digital content creation pipeline. It follows the journey of a single concept (a whimsical traffic light on wheels) from a simple sketch to two distinct final products: a realistic visual effects composite and a playable game prototype. This showcases the ability to take an idea from a basic drawing to a fully realized, interactive experience.
 
 #### Key Features & Architecture
 - **Concept & Sketching:** The project began with initial concept sketches, establishing the design for the mobile traffic light character.
@@ -774,7 +774,7 @@ The vision for Gunners Gauntlet was to create a fast-paced, minimalist, top-down
   - [Case Study (Markdown)](https://ducklin.de/case-studies/neosliders.md)
 
 #### Overview
-The vision for Neo Sliders is to create a skill-based arcade game that is easy to learn but difficult to master. By reducing player control to a single mechanic—flipping gravity—the gameplay focuses entirely on mastering momentum to speedrun through challenging, curved levels.
+The vision for Neo Sliders is to create a skill-based arcade game that is easy to learn but difficult to master. By reducing player control to a single mechanic (flipping gravity), the gameplay focuses entirely on mastering momentum to speedrun through challenging, curved levels.
 
 #### Key Features & Architecture
 - **Core Gravity Mechanic:** A one-touch control system allows the player to instantly change the direction of gravity.

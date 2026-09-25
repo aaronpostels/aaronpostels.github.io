@@ -9,7 +9,7 @@
 
 ## Project Overview
 
-The vision for Neo Sliders is to create a skill-based arcade game that is easy to learn but difficult to master. By reducing player control to a single mechanic—flipping gravity—the gameplay focuses entirely on mastering momentum to speedrun through challenging, curved levels.
+The vision for Neo Sliders is to create a skill-based arcade game that is easy to learn but difficult to master. By reducing player control to a single mechanic (flipping gravity), the gameplay focuses entirely on mastering momentum to speedrun through challenging, curved levels.
 
 ## Tech Stack
 

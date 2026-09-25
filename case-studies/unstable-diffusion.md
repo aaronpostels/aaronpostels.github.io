@@ -9,7 +9,7 @@
 
 ## Project Overview
 
-The vision for "Unstable Diffusion" was to explore the creative potential of generative AI as an interpretive tool. As a group project for a university class, it tests the AI's ability to perceive and construct recognizable forms—specifically human faces and figures—from purely abstract and ambiguous motion data provided by a depth map. The goal was to generate a unique, fluid animation where human-like forms appear to emerge and dissolve from a chaotic source.
+The vision for "Unstable Diffusion" was to explore the creative potential of generative AI as an interpretive tool. As a group project for a university class, it tests the AI's ability to perceive and construct recognizable forms, specifically human faces and figures, from purely abstract and ambiguous motion data provided by a depth map. The goal was to generate a unique, fluid animation where human-like forms appear to emerge and dissolve from a chaotic source.
 
 ## Tech Stack
 
