@@ -62,10 +62,16 @@ document.getElementById('demos').innerHTML = demos.map(card).join('');
 strip.innerHTML = archive.map(card).join('');
 dc.textContent = demos.length; mc.textContent = archive.length;
 dots.innerHTML = archive.map(() => '<i></i>').join('');
-const dotsUpd = () => { const w = strip.firstElementChild.offsetWidth + 12, k = Math.round(strip.scrollLeft / w); [...dots.children].forEach((d, j) => d.classList.toggle('on', j === k)); };
+// active dot: follows the scroll position, except while a dot tap/slide is moving the row (then it shows the target right away)
+let dotLock = -1, lockT = 0;
+const mark = k => [...dots.children].forEach((d, i) => d.classList.toggle('on', i === k));
+const dotsUpd = () => { if (dotLock >= 0) return mark(dotLock); const w = strip.firstElementChild.offsetWidth + 12; mark(Math.round(strip.scrollLeft / w)); };
+const release = () => { dotLock = -1; dotsUpd(); };
 strip.addEventListener('scroll', () => requestAnimationFrame(dotsUpd), { passive: true }); dotsUpd();
+strip.addEventListener('scrollend', release);
+strip.addEventListener('pointerdown', release);
 // tap a dot, or slide a finger along the dots, to move through the cards
-const goTo = k => { const c = strip.children[k]; strip.scrollTo({ left: c.offsetLeft - (strip.clientWidth - c.offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' }); };
+const goTo = k => { dotLock = k; mark(k); clearTimeout(lockT); lockT = setTimeout(release, 1000); const c = strip.children[k]; strip.scrollTo({ left: c.offsetLeft - (strip.clientWidth - c.offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' }); };
 let dotAt = -1;
 const scrub = e => {
   const r = dots.getBoundingClientRect(), k = Math.max(0, Math.min(archive.length - 1, Math.floor((e.clientX - r.left - 16) / (r.width - 32) * archive.length)));
