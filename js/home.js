@@ -68,10 +68,23 @@ const mark = k => [...dots.children].forEach((d, i) => d.classList.toggle('on', 
 const dotsUpd = () => { if (dotLock >= 0) return mark(dotLock); const w = strip.firstElementChild.offsetWidth + 12; mark(Math.round(strip.scrollLeft / w)); };
 const release = () => { dotLock = -1; dotsUpd(); };
 strip.addEventListener('scroll', () => requestAnimationFrame(dotsUpd), { passive: true }); dotsUpd();
-strip.addEventListener('scrollend', release);
-strip.addEventListener('pointerdown', release);
+strip.addEventListener('scrollend', () => { if (!sRaf) release(); });
+strip.addEventListener('pointerdown', () => { if (sRaf) { cancelAnimationFrame(sRaf); sRaf = 0; sLast = 0; strip.style.scrollSnapType = ''; } release(); });
 // tap a dot, or slide a finger along the dots, to move through the cards
-const goTo = k => { dotLock = k; mark(k); clearTimeout(lockT); lockT = setTimeout(release, 1000); const c = strip.children[k]; strip.scrollTo({ left: c.offsetLeft - (strip.clientWidth - c.offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' }); };
+// the row glides after one moving target: new dot = new target, the motion never restarts
+let sx = 0, sTarget = 0, sRaf = 0, sLast = 0;
+const sTick = t => {
+  const dt = Math.min(64, t - (sLast || t)); sLast = t;
+  sx += (sTarget - sx) * (1 - Math.pow(.78, dt / 16.67));
+  if (Math.abs(sTarget - sx) < .5) { strip.scrollLeft = sTarget; strip.style.scrollSnapType = ''; sRaf = 0; sLast = 0; release(); return; }
+  strip.scrollLeft = sx; sRaf = requestAnimationFrame(sTick);
+};
+const goTo = k => {
+  dotLock = k; mark(k); clearTimeout(lockT); lockT = setTimeout(release, 1200);
+  const c = strip.children[k]; sTarget = c.offsetLeft - (strip.clientWidth - c.offsetWidth) / 2;
+  if (reduce) { strip.scrollLeft = sTarget; return; }
+  if (!sRaf) { sx = strip.scrollLeft; strip.style.scrollSnapType = 'none'; sRaf = requestAnimationFrame(sTick); } // snapping would fight the small steps
+};
 let dotAt = -1;
 const scrub = e => {
   const r = dots.getBoundingClientRect(), k = Math.max(0, Math.min(archive.length - 1, Math.floor((e.clientX - r.left - 16) / (r.width - 32) * archive.length)));
