@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="../favicon.ico" sizes="any"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <title>Staggered Text Fall Animator | Canvas & Kinematics Case Study</title>
     <meta name="description" content="A case study on a high-performance 2D Canvas animator that simulates text falling in randomized, physics-like chunks with staggered timing, sine-wave motion, and smooth landing interpolation."/>
     <link rel="canonical" href="https://ducklin.de/case-studies/textfall.html" />
@@ -16,19 +16,20 @@
     <meta name="twitter:description" content="A case study on a high-performance 2D Canvas animator that simulates text falling in randomized, physics-like chunks." />
     <meta name="twitter:image" content="https://ducklin.de/images/textfall_thumbnail.webp" />
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Staggered Text Fall Animator (TextFall)","description":"A case study on a high-performance 2D Canvas animator that simulates text falling in randomized, physics-like chunks with staggered timing, sine-wave motion, and smooth landing interpolation.","image":"https://ducklin.de/images/textfall_thumbnail.webp","author":{"@type":"Person","name":"Aaron Postels","url":"https://ducklin.de"}}</script>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/case-study.css" />
+    <link rel="stylesheet" href="../css/page.css" />
 </head>
 <body>
+    <header class="bar"><a class="back" href="../index.html"><img src="../images/aaron_postels_profile_2x.webp" alt="" width="36" height="36"><span><b>Aaron Postels</b><small>Back to portfolio</small></span></a><nav class="soc" aria-label="Social profiles"><a href="https://github.com/aaronpostels" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg></a><a href="https://www.linkedin.com/in/aaronpostels" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a><a href="https://www.instagram.com/apos.tels/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1" fill="currentColor" stroke="none"/></svg></a></nav></header>
     <header class="case-study-header" style="--bg-image: url('../images/textfall_thumbnail.webp');">
         <h1>Staggered Text Fall Animator (TextFall)</h1><p>A kinetic typography experiment</p>
-        <div class="case-study-links"><a href="/" class="btn btn-secondary">&larr; Back to Portfolio</a><a href="/projects/textfall/" target="_blank" class="btn btn-primary">View Live Demo</a></div>
+        <div class="case-study-links"><a href="../projects/textfall/" target="_blank" class="btn btn-primary">View Live Demo</a></div>
     </header>
     <main class="case-study-main">
         <section><h2>Project Overview</h2><p>This project is a bespoke animation module built using the HTML5 Canvas API and vanilla JavaScript. It simulates a wall of text dynamically segmenting and falling into place, piece by piece. Unlike simple gravity, the animation employs precise, staggered timing, physics-like sine-wave motion for horizontal drift, and a final smoothing interpolation phase to achieve a chaotic yet controlled landing effect. The entire text block is pre-wrapped and the spawn/settlement timings for every chunk are calculated ahead of the animation loop, ensuring high performance and a complex, synchronized visual sequence.</p></section>
         <section><h2>Tech Stack</h2><ul class="tech-stack-list"><li>HTML5 Canvas API</li><li>Vanilla JavaScript (ES6+)</li><li>requestAnimationFrame</li><li>Kinematic/Timing Algorithms</li><li>Text Wrapping & Pre-calculation</li></ul></section>
         <section><h2>Key Features</h2><ul><li>Advanced timing control: Chunks are scheduled to land sequentially with fixed frame intervals, creating a rain-like, staggered waterfall effect.</li><li>Physics Simulation: Uses sine-wave motion with dynamic damping (falloff as the chunk approaches its target Y-position) to create organic, floating horizontal drift.</li><li>Two-Phase Animation: Features a "Falling" phase driven by speed and sine-wave physics, followed by a "Landing" phase using linear interpolation (LERP) to smoothly snap the chunk to its precise final X/Y coordinates.</li><li>Pre-calculation Pipeline: Text wrapping, chunk segmentation (2-5 words per chunk), and all animation timing parameters (speed, amplitude, spawn frame) are calculated once during setup.</li><li>Performance: Achieves high frame rates necessary for smooth animation by offloading rendering to the GPU-accelerated Canvas context and minimizing DOM manipulation.</li></ul></section>
     </main>
-    <footer>&copy; 2026 Aaron Postels @ Ducklin &mdash;<a href="https://github.com/aaronpostels" target="_blank" rel="noopener noreferrer">GitHub</a> &mdash;<a href="/impressum.html">Impressum</a> &mdash;<a href="/datenschutz.html">Datenschutz</a></footer>
+    <footer class="foot"><span>&copy; 2026 Aaron Postels</span><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a></footer>
+    <script src="../js/magnet.js" defer></script>
 </body>
 </html>

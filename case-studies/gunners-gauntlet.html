@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="../favicon.ico" sizes="any"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <title>Gunners Gauntlet: A Pseudo-3D Arcade Shooter | Java & Processing Case Study</title>
     <meta name="description" content="A case study on Gunners Gauntlet, a fast-paced arcade shooter built from scratch in Java with a custom pseudo-3D rendering engine."/>
     <link rel="canonical" href="https://ducklin.de/case-studies/gunners-gauntlet.html" />
@@ -16,13 +16,13 @@
     <meta name="twitter:description" content="A case study on Gunners Gauntlet, a fast-paced arcade shooter built from scratch in Java with a custom pseudo-3D rendering engine." />
     <meta name="twitter:image" content="https://ducklin.de/images/gunners-gauntlet_1.webp" />
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Gunners Gauntlet: A Pseudo-3D Arcade Shooter","description":"A case study on Gunners Gauntlet, a fast-paced arcade shooter built from scratch in Java with a custom pseudo-3D rendering engine.","image":"https://ducklin.de/images/gunners-gauntlet_1.webp","author":{"@type":"Person","name":"Aaron Postels","url":"https://ducklin.de"}}</script>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/case-study.css" />
+    <link rel="stylesheet" href="../css/page.css" />
 </head>
 <body>
-    <header class="case-study-header" style="--bg-image: url('/images/gunners-gauntlet_1.webp');">
+    <header class="bar"><a class="back" href="../index.html"><img src="../images/aaron_postels_profile_2x.webp" alt="" width="36" height="36"><span><b>Aaron Postels</b><small>Back to portfolio</small></span></a><nav class="soc" aria-label="Social profiles"><a href="https://github.com/aaronpostels" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg></a><a href="https://www.linkedin.com/in/aaronpostels" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a><a href="https://www.instagram.com/apos.tels/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1" fill="currentColor" stroke="none"/></svg></a></nav></header>
+    <header class="case-study-header" style="--bg-image: url('../images/gunners-gauntlet_1.webp');">
         <h1>Gunners Gauntlet</h1><p>A Pseudo-3D Arcade Shooter</p>
-        <div class="case-study-links"><a href="/" class="btn btn-secondary">&larr; Back to Portfolio</a></div>
+        <div class="case-study-links"></div>
     </header>
     <main class="case-study-main">
         <section><h2>Project Overview</h2><p>The vision for Gunners Gauntlet was to create a fast-paced, minimalist, top-down arcade shooter with a retro-inspired aesthetic. Developed as a solo project for the first-semester university course "Grundlagen der Programmierung," the game challenges the player to navigate a series of increasingly difficult mazes, surviving waves of enemies and culminating in a complex, multi-phase boss battle. The core gameplay loop is centered on classic twin-stick shooter mechanics.</p></section>
@@ -30,10 +30,10 @@
         <section class="case-study-gallery">
             <h2>Gallery</h2>
             <div class="gallery-grid">
-                <a href="/images/gunners-gauntlet_1.webp"><img src="/images/gunners-gauntlet_1.webp" alt="Title screen of Gunners Gauntlet." loading="lazy" width="600"></a>
-                <a href="/images/gunners-gauntlet_2.webp"><img src="/images/gunners-gauntlet_2.webp" alt="Gameplay screenshot showing the pseudo-3D walls." loading="lazy" width="600"></a>
-                <a href="/images/gunners-gauntlet_3.webp"><img src="/images/gunners-gauntlet_3.webp" alt="Player navigating a maze-like level." loading="lazy" width="600"></a>
-                <a href="/images/gunners-gauntlet_4.webp"><img src="/images/gunners-gauntlet_4.webp" alt="The multi-phase final boss battle." loading="lazy" width="600"></a>
+                <a href="../images/gunners-gauntlet_1.webp"><img src="../images/gunners-gauntlet_1.webp" alt="Title screen of Gunners Gauntlet." loading="lazy" width="600"></a>
+                <a href="../images/gunners-gauntlet_2.webp"><img src="../images/gunners-gauntlet_2.webp" alt="Gameplay screenshot showing the pseudo-3D walls." loading="lazy" width="600"></a>
+                <a href="../images/gunners-gauntlet_3.webp"><img src="../images/gunners-gauntlet_3.webp" alt="Player navigating a maze-like level." loading="lazy" width="600"></a>
+                <a href="../images/gunners-gauntlet_4.webp"><img src="../images/gunners-gauntlet_4.webp" alt="The multi-phase final boss battle." loading="lazy" width="600"></a>
             </div>
         </section>
 
@@ -41,14 +41,15 @@
         
         <section><h2>Key Features</h2><ul><li><strong>Custom Pseudo-3D Renderer:</strong> A fully functional rendering system draws the game world, giving a distinct 3D feel to the 2D grid-based levels.</li><li><strong>Classic Twin-Stick Controls:</strong> The game implements responsive twin-stick shooter controls (keyboard for movement, mouse for aiming).</li><li><strong>Level Progression:</strong> The game features a state machine that manages progression through four distinct levels, each with a unique layout and enemy configuration.</li><li><strong>Complex Boss Battle:</strong> The final level features a multi-phase boss fight where the boss is protected by a shield that must be deactivated by pressing buttons throughout the arena.</li><li><strong>Complete Audio-Visual Package:</strong> The game includes custom UI, a dynamic music system that changes with each level, and a comprehensive set of sound effects.</li></ul></section>
     </main>
-    <footer>&copy; 2026 Aaron Postels @ Ducklin &mdash;<a href="https://github.com/aaronpostels" target="_blank" rel="noopener noreferrer">GitHub</a> &mdash;<a href="/impressum.html">Impressum</a> &mdash;<a href="/datenschutz.html">Datenschutz</a></footer>
+    <footer class="foot"><span>&copy; 2026 Aaron Postels</span><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a></footer>
 
     <div class="lightbox-overlay" id="lightbox">
         <div class="lightbox-content">
             <img src="" alt="Enlarged gallery image" id="lightbox-img">
         </div>
-        <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">&times;</button>
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer"></button>
     </div>
     <script src="../js/case-study.js" defer></script>
+    <script src="../js/magnet.js" defer></script>
 </body>
 </html>

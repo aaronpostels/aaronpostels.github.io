@@ -3,73 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <title>Datenschutzerklärung - ducklin.de</title>
     <meta name="robots" content="noindex, follow">
-    <link rel="stylesheet" href="/css/style.css" />
-    <style>
-      body {
-        padding: 2rem 1rem;
-        font-size: 1rem;
-      }
-      .privacy-container {
-        max-width: 750px;
-        margin: 2rem auto;
-        line-height: 1.7;
-        color: var(--text-color-secondary);
-      }
-      .privacy-container h1,
-      .privacy-container h2,
-      .privacy-container h3 {
-        color: var(--text-color);
-        text-align: left;
-        border-bottom: none;
-      }
-      .privacy-container h1 {
-        margin-bottom: 1.5rem;
-        font-size: 2.2rem;
-      }
-      .privacy-container h2 {
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-        font-size: 1.4rem;
-        border-bottom: 1px solid var(--card-border-color);
-        padding-bottom: 0.3rem;
-      }
-      .privacy-container h3 {
-        margin-top: 1.5rem;
-        margin-bottom: 0.5rem;
-        font-size: 1.15rem;
-      }
-      .privacy-container p, .privacy-container ul {
-        margin-bottom: 1.2rem;
-      }
-      .privacy-container ul {
-        padding-left: 1.5rem;
-      }
-      .privacy-container li {
-        margin-bottom: 0.5rem;
-      }
-      .privacy-container a {
-        color: var(--primary-color-light);
-        text-decoration: none;
-      }
-      .privacy-container a:hover {
-        text-decoration: underline;
-      }
-      .highlight-box {
-        background-color: var(--card-background);
-        border: 1px solid var(--card-border-color);
-        border-radius: 8px;
-        padding: 1.2rem;
-        margin: 1.5rem 0;
-      }
-    </style>
+    <link rel="stylesheet" href="css/page.css" />
 </head>
 <body>
-  <div class="privacy-container">
+  <header class="bar"><a class="back" href="index.html"><img src="images/aaron_postels_profile_2x.webp" alt="" width="36" height="36"><span><b>Aaron Postels</b><small>Zurück zum Portfolio</small></span></a><nav><a href="privacy.html" hreflang="en" lang="en">English</a></nav></header>
+  <main class="prose">
     <h1>Datenschutzerklärung</h1>
 
     <div class="highlight-box">
@@ -85,7 +28,7 @@
     <h3>Datenerfassung auf dieser Website</h3>
     <p><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong></p>
     <p>
-      Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle“ in dieser Datenschutzerklärung sowie dem <a href="/impressum.html">Impressum</a> entnehmen.
+      Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle“ in dieser Datenschutzerklärung sowie dem <a href="impressum.html">Impressum</a> entnehmen.
     </p>
 
     <p><strong>Wie erfassen wir Ihre Daten?</strong></p>
@@ -205,12 +148,9 @@
       Auf dieser Website befinden sich Links zu unseren Profilen auf externen Plattformen (GitHub, LinkedIn, Instagram). Es handelt sich hierbei um normale Hyperlinks und nicht um Social-Media-Plugins, die bereits beim Laden der Seite Daten an Dritte übertragen. Erst wenn Sie auf einen dieser Links klicken, verlassen Sie diese Website und werden zum jeweiligen Anbieter weitergeleitet.
     </p>
 
-    <p style="margin-top: 2rem;"><em>Stand: September 2026</em></p>
-
-    <p style="margin-top: 3rem;">
-      <a href="/">&larr; Zurück zum Portfolio</a> &nbsp;|&nbsp; <a href="/impressum.html">Zum Impressum</a>
-    </p>
-  </div>
+    <p class="note"><em>Stand: September 2026</em></p>
+  </main>
+  <footer class="foot"><span>&copy; 2026 Aaron Postels</span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></footer>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       document.querySelectorAll(".secure-email").forEach(function(el) {

@@ -6,7 +6,7 @@ const projects = [
       "A real-time 3D web simulator of a 3-axis Stewart platform, created as part of a collaborative hardware project for an electronic systems course.",
     href: "./projects/platform/",
     image: "./images/platform_thumbnail.webp",
-    status: "In Development",
+    status: "Archived",
     docHref: "./case-studies/platform.html",
     featured: true,
     relevance: 100,
@@ -46,7 +46,7 @@ const projects = [
       "A web app featuring a suite of polished utilities like a QR Code Generator and JSON Formatter.",
     href: "./projects/toolbox/",
     image: "./images/toolbox_thumbnail.webp",
-    status: "On Hold",
+    status: "Archived",
     docHref: "./case-studies/toolbox.html",
     featured: true,
     relevance: 100,
@@ -68,7 +68,7 @@ const projects = [
       "An interactive 3D portfolio where you sail a ship between islands, featuring custom water shaders and spatial audio.",
     href: "./projects/island/",
     image: "./images/island_thumbnail.webp",
-    status: "On Hold",
+    status: "Archived",
     docHref: "./case-studies/island.html",
     featured: true,
     relevance: 100,
@@ -223,7 +223,7 @@ const projects = [
     name: "Web Platformer",
     description:
       "A web game to build and play speedrun platformer levels with highly tweakable player controls and competitive leaderboards.",
-    status: "In Development",
+    status: "Archived",
     date: "November 2025",
     relevance: 60,
     docHref: "./case-studies/web-platformer.html",
@@ -234,7 +234,7 @@ const projects = [
     name: "TileQuest",
     description:
       "A physical/digital co-op board game using RFID figures on a custom electronic grid. A 4th-semester university group project.",
-    status: "In Development",
+    status: "Archived",
     date: "April 2025",
     relevance: 100,
     docHref: "./case-studies/tilequest.html",
@@ -289,7 +289,7 @@ const projects = [
     name: "Panzer",
     description:
       "A real-time 2D multiplayer top-down tank game with online lobbies and a map builder, also adapted as a Discord Activity.",
-    status: "On Hold",
+    status: "Archived",
     date: "October 2025",
     relevance: 50,
     docHref: "./case-studies/panzer.html",
@@ -300,7 +300,7 @@ const projects = [
     name: "Aurora",
     description:
       "A modern, visual website editor architected as a monorepo for modularity and scalability.",
-    status: "On Hold",
+    status: "Archived",
     date: "August 2025",
     relevance: 96,
     docHref: "./case-studies/aurora.html",
@@ -311,7 +311,7 @@ const projects = [
     name: "Scribes",
     description:
       "A minimalist documentation site generator for Markdown/MDX with an extensive, hot-swappable theming system.",
-    status: "On Hold",
+    status: "Archived",
     date: "October 2025",
     relevance: 50,
     docHref: "./case-studies/scribes.html",
@@ -372,17 +372,6 @@ const projects = [
     docHref: "./case-studies/birkenhirten.html",
     image: "./images/birkenhirten_1.webp",
     techStack: ["Java", "Processing 4"],
-  },
-  {
-    name: "Artisan2D Game Engine",
-    description:
-      "A 2D game engine concept, first built in C++ and later re-envisioned as a web-based tool in TypeScript.",
-    status: "Archived",
-    date: "2024 - 2025",
-    relevance: 27,
-    docHref: "./case-studies/artisan2d-game-engine.html",
-    image: "./images/artisan2d-game-engine_1.webp",
-    techStack: ["C++", "TypeScript"],
   },
   {
     name: "Neosliders",
@@ -519,4 +508,3 @@ const projects = [
   */
 ];
 
-export default projects;

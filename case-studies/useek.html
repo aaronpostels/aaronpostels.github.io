@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="../favicon.ico" sizes="any"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <title>uSeek: Interactive Pirate Puzzle Campaign | GSAP, Spline & Full-Stack Web Case Study</title>
     <meta name="description" content="A case study on uSeek, a large-scale interactive pirate-themed web puzzle campaign featuring scroll-based animations (GSAP), 3D graphics (Spline), a custom preloader, and light/dark mode functionality."/>
     <link rel="canonical" href="https://ducklin.de/case-studies/useek.html" />
@@ -16,19 +16,20 @@
     <meta name="twitter:description" content="A case study on uSeek, a large-scale interactive pirate-themed web puzzle campaign featuring scroll-based animations (GSAP) and 3D graphics (Spline)." />
     <meta name="twitter:image" content="https://ducklin.de/images/useek_thumbnail.webp" />
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"uSeek: An Interactive Pirate Puzzle Campaign","description":"A case study on uSeek, a large-scale interactive pirate-themed web puzzle campaign featuring scroll-based animations (GSAP), 3D graphics (Spline), a custom preloader, and light/dark mode functionality.","image":"https://ducklin.de/images/useek_thumbnail.webp","author":{"@type":"Person","name":"Aaron Postels","url":"https://ducklin.de"}}</script>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/case-study.css" />
+    <link rel="stylesheet" href="../css/page.css" />
 </head>
 <body>
+    <header class="bar"><a class="back" href="../index.html"><img src="../images/aaron_postels_profile_2x.webp" alt="" width="36" height="36"><span><b>Aaron Postels</b><small>Back to portfolio</small></span></a><nav class="soc" aria-label="Social profiles"><a href="https://github.com/aaronpostels" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg></a><a href="https://www.linkedin.com/in/aaronpostels" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a><a href="https://www.instagram.com/apos.tels/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1" fill="currentColor" stroke="none"/></svg></a></nav></header>
     <header class="case-study-header" style="--bg-image: url('../images/useek_thumbnail.webp');">
         <h1>uSeek</h1><p>An Interactive Pirate Puzzle Campaign</p>
-        <div class="case-study-links"><a href="/" class="btn btn-secondary">&larr; Back to Portfolio</a><a href="/projects/uSeek/" target="_blank" class="btn btn-primary">View Live Demo</a></div>
+        <div class="case-study-links"><a href="../projects/uSeek/" target="_blank" class="btn btn-primary">View Live Demo</a></div>
     </header>
     <main class="case-study-main">
         <section><h2>Project Overview</h2><p>uSeek is a comprehensive, narrative-driven web campaign designed as a multi-hour interactive pirate puzzle. Created as a group project for the university course "Medieninformatik 1," it was selected as the best website of the year among all participating classes. The site guides users through a story, presenting challenges that require code-breaking, visual analysis, and interactive manipulation of page elements. The project integrates advanced front-end technologies like GSAP for scroll-triggered parallax and pinning, and Spline for embedding interactive 3D models (like the lock and treasure chest). It also features a custom preloader, a responsive UI framework, and a persistent light/dark mode system.</p></section>
         <section><h2>Tech Stack</h2><ul class="tech-stack-list"><li>GSAP (ScrollTrigger)</li><li>Spline (3D Embed)</li><li>Lenis (Smooth Scrolling)</li><li>Bootstrap 5</li><li>Vanilla JavaScript</li><li>HTML5 / CSS3</li><li>Responsive Design</li></ul></section>
         <section><h2>Key Features</h2><ul><li>Cinematic Preloader: A custom, GSAP-animated loading screen that creates an engaging transition into the main site content.</li><li>Interactive 3D Integration: Uses Spline to embed and interact with custom 3D assets (a treasure chest lock, the chest itself) directly within the webpage.</li><li>Advanced Scroll Animations: Implements multiple GSAP ScrollTrigger timelines for pinning, horizontal navigation parallax, and complex background movements.</li><li>Custom UI & Branding: Features a unique pirate-themed design with custom cursor, responsive typography, and dynamic CSS styling for light/dark mode switching.</li><li>Utility Framework: Built upon a custom CSS framework to simplify layout and speed up responsive development.</li><li>Integrated Puzzles: Contains functional, embedded puzzle mechanics such as drawing on a star map and an X-ray effect for revealing hidden clues.</li></ul></section>
     </main>
-    <footer>&copy; 2026 Aaron Postels @ Ducklin &mdash;<a href="https://github.com/aaronpostels" target="_blank" rel="noopener noreferrer">GitHub</a> &mdash;<a href="/impressum.html">Impressum</a> &mdash;<a href="/datenschutz.html">Datenschutz</a></footer>
+    <footer class="foot"><span>&copy; 2026 Aaron Postels</span><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a></footer>
+    <script src="../js/magnet.js" defer></script>
 </body>
 </html>
