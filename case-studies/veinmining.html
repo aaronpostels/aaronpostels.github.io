@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../favicon.ico" sizes="any"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <title>VeinMining | Hytale Mod &amp; Excavation Plugin Case Study</title>
+    <meta name="description" content="A case study on VeinMining, an advanced ore vein and excavation pattern mining mod for Hytale, featuring in-game GUI configuration, chat commands, and tool durability balance."/>
+    <link rel="canonical" href="https://ducklin.de/case-studies/veinmining.html" />
+    <meta property="og:title" content="VeinMining | Hytale Mod &amp; Excavation Plugin Case Study" />
+    <meta property="og:description" content="A case study on VeinMining, an advanced ore vein and excavation pattern mining mod for Hytale, featuring in-game GUI configuration, chat commands, and tool durability balance." />
+    <meta property="og:type" content="article" /><meta property="og:url" content="https://ducklin.de/case-studies/veinmining.html" />
+    <meta property="og:image" content="https://ducklin.de/images/veinmining_1.webp" />
+    <meta property="og:site_name" content="Ducklin Portfolio" /><meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VeinMining | Hytale Mod &amp; Excavation Plugin Case Study" />
+    <meta name="twitter:description" content="A case study on VeinMining, an advanced ore vein and excavation pattern mining mod for Hytale, featuring in-game GUI configuration, chat commands, and tool durability balance." />
+    <meta name="twitter:image" content="https://ducklin.de/images/veinmining_1.webp" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"VeinMining","description":"A case study on VeinMining, an advanced ore vein and excavation pattern mining mod for Hytale, featuring in-game GUI configuration, chat commands, and tool durability balance.","image":"https://ducklin.de/images/veinmining_1.webp","author":{"@type":"Person","name":"Aaron Postels","url":"https://ducklin.de"}}</script>
+    <link rel="stylesheet" href="../css/page.css" />
+</head>
+<body>
+    <header class="bar"><a class="back" href="../index.html"><img src="../images/aaron_postels_profile_2x.webp" alt="" width="36" height="36"><span><b>Aaron Postels</b><small>Back to portfolio</small></span></a><nav class="soc" aria-label="Social profiles"><a href="https://github.com/aaronpostels" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg></a><a href="https://www.linkedin.com/in/aaronpostels" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a><a href="https://www.instagram.com/apos.tels/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1" fill="currentColor" stroke="none"/></svg></a></nav></header>
+    <header class="case-study-header" style="--bg-image: url('../images/veinmining_1.webp');">
+        <h1>VeinMining</h1><p>Advanced ore vein &amp; excavation pattern mining mod for Hytale (Updated for v0.6)</p>
+        <div class="case-study-links">
+            <a href="https://www.curseforge.com/hytale/mods/veinmining" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on CurseForge</a>
+            <a href="https://github.com/aaronpostels/VeinMining" target="_blank" rel="noopener noreferrer" class="btn">Source on GitHub</a>
+        </div>
+    </header>
+    <main class="case-study-main">
+        <section>
+            <h2>Project Overview</h2>
+            <p>VeinMining is a versatile utility mod for Hytale that streamlines gathering by letting players mine entire connected ore veins or excavate geometric shapes in one coordinated break action. Players activate veinmining simply by holding an activation key (defaulting to Left Alt / Walk) while mining with an appropriate tool.</p>
+            <p>The mod has been fully migrated and updated to remain compatible with <strong>Hytale v0.6</strong> (with special thanks to contributor <em>ItsRiprod</em> for migration support). It features a custom in-game UI configuration window, deep chat command flag parsing, tool durability balance, and smart drop consolidation.</p>
+        </section>
+
+        <section class="case-study-gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <a href="../images/veinmining_1.webp"><img src="../images/veinmining_1.webp" alt="VeinMining in-game configuration GUI (/vm)." loading="lazy" width="600"></a>
+                <a href="../images/veinmining_2.webp"><img src="../images/veinmining_2.webp" alt="Vein mining excavation particles and breaking effect." loading="lazy" width="600"></a>
+                <a href="../images/veinmining_3.webp"><img src="../images/veinmining_3.webp" alt="Excavated tunnel created using the tunnel pattern." loading="lazy" width="600"></a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tech Stack</h2>
+            <ul class="tech-stack-list">
+                <li>Java</li>
+                <li>Hytale Plugin API</li>
+                <li>Gradle</li>
+                <li>Custom In-Game GUI Pages</li>
+                <li>JSON Configuration</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Activation on Demand:</strong> Hold the Walk key (Left Alt) while mining to activate veinmining without interrupting standard single-block mining.</li>
+                <li><strong>Interactive In-Game GUI:</strong> Open a visual settings dashboard at any time with <code>/vm</code> to adjust targeting mode, patterns, orientation, and activation triggers.</li>
+                <li><strong>Durability Balance:</strong> Equipped tools lose durability based on the total count of broken blocks, keeping server economies and survival progression balanced.</li>
+                <li><strong>Loot Consolidation:</strong> Collect all block drops and ores from the broken vein into a single consolidated stack placed at the player's feet or at the source block.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Mining Modes &amp; Excavation Patterns</h2>
+            <p>VeinMining provides multiple targeting filters and spatial excavation algorithms to accommodate both mining and construction:</p>
+            <ul>
+                <li><strong>Targeting Modes:</strong>
+                    <ul>
+                        <li><em>All Blocks:</em> Mines contiguous blocks of identical type (ideal for stone clearing and woodcutting).</li>
+                        <li><em>Ores Only:</em> Limits propagation strictly to ore blocks.</li>
+                        <li><em>Disabled / Off:</em> Temporarily suspends the mod without unbinding hotkeys.</li>
+                    </ul>
+                </li>
+                <li><strong>Excavation Patterns:</strong>
+                    <ul>
+                        <li><em>Freeform:</em> Recursively follows the vein in any contiguous 3D direction (Classic veinminer).</li>
+                        <li><em>3x3x3 Cube:</em> Excavates a neat cube volume centered on the target.</li>
+                        <li><em>Tunnel:</em> Available in 1x1, 1x2 (player-height passage), and 3x3 boreholes.</li>
+                        <li><em>Wall:</em> Mines a flat 3x3 or 5x5 surface plane.</li>
+                        <li><em>Diagonal:</em> Mines a clean 45-degree staircase progression.</li>
+                    </ul>
+                </li>
+                <li><strong>Spatial Orientation:</strong> Patterns can align to either the clicked <em>Block Face</em> or the player's current <em>Camera View</em> direction.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Chat &amp; Server Configuration</h2>
+            <p>All settings can be configured either via the visual GUI or directly in chat with smart flag parsing and short aliases:</p>
+            <pre><code>/vm --mode all --pattern cube --key always</code></pre>
+            <p>Available flags include <code>--mode</code> (all, ores, off), <code>--pattern</code> (free, cube, t1, t2, t3, w3, w5, diag), <code>--orientation</code> (block, player), and <code>--key</code> (walk, crouch, always).</p>
+            <p>Server administrators can fine-tune global limits in <code>VeinMining.json</code>, including maximum vein size limits per player group, durability multiplier curves, drop positioning rules, tool restrictions (Pickaxe, Axe, Shovel, Shears), and instant-break toggles.</p>
+        </section>
+    </main>
+    <footer class="foot"><span>&copy; 2026 Aaron Postels</span><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a></footer>
+
+    <div class="lightbox-overlay" id="lightbox">
+        <div class="lightbox-content">
+            <img src="" alt="Enlarged gallery image" id="lightbox-img">
+        </div>
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer"></button>
+    </div>
+    <script src="../js/case-study.js" defer></script>
+    <script src="../js/magnet.js" defer></script>
+</body>
+</html>

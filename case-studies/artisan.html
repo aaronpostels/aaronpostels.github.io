@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../favicon.ico" sizes="any"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <title>Artisan | Rust, WebAssembly & WebGPU ECS Engine Case Study</title>
+    <meta name="description" content="A case study on Artisan, a web-first archetype Entity Component System engine written in Rust, compiled to WebAssembly and rendered with WebGPU, with six interactive browser demos."/>
+    <link rel="canonical" href="https://ducklin.de/case-studies/artisan.html" />
+    <meta property="og:title" content="Artisan | Rust, WebAssembly &amp; WebGPU ECS Engine Case Study" />
+    <meta property="og:description" content="A case study on Artisan, a web-first archetype Entity Component System engine written in Rust, compiled to WebAssembly and rendered with WebGPU, with six interactive browser demos." />
+    <meta property="og:type" content="article" /><meta property="og:url" content="https://ducklin.de/case-studies/artisan.html" />
+    <meta property="og:image" content="https://ducklin.de/images/artisan_thumbnail.webp" />
+    <meta property="og:site_name" content="Ducklin Portfolio" /><meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Artisan | Rust, WebAssembly &amp; WebGPU ECS Engine Case Study" />
+    <meta name="twitter:description" content="A case study on Artisan, a web-first archetype Entity Component System engine written in Rust, compiled to WebAssembly and rendered with WebGPU, with six interactive browser demos." />
+    <meta name="twitter:image" content="https://ducklin.de/images/artisan_thumbnail.webp" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Artisan","description":"A case study on Artisan, a web-first archetype Entity Component System engine written in Rust, compiled to WebAssembly and rendered with WebGPU, with six interactive browser demos.","image":"https://ducklin.de/images/artisan_thumbnail.webp","author":{"@type":"Person","name":"Aaron Postels","url":"https://ducklin.de"}}</script>
+    <link rel="stylesheet" href="../css/page.css" />
+</head>
+<body>
+    <header class="bar"><a class="back" href="../index.html"><img src="../images/aaron_postels_profile_2x.webp" alt="" width="36" height="36"><span><b>Aaron Postels</b><small>Back to portfolio</small></span></a><nav class="soc" aria-label="Social profiles"><a href="https://github.com/aaronpostels" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg></a><a href="https://www.linkedin.com/in/aaronpostels" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a><a href="https://www.instagram.com/apos.tels/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1" fill="currentColor" stroke="none"/></svg></a></nav></header>
+    <header class="case-study-header" style="--bg-image: url('../images/artisan_thumbnail.webp');">
+        <h1>Artisan</h1><p>An archetype ECS game engine for the browser, in Rust, WebAssembly and WebGPU</p>
+        <div class="case-study-links"><a href="../projects/artisan-paper/demos.html" target="_blank" class="btn btn-primary">View Live Demos</a><a href="../projects/artisan-paper/" target="_blank" class="btn">Read the Paper (German)</a><a href="https://github.com/aaronpostels/Artisan-Publish" target="_blank" rel="noopener" class="btn">Source on GitHub</a></div>
+    </header>
+    <main class="case-study-main">
+        <section><h2>Project Overview</h2><p>Artisan explores how far data-heavy games and real-time simulations can be pushed in the browser when they are designed for modern web technology from the start, instead of being exported to the web as an afterthought. It combines a data-oriented archetype Entity Component System written in Rust, compiled to WebAssembly with SIMD and multi-threaded Rayon workers, with a WebGPU renderer.</p><p>A planetary civilization simulation serves as the main use case, and targeted benchmarks measure the core data paths. The full write-up is published as a paper (in German) alongside the demos.</p></section>
+        <section><h2>Tech Stack</h2><ul class="tech-stack-list"><li>Rust</li><li>WebAssembly (SIMD)</li><li>WebGPU</li><li>WGSL Compute Shaders</li><li>Rayon (Web Workers)</li><li>TypeScript</li></ul></section>
+        <section><h2>Key Features</h2><ul><li>Archetype ECS with contiguous columnar component storage for cache-friendly, vectorized iteration and O(1) entity removal.</li><li>Zero-copy memory bridge: typed array views into WebAssembly memory feed WebGPU buffers directly.</li><li>Parallel scheduler that builds conflict-free stages from each system's read/write access and runs them on a Rayon worker pool.</li><li>Instanced WebGPU rendering for 2D and 3D scenes, with optional GPU compute simulation paths.</li><li><a href="../projects/vivarium/" target="_blank">Vivarium</a>: settlers move across a procedurally generated planet, use local resources and grow their tribes.</li><li>Smaller demos isolate single engine parts: <a href="../projects/murmuration/" target="_blank">Murmuration</a> (CPU vs. GPU flow field), <a href="../projects/rects/" target="_blank">Bouncing Rects</a> (compute shaders), <a href="../projects/scheduler/" target="_blank">Scheduler</a> (parallel stages) and <a href="../projects/metamorphosis/" target="_blank">Metamorphosis</a> (archetype changes).</li><li>Benchmark suite comparing Artisan with Bevy and Flecs across 34 categories. Artisan was fastest in 20 of them.</li><li>The demos need a browser with WebGPU, such as a current desktop Chrome, Edge or Firefox.</li></ul></section>
+    </main>
+    <footer class="foot"><span>&copy; 2026 Aaron Postels</span><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a></footer>
+    <script src="../js/magnet.js" defer></script>
+</body>
+</html>
