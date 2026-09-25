@@ -3,36 +3,50 @@
 # General search engines: allow portfolio and case studies, disallow raw project demos
 User-agent: *
 Disallow: /projects/
-Sitemap: https://ducklin.de/sitemap.xml
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /projects.json
+Allow: /index.md
+Allow: /case-studies/
 
-# Explicit reservation of rights against Text and Data Mining (TDM) / AI Training
-# pursuant to § 44b Abs. 3 UrhG and Article 4 of EU Directive 2019/790:
+# AI Search & Retrieval Assistants (Perplexity, ChatGPT, Claude, Gemini, etc.)
+# Configured for agentic web discovery and citation (https://llmstxt.org)
 User-agent: GPTBot
-Disallow: /
+Disallow: /projects/
+Allow: /
 
 User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
+Disallow: /projects/
+Allow: /
 
 User-agent: ClaudeBot
-Disallow: /
+Disallow: /projects/
+Allow: /
 
 User-agent: anthropic-ai
-Disallow: /
+Disallow: /projects/
+Allow: /
+
+User-agent: PerplexityBot
+Disallow: /projects/
+Allow: /
 
 User-agent: Google-Extended
+Disallow: /projects/
+Allow: /
+
+User-agent: Applebot-Extended
+Disallow: /projects/
+Allow: /
+
+# Bulk unvetted training crawlers
+User-agent: CCBot
 Disallow: /
 
 User-agent: Bytespider
 Disallow: /
 
-User-agent: PerplexityBot
-Disallow: /
-
-User-agent: FacebookBot
-Disallow: /
-
-User-agent: Amazonbot
-Disallow: /
+# Discovery endpoints
+Sitemap: https://ducklin.de/sitemap.xml
+# LLM Context: https://ducklin.de/llms.txt
+# LLM Full Knowledge Base: https://ducklin.de/llms-full.txt

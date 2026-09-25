@@ -1,0 +1,93 @@
+# Aaron Postels – Systems, Web & Graphics Engineer
+
+> Portfolio and engineering knowledge base of Aaron Postels (Ducklin). Specializes in Rust, WebAssembly, WebGPU, React Three Fiber, physics simulations, 6-DoF Stewart platform kinematics, game engines, and full-stack software development.
+
+This file serves as the canonical table of contents for AI agents and LLMs. Below are the primary projects, live demos, and case studies. Detailed markdown files are available for all case studies without HTML noise. For a single-file context dump of the entire portfolio, fetch [llms-full.txt](https://ducklin.de/llms-full.txt). For structured machine data, fetch [projects.json](https://ducklin.de/projects.json).
+
+## Featured Projects
+
+- [Artisan](https://ducklin.de/case-studies/artisan.md): A web-first game engine built on an archetype ECS in Rust, compiled to WebAssembly and rendered with WebGPU, with a written paper and six live demos.
+- [ProCue Motion Platform](https://ducklin.de/case-studies/procue.md): A real-time 3D digital twin of a six-axis Stewart motion platform for driving simulators, built for ProCue alongside their website.
+- [Island](https://ducklin.de/case-studies/island.md): An interactive 3D portfolio where you sail a ship between islands, featuring custom water shaders and spatial audio.
+
+## Live Interactive Demos
+
+- [Platform Kinematics](https://ducklin.de/case-studies/platform.md): A real-time 3D web simulator of a 3-axis Stewart platform, created as part of a collaborative hardware project for an electronic systems course. (Demo: https://ducklin.de/projects/platform/)
+- [Phase Up](https://ducklin.de/case-studies/phaseup.md): An installable phone app for the card game Phase 10 that generates fresh phase sets and keeps score, fully offline. (Demo: https://ducklin.de/projects/phaseup/)
+- [Toolbox](https://ducklin.de/case-studies/toolbox.md): A web app featuring a suite of polished utilities like a QR Code Generator and JSON Formatter. (Demo: https://ducklin.de/projects/toolbox/)
+- [Eneida](https://ducklin.de/case-studies/eneida.md): An interactive portfolio simulating a retro sci-fi desktop with a CLI, window manager, and playable games with online leaderboards. (Demo: https://ducklin.de/projects/eneida/)
+- [RPG Combat Minigame](https://ducklin.de/case-studies/combat.md): A tech demo for a turn-based combat system, prototyped for the TileQuest project, featuring skill-based minigames. (Demo: https://ducklin.de/projects/combat/)
+- [uSeek](https://ducklin.de/case-studies/useek.md): An award-winning university group project: a pirate-themed puzzle campaign using scroll-based animations and 3D models. (Demo: https://ducklin.de/projects/uSeek/)
+- [ASCII Video Renderer](https://ducklin.de/case-studies/ascii.md): A high-performance, real-time video-to-ASCII art converter using Web Workers to prevent UI blocking. (Demo: https://ducklin.de/projects/ASCII/)
+- [Lockpicking Minigame](https://ducklin.de/case-studies/lockpick.md): A tech demo for a timing-based lockpicking minigame, prototyped for the TileQuest project, with dynamic difficulty. (Demo: https://ducklin.de/projects/lockpick/)
+- [Scrub GSAP Portfolio](https://ducklin.de/case-studies/scrub-gsap.md): An HfK university project prototyping a portfolio with scroll-scrubbed animations for cinematic parallax effects. (Demo: https://ducklin.de/projects/scrub/)
+- [Particles Portfolio](https://ducklin.de/case-studies/particles.md): An HfK university project where scrolling dissolves 3D point cloud models into chaotic particle fields. (Demo: https://ducklin.de/projects/particles/)
+- [Portal](https://ducklin.de/case-studies/portal.md): A UI demo using transparent video (HEVC with alpha channel), conceptualized for the TileQuest project's figure scanning animation. (Demo: https://ducklin.de/projects/portal/)
+- [Text Fall Animation](https://ducklin.de/case-studies/textfall.md): A kinetic typography experiment using the Canvas API to simulate text falling into place with physics-like motion. (Demo: https://ducklin.de/projects/textfall/)
+
+## Project Archive
+
+- [TileQuest](https://ducklin.de/case-studies/tilequest.md): A physical/digital co-op board game using RFID figures on a custom electronic grid. A 4th-semester university group project.
+- [Duckslayer](https://ducklin.de/case-studies/duckslayer.md): A 3D trick-based soap-surfing game developed in a group for Global Game Jam 2025. Winner of the Bremen site.
+- [VeinMining](https://ducklin.de/case-studies/veinmining.md): A feature-rich Hytale mod that lets players mine connected ore veins and excavate custom patterns with full in-game GUI and chat configuration.
+- [Flashdash](https://ducklin.de/case-studies/flashdash.md): A 15-meter interactive LED strip game of 1D ping-pong. A collaborative HfK project with a custom display and spatial audio.
+- [Aurora](https://ducklin.de/case-studies/aurora.md): A modern, visual website editor architected as a monorepo for modularity and scalability.
+- [Webbox](https://ducklin.de/case-studies/webbox.md): A static site generator that creates full websites from a single config file using pre-built templates.
+- [Modernized Rotary Telephone](https://ducklin.de/case-studies/modernized-rotary-telephone.md): A vintage rotary telephone retrofitted with modern electronics (Bluetooth, battery, custom ringer) to act as an interactive audio guide.
+- [Unity ML-Agents Parkour](https://ducklin.de/case-studies/unity-ml-agents-parkour.md): Trained AI agents using machine learning to navigate a parkour. A solo project for a first-semester HfK university course.
+- [Unstable Diffusion](https://ducklin.de/case-studies/unstable-diffusion.md): A university group art project using Stable Diffusion to generate figures from abstract 3D depth maps.
+- [HueTogether](https://ducklin.de/case-studies/huetogether.md): A two-player co-op puzzle game developed as a group project for a university course, which won its project showcase.
+- [MI2 3D Integration](https://ducklin.de/case-studies/mi2-3d-integration.md): A solo university project for Medieninformatik 2, involving modeling, animating, and compositing a 3D model into a live-action video.
+- [NPC Engine](https://ducklin.de/case-studies/npc-engine.md): A local AI platform for creating stable, role-playing NPCs. Features custom LoRA training, advanced prompt engineering, and a bespoke Web UI.
+- [Reinforcement Learning Racer](https://ducklin.de/case-studies/racing-ai.md): A self-driving racing agent trained via PPO. Features procedural track generation, 'GPS' spatial awareness optimization, and a custom 'Draw & Drive' interface.
+- [Gunners Gauntlet](https://ducklin.de/case-studies/gunners-gauntlet.md): A pseudo-3D shooter built with a self-made rendering engine in Java. A solo project for a first-semester university course.
+- [Neosliders](https://ducklin.de/case-studies/neosliders.md): A mobile game where you roll a ball along curves, changing gravity to navigate the course as fast as possible.
+- [Birkenhirten](https://ducklin.de/case-studies/birkenhirten.md): A game about herding sheep and protecting them from wolves. A group project for a first-semester university course.
+- [Web Platformer](https://ducklin.de/case-studies/web-platformer.md): A web game to build and play speedrun platformer levels with highly tweakable player controls and competitive leaderboards.
+- [Panzer](https://ducklin.de/case-studies/panzer.md): A real-time 2D multiplayer top-down tank game with online lobbies and a map builder, also adapted as a Discord Activity.
+- [Scribes](https://ducklin.de/case-studies/scribes.md): A minimalist documentation site generator for Markdown/MDX with an extensive, hot-swappable theming system.
+
+## Case Studies (Markdown)
+
+- [Artisan](https://ducklin.de/case-studies/artisan.md) [Rust, WebAssembly, WebGPU, Rayon]: A web-first game engine built on an archetype ECS in Rust, compiled to WebAssembly and rendered with WebGPU, with a written paper and six live demos.
+- [ProCue Motion Platform](https://ducklin.de/case-studies/procue.md) [React, TypeScript, React Three Fiber (R3F), Three.js]: A real-time 3D digital twin of a six-axis Stewart motion platform for driving simulators, built for ProCue alongside their website.
+- [Island](https://ducklin.de/case-studies/island.md) [React Three Fiber (R3F), Three.js, GLSL (Shaders), Zustand]: An interactive 3D portfolio where you sail a ship between islands, featuring custom water shaders and spatial audio.
+- [Platform Kinematics](https://ducklin.de/case-studies/platform.md) [React, Three.js, React Three Fiber (R3F), Drei]: A real-time 3D web simulator of a 3-axis Stewart platform, created as part of a collaborative hardware project for an electronic systems course.
+- [Phase Up](https://ducklin.de/case-studies/phaseup.md) [JavaScript, HTML, CSS, PWA]: An installable phone app for the card game Phase 10 that generates fresh phase sets and keeps score, fully offline.
+- [Toolbox](https://ducklin.de/case-studies/toolbox.md) [React 19, TypeScript, Tailwind CSS v4, Motion]: A web app featuring a suite of polished utilities like a QR Code Generator and JSON Formatter.
+- [Eneida](https://ducklin.de/case-studies/eneida.md) [Vanilla JavaScript (ES6+), Firebase (Firestore), Canvas API]: An interactive portfolio simulating a retro sci-fi desktop with a CLI, window manager, and playable games with online leaderboards.
+- [RPG Combat Minigame](https://ducklin.de/case-studies/combat.md) [Vanilla JavaScript, CSS Animations, DOM API]: A tech demo for a turn-based combat system, prototyped for the TileQuest project, featuring skill-based minigames.
+- [uSeek](https://ducklin.de/case-studies/useek.md) [GSAP (ScrollTrigger), Spline (3D), Lenis, Vanilla JavaScript]: An award-winning university group project: a pirate-themed puzzle campaign using scroll-based animations and 3D models.
+- [ASCII Video Renderer](https://ducklin.de/case-studies/ascii.md) [JavaScript, Web Workers API, HTML5 Canvas API, HTML5 Video]: A high-performance, real-time video-to-ASCII art converter using Web Workers to prevent UI blocking.
+- [Lockpicking Minigame](https://ducklin.de/case-studies/lockpick.md) [Vanilla JavaScript, CSS3, requestAnimationFrame]: A tech demo for a timing-based lockpicking minigame, prototyped for the TileQuest project, with dynamic difficulty.
+- [Scrub GSAP Portfolio](https://ducklin.de/case-studies/scrub-gsap.md) [GSAP (ScrollTrigger), Lenis, Vanilla JavaScript]: An HfK university project prototyping a portfolio with scroll-scrubbed animations for cinematic parallax effects.
+- [Particles Portfolio](https://ducklin.de/case-studies/particles.md) [Three.js, GSAP (ScrollTrigger), GLTFLoader]: An HfK university project where scrolling dissolves 3D point cloud models into chaotic particle fields.
+- [Portal](https://ducklin.de/case-studies/portal.md) [HTML5 Video API, JavaScript, HEVC (H.265), WebM]: A UI demo using transparent video (HEVC with alpha channel), conceptualized for the TileQuest project's figure scanning animation.
+- [Text Fall Animation](https://ducklin.de/case-studies/textfall.md) [HTML5 Canvas API, Vanilla JavaScript, requestAnimationFrame]: A kinetic typography experiment using the Canvas API to simulate text falling into place with physics-like motion.
+- [TileQuest](https://ducklin.de/case-studies/tilequest.md) [Raspberry Pi, Flask, React, ESP32]: A physical/digital co-op board game using RFID figures on a custom electronic grid. A 4th-semester university group project.
+- [Duckslayer](https://ducklin.de/case-studies/duckslayer.md) [Godot, GDScript]: A 3D trick-based soap-surfing game developed in a group for Global Game Jam 2025. Winner of the Bremen site.
+- [VeinMining](https://ducklin.de/case-studies/veinmining.md) [Java, Hytale Plugin API, Gradle]: A feature-rich Hytale mod that lets players mine connected ore veins and excavate custom patterns with full in-game GUI and chat configuration.
+- [Flashdash](https://ducklin.de/case-studies/flashdash.md) [ESP32, C++, WS2813B LEDs, 3D Printing]: A 15-meter interactive LED strip game of 1D ping-pong. A collaborative HfK project with a custom display and spatial audio.
+- [Aurora](https://ducklin.de/case-studies/aurora.md) [Next.js, TypeScript, Turborepo, pnpm]: A modern, visual website editor architected as a monorepo for modularity and scalability.
+- [Webbox](https://ducklin.de/case-studies/webbox.md) [Nunjucks, Python, HTML, CSS]: A static site generator that creates full websites from a single config file using pre-built templates.
+- [Modernized Rotary Telephone](https://ducklin.de/case-studies/modernized-rotary-telephone.md) [ESP32, C++]: A vintage rotary telephone retrofitted with modern electronics (Bluetooth, battery, custom ringer) to act as an interactive audio guide.
+- [Unity ML-Agents Parkour](https://ducklin.de/case-studies/unity-ml-agents-parkour.md) [Unity, C#, ML-Agents (Python, TensorFlow)]: Trained AI agents using machine learning to navigate a parkour. A solo project for a first-semester HfK university course.
+- [Unstable Diffusion](https://ducklin.de/case-studies/unstable-diffusion.md) [Blender, Python, Stable Diffusion, Flux]: A university group art project using Stable Diffusion to generate figures from abstract 3D depth maps.
+- [HueTogether](https://ducklin.de/case-studies/huetogether.md) [Unreal Engine 5, Blueprints, C++]: A two-player co-op puzzle game developed as a group project for a university course, which won its project showcase.
+- [MI2 3D Integration](https://ducklin.de/case-studies/mi2-3d-integration.md) [Blender, Unreal Engine 5]: A solo university project for Medieninformatik 2, involving modeling, animating, and compositing a 3D model into a live-action video.
+- [NPC Engine](https://ducklin.de/case-studies/npc-engine.md) [Python, PyTorch, FastAPI, Transformers]: A local AI platform for creating stable, role-playing NPCs. Features custom LoRA training, advanced prompt engineering, and a bespoke Web UI.
+- [Reinforcement Learning Racer](https://ducklin.de/case-studies/racing-ai.md) [Python, Stable Baselines 3, Pygame, Gymnasium]: A self-driving racing agent trained via PPO. Features procedural track generation, 'GPS' spatial awareness optimization, and a custom 'Draw & Drive' interface.
+- [Gunners Gauntlet](https://ducklin.de/case-studies/gunners-gauntlet.md) [Java, Processing 4]: A pseudo-3D shooter built with a self-made rendering engine in Java. A solo project for a first-semester university course.
+- [Neosliders](https://ducklin.de/case-studies/neosliders.md) [Unity, C#]: A mobile game where you roll a ball along curves, changing gravity to navigate the course as fast as possible.
+- [Birkenhirten](https://ducklin.de/case-studies/birkenhirten.md) [Java, Processing 4]: A game about herding sheep and protecting them from wolves. A group project for a first-semester university course.
+- [Web Platformer](https://ducklin.de/case-studies/web-platformer.md) [Next.js, Turborepo, TypeScript, Docker]: A web game to build and play speedrun platformer levels with highly tweakable player controls and competitive leaderboards.
+- [Panzer](https://ducklin.de/case-studies/panzer.md) [React, TypeScript, Tailwind CSS, Socket.io]: A real-time 2D multiplayer top-down tank game with online lobbies and a map builder, also adapted as a Discord Activity.
+- [Scribes](https://ducklin.de/case-studies/scribes.md) [Vite, React, TypeScript, Tailwind CSS]: A minimalist documentation site generator for Markdown/MDX with an extensive, hot-swappable theming system.
+
+## Optional
+
+- [Full Portfolio Context (llms-full.txt)](https://ducklin.de/llms-full.txt): Complete consolidated text export of all 34 project overviews, tech stacks, and features in a single prompt-ready file.
+- [Structured Projects Dataset (projects.json)](https://ducklin.de/projects.json): Complete machine-readable JSON array of all projects with metadata, tags, stacks, and links.
+- [Home Page Markdown (index.md)](https://ducklin.de/index.md): Markdown version of the ducklin.de homepage.
+- [GitHub Profile](https://github.com/aaronpostels): Open-source repositories and contributions.
+- [LinkedIn](https://www.linkedin.com/in/aaronpostels): Professional background and experience.

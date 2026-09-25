@@ -1,0 +1,876 @@
+# Aaron Postels (Ducklin) — Complete Engineering Portfolio & Knowledge Base
+
+> Systems, Web & Graphics Engineer specializing in Rust, WebAssembly, WebGPU, React Three Fiber, physics simulations, 6-DoF Stewart platform kinematics, game engines, and full-stack software development.
+
+## Contact & Links
+- Website: https://ducklin.de
+- GitHub: https://github.com/aaronpostels
+- LinkedIn: https://www.linkedin.com/in/aaronpostels
+- Instagram: https://www.instagram.com/apos.tels/
+- Location: Germany
+
+## Core Competencies & Technologies
+- **Languages**: Rust, TypeScript, JavaScript, Python, C++, C#, Java, WGSL, GLSL, HTML5/CSS3
+- **Graphics & Web 3D**: WebGPU, WebAssembly (SIMD), Three.js, React Three Fiber (R3F), Drei, Shaders, Instanced Rendering
+- **Simulation & Mechanics**: 6-axis Stewart motion platform inverse kinematics, classical washout filter algorithms, physics-based simulations, archetype Entity Component Systems (ECS)
+- **Web & Frameworks**: React, Vite, Node.js, GSAP, Tailwind CSS, REST APIs
+- **Game Dev & AI**: Unity, Godot, Reinforcement Learning (ML-Agents, PPO, Ray casting), Minecraft Java modding, Hytale modding
+
+---
+
+## Detailed Project Catalog (34 Projects)
+
+### 1. Artisan
+
+*An archetype ECS game engine for the browser, in Rust, WebAssembly and WebGPU*
+
+- **Status**: Completed
+- **Date**: 2026-08-11
+- **Featured**: Yes
+- **Categories**: Web, 3D
+- **Tech Stack**: Rust, WebAssembly, WebGPU, Rayon, TypeScript
+- **Device Support**: desktop, mobile
+- **Links**:
+  - [Live Demo](https://ducklin.de/projects/artisan-paper/demos.html)
+  - [Case Study (HTML)](https://ducklin.de/case-studies/artisan.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/artisan.md)
+  - [Read the Paper (German)](https://ducklin.de/projects/artisan-paper/)
+  - [Source on GitHub](https://github.com/aaronpostels/Artisan-Publish)
+
+#### Overview
+Artisan explores how far data-heavy games and real-time simulations can be pushed in the browser when they are designed for modern web technology from the start, instead of being exported to the web as an afterthought. It combines a data-oriented archetype Entity Component System written in Rust, compiled to WebAssembly with SIMD and multi-threaded Rayon workers, with a WebGPU renderer.
+
+A planetary civilization simulation serves as the main use case, and targeted benchmarks measure the core data paths. The full write-up is published as a paper (in German) alongside the demos.
+
+#### Key Features & Architecture
+- Archetype ECS with contiguous columnar component storage for cache-friendly, vectorized iteration and O(1) entity removal.
+- Zero-copy memory bridge: typed array views into WebAssembly memory feed WebGPU buffers directly.
+- Parallel scheduler that builds conflict-free stages from each system's read/write access and runs them on a Rayon worker pool.
+- Instanced WebGPU rendering for 2D and 3D scenes, with optional GPU compute simulation paths.
+- [Vivarium](https://ducklin.de/projects/vivarium/): settlers move across a procedurally generated planet, use local resources and grow their tribes.
+- Smaller demos isolate single engine parts: [Murmuration](https://ducklin.de/projects/murmuration/) (CPU vs. GPU flow field), [Bouncing Rects](https://ducklin.de/projects/rects/) (compute shaders), [Scheduler](https://ducklin.de/projects/scheduler/) (parallel stages) and [Metamorphosis](https://ducklin.de/projects/metamorphosis/) (archetype changes).
+- Benchmark suite comparing Artisan with Bevy and Flecs across 34 categories. Artisan was fastest in 20 of them.
+- The demos need a browser with WebGPU, such as a current desktop Chrome, Edge or Firefox.
+
+---
+
+### 2. ProCue Motion Platform
+
+*A real-time 3D digital twin of a six-axis motion platform*
+
+- **Status**: Completed
+- **Date**: 2026-08-14
+- **Featured**: Yes
+- **Categories**: React, Three.js, 3D
+- **Tech Stack**: React, TypeScript, React Three Fiber (R3F), Three.js, Vite
+- **Device Support**: desktop, mobile
+- **Links**:
+  - [Live Demo](https://ducklin.de/projects/motion-platform/)
+  - [Case Study (HTML)](https://ducklin.de/case-studies/procue.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/procue.md)
+  - [Visit procue.xyz](https://procue.xyz)
+
+#### Overview
+ProCue is software for managing and tuning motion cueing on driving simulators. For them I built an interactive digital twin of a six-degree-of-freedom Stewart platform that shows in real time how cueing moves the platform, and I also built their website, [procue.xyz](https://procue.xyz), where the simulator is embedded.
+
+The demo here is the standalone 3D scene of the platform. The six leg lengths are always solved from the platform pose with Stewart-platform inverse kinematics.
+
+#### Key Features & Architecture
+- Six-axis Stewart platform with inverse kinematics: every visible actuator length is calculated from the commanded platform position and rotation.
+- Classical washout filter that turns vehicle acceleration into platform motion cues on a fixed 60 Hz update loop.
+- Three control paths: vehicle acceleration, direct platform pose (surge, sway, heave, roll, pitch, yaw) and individual actuator strokes.
+- Idle showcase camera that blends back smoothly after the visitor stops orbiting or zooming.
+- Runs on desktop and phones, and loads behind a short fade so no unfinished frame is ever shown.
+
+---
+
+### 3. Island
+
+*Interactive 3D Portfolio Environment*
+
+- **Status**: Archived
+- **Date**: 2025-09-01
+- **Featured**: Yes
+- **Categories**: Web, Three.js
+- **Tech Stack**: React Three Fiber (R3F), Three.js, GLSL (Shaders), Zustand, Howler.js
+- **Device Support**: desktop, mobile
+- **Links**:
+  - [Live Demo](https://ducklin.de/projects/island/)
+  - [Case Study (HTML)](https://ducklin.de/case-studies/island.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/island.md)
+
+#### Overview
+"Ducklin's Ocean Adventure" is an immersive 3D interactive experience serving as a portfolio showcase. The user controls a ship sailing across a dynamic ocean environment to discover floating islands, each representing a project. The application utilizes a custom-built Gerstner wave shader for realistic water displacement and movement, paired with spatial audio cues to enhance immersion. The project structure relies on React Three Fiber for declarative scene composition and state management for physics, controls, and game flow.
+
+#### Key Features & Architecture
+- Realistic and performant 3D ocean simulation using a custom GLSL shader implementing Gerstner waves and FBM noise.
+- Interactive third-person controls for steering the ship, incorporating physics logic for drag and water influence.
+- Immersive audio experience with Howler.js, adjusting ambient and sailing sound volumes based on ship speed.
+- A declarative game structure built entirely with R3F components, managing game modes (intro, ocean, island) and scene transitions.
+- Interactive navigation elements, including a compass-based minimap and dockable islands to access project details.
+
+---
+
+### 4. Platform Kinematics
+
+*A Real-Time 3D Stewart Platform Simulation*
+
+- **Status**: Archived
+- **Date**: 2025-10-01
+- **Categories**: React, Three.js, 3D
+- **Tech Stack**: React, Three.js, React Three Fiber (R3F), Drei, Tweakpane
+- **Device Support**: desktop, mobile
+- **Links**:
+  - [Live Demo](https://ducklin.de/projects/platform/)
+  - [Case Study (HTML)](https://ducklin.de/case-studies/platform.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/platform.md)
+
+#### Overview
+This project is a real-time 3D web simulation of a motorized 3-axis Stewart platform, developed to visualize and test inverse kinematics algorithms before deployment on physical hardware. As part of a collaborative project for an electronic systems course, this simulator allows users to control the platform's roll and pitch angles or manipulate individual actuator heights. It accurately calculates the required actuator positions to achieve the desired orientation, providing a crucial tool for debugging and demonstrating the complex mathematics involved. An interactive control panel powered by Tweakpane offers real-time manipulation of all system parameters.
+
+#### Key Features & Architecture
+- Real-time 3D visualization of a 3-axis Stewart platform and its components.
+- Accurate inverse kinematics simulation converting target roll/pitch angles into individual actuator heights.
+- Interactive control panel (Tweakpane) for manipulating platform radius, actuator distance, target angles, and manual actuator heights.
+- Dual control modes: "Target Angle" for kinematic simulation and "Manual" for direct actuator control.
+- A physics-based ball simulation on the platform's surface to visually demonstrate stability and tilt.
+- Includes a separate [single actuator simulation](https://ducklin.de/projects/platform/actuator/) to demonstrate its individual motion and homing sequence.
+
+---
+
+### 5. Phase Up
+
+*Fresh phases and scorekeeping for Phase 10*
+
+- **Status**: Completed
+- **Date**: 2026-09-22
+- **Categories**: Web
+- **Tech Stack**: JavaScript, HTML, CSS, PWA, Service Worker
+- **Device Support**: mobile, desktop
+- **Links**:
+  - [Live Demo](https://ducklin.de/projects/phaseup/)
+  - [Case Study (HTML)](https://ducklin.de/case-studies/phaseup.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/phaseup.md)
+
+#### Overview
+Phase Up is a companion app for the card game Phase 10. Instead of playing the same ten phases every time, it deals out new phase sets from a pool of 1,610 phases and keeps track of everyone's progress at the table.
+
+It is a single static page with no build step, installable as a PWA so it keeps working offline once it has been opened.
+
+#### Key Features & Architecture
+- Ready-made sets: Classic (the original 10 phases), Remix and Expert.
+- Random runs of 1 to 30 phases with a chosen difficulty range.
+- Card guide that explains every phase type with valid and invalid examples.
+- Player list and score counter for the whole table.
+- Installable to the home screen and fully usable offline.
+
+---
+
+### 6. Toolbox
+
+*A Seamless Web Utility Collection*
+
+- **Status**: Archived
+- **Date**: 2025-10-10
+- **Categories**: Web
+- **Tech Stack**: React 19, TypeScript, Tailwind CSS v4, Motion, Radix UI, Vite
+- **Device Support**: desktop, mobile
+- **Links**:
+  - [Live Demo](https://ducklin.de/projects/toolbox/)
+  - [Case Study (HTML)](https://ducklin.de/case-studies/toolbox.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/toolbox.md)
+
+#### Overview
+Toolbox is a modern web application offering a suite of functional utilities like a QR Code Generator and JSON Formatter. The project's core focus is delivering a seamless and highly polished user experience, where every interaction, transition, and visual element is meticulously crafted for robustness and aesthetic appeal across all devices. This was achieved using a cutting-edge stack including React 19 and Tailwind CSS v4, unified by a cohesive design and fluid animations managed by the Motion library.
+
+#### Key Features & Architecture
+- Advanced Utility Tools: A suite of functional utilities, including a feature-rich QR Code Generator (with color picking, logo embedding, and multiple download formats) and a robust JSON Formatter/Validator.
+- Polished UX & Micro-Interactions: Fluid page transitions are managed by Motion, while a curated set of interactive components like `FuzzyText` and `ClickSpark` adds a unique, tactile feel to the user experience.
+- Headless UI & Accessibility: Built upon Radix UI primitives for robust accessibility standards, ensuring the custom-styled components are functional and reliable for all users.
+- Modular & Scalable Structure: Organized with a clear separation of concerns, with a central tool configuration that makes feature expansion straightforward and maintainable.
+
+---
+
+### 7. Eneida
+
+*Interactive Portfolio Terminal - A Command-Line Desktop*
+
+- **Status**: Completed
+- **Date**: 2025-07-15
+- **Categories**: Web
+- **Tech Stack**: Vanilla JavaScript (ES6+), Firebase (Firestore), Canvas API
+- **Device Support**: desktop
+- **Links**:
+  - [Live Demo](https://ducklin.de/projects/eneida/)
+  - [Case Study (HTML)](https://ducklin.de/case-studies/eneida.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/eneida.md)
+
+#### Overview
+Eneida is an immersive portfolio that simulates a retro-futuristic, sci-fi themed desktop environment directly in the browser. It moves beyond a traditional website by offering a fully interactive experience where users navigate projects and skills via a command-line interface and a simulated filesystem. The environment features a robust, modular window manager for displaying content and launching playable classic games like Pong, Tetris, and Snake. To enhance engagement, it includes a "system compromise" mode with dynamic visual effects and persistent, real-time leaderboards for the games, powered by Google Firestore.
+
+#### Key Features & Architecture
+- A simulated operating system with a command-line interface for navigating portfolio content from a virtual filesystem.
+- A dynamic, modular window manager for displaying content, images, and playable games in draggable windows.
+- Three fully playable classic games (Pong, Tetris, Snake) built with the Canvas API, featuring multiple modes and difficulty levels.
+- Real-time, persistent leaderboards for games, integrated with Google Firestore for data storage and retrieval.
+- An interactive "system compromise" mode that triggers a variety of visual glitch effects and disruptive UI events, showcasing advanced DOM manipulation.
+
+---
+
+### 8. RPG Combat Minigame
+
+*A Skill-Based Battle System*
+
+- **Status**: Completed
+- **Date**: 2025-06-15
+- **Categories**: Web
+- **Tech Stack**: Vanilla JavaScript, CSS Animations, DOM API
+- **Device Support**: mobile
+- **Links**:
+  - [Live Demo](https://ducklin.de/projects/combat/)
+  - [Case Study (HTML)](https://ducklin.de/case-studies/combat.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/combat.md)
+
+#### Overview
+This project is a turn-based RPG combat simulator built from the ground up using only vanilla JavaScript, HTML, and CSS. Originally prototyped as a potential mechanic for the larger TileQuest project, its core is an engaging, two-part attack sequence that requires player skill. First, a timing-based "Charge" minigame, utilizing `requestAnimationFrame` for a smooth, accelerating meter, determines the base damage. This is immediately followed by a fast-paced, reaction-based "Fury" minigame where players tap dynamically spawning targets to build a damage multiplier. This system creates a rewarding and interactive alternative to traditional static menu-based combat.
+
+#### Key Features & Architecture
+- A unique two-phase attack system combining a timing minigame for base damage and a reaction minigame for a damage multiplier.
+- Sophisticated visual feedback, including a procedural damage number animation that merges, combines, and flies towards the target.
+- Clean game flow managed by a finite state machine logic, ensuring predictable and bug-free transitions between game states (e.g., player turn, enemy turn, minigames).
+- Performance-conscious animation loops using `requestAnimationFrame` for the charge minigame, guaranteeing a smooth experience regardless of device refresh rate.
+
+---
+
+### 9. uSeek
+
+*An Interactive Pirate Puzzle Campaign*
+
+- **Status**: Completed
+- **Date**: 2024-01-01
+- **Categories**: Web
+- **Tech Stack**: GSAP (ScrollTrigger), Spline (3D), Lenis, Vanilla JavaScript
+- **Device Support**: desktop
+- **Links**:
+  - [Live Demo](https://ducklin.de/projects/uSeek/)
+  - [Case Study (HTML)](https://ducklin.de/case-studies/useek.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/useek.md)
+
+#### Overview
+uSeek is a comprehensive, narrative-driven web campaign designed as a multi-hour interactive pirate puzzle. Created as a group project for the university course "Medieninformatik 1," it was selected as the best website of the year among all participating classes. The site guides users through a story, presenting challenges that require code-breaking, visual analysis, and interactive manipulation of page elements. The project integrates advanced front-end technologies like GSAP for scroll-triggered parallax and pinning, and Spline for embedding interactive 3D models (like the lock and treasure chest). It also features a custom preloader, a responsive UI framework, and a persistent light/dark mode system.
+
+#### Key Features & Architecture
+- Cinematic Preloader: A custom, GSAP-animated loading screen that creates an engaging transition into the main site content.
+- Interactive 3D Integration: Uses Spline to embed and interact with custom 3D assets (a treasure chest lock, the chest itself) directly within the webpage.
+- Advanced Scroll Animations: Implements multiple GSAP ScrollTrigger timelines for pinning, horizontal navigation parallax, and complex background movements.
+- Custom UI & Branding: Features a unique pirate-themed design with custom cursor, responsive typography, and dynamic CSS styling for light/dark mode switching.
+- Utility Framework: Built upon a custom CSS framework to simplify layout and speed up responsive development.
+- Integrated Puzzles: Contains functional, embedded puzzle mechanics such as drawing on a star map and an X-ray effect for revealing hidden clues.
+
+---
+
+### 10. ASCII Video Renderer
+
+*A High-Performance Video-to-ASCII Art Converter*
+
+- **Status**: Completed
+- **Date**: 2025-07-10
+- **Categories**: Web
+- **Tech Stack**: JavaScript, Web Workers API, HTML5 Canvas API, HTML5 Video
+- **Device Support**: desktop
+- **Links**:
+  - [Live Demo](https://ducklin.de/projects/ASCII/)
+  - [Case Study (HTML)](https://ducklin.de/case-studies/ascii.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/ascii.md)
+
+#### Overview
+This project is a high-performance ASCII art generator that converts video playback into a stylized, real-time text animation directly in the browser. It leverages the HTML5 Canvas and Video APIs to capture frames, which are then passed to a dedicated Web Worker for intensive processing. This multi-threaded approach ensures the main UI thread remains unblocked, resulting in a smooth and responsive user experience. The renderer includes features like color quantization, brightness/saturation controls, and dynamic resizing to create a visually compelling, retro-tech aesthetic.
+
+#### Key Features & Architecture
+- Real-time conversion of video playback to animated ASCII art.
+- Offloads heavy pixel processing to a separate Web Worker to maintain a responsive UI and prevent animation stutter.
+- Supports both monochromatic and quantized color palette rendering for a customizable retro aesthetic.
+- Features an optimized rendering pipeline with configurable frame skipping and efficient data batching to ensure smooth playback on various devices.
+
+---
+
+### 11. Lockpicking Minigame
+
+*Responsive Timing Challenge with Dynamic Difficulty*
+
+- **Status**: Completed
+- **Date**: 2025-06-10
+- **Categories**: Web
+- **Tech Stack**: Vanilla JavaScript, CSS3, requestAnimationFrame
+- **Device Support**: desktop, mobile
+- **Links**:
+  - [Live Demo](https://ducklin.de/projects/lockpick/)
+  - [Case Study (HTML)](https://ducklin.de/case-studies/lockpick.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/lockpick.md)
+
+#### Overview
+This project is a mobile-first, timing-based lockpicking minigame designed to simulate a classic RPG mechanic using pure front-end technologies. Prototyped as a potential minigame for the TileQuest project, its core mechanic involves a rapidly rotating needle that must be stopped precisely within a dynamically sized target zone across multiple concentric rings. The game features configurable difficulty, dramatic CSS-based success/failure animations, and full responsiveness, ensuring an engaging experience that requires timing and precision on both desktop and mobile devices.
+
+#### Key Features & Architecture
+- Responsive, pure CSS rendering of the lock mechanism using pseudo-elements and conic gradients for the target zones.
+- Real-time animation loop managed by JavaScript's requestAnimationFrame for smooth, precision-based needle rotation.
+- Dynamic difficulty scaling controlled by a slider, influencing both the needle rotation speed and the size of the target success zone.
+- Multi-stage challenge system requiring the player to successfully "pick" concentric rings sequentially to unlock the final goal.
+- Advanced CSS animations for visual feedback, including success pulses, screen shakes on failure, and a dramatic 'unlocked' explosion effect.
+
+---
+
+### 12. Scrub GSAP Portfolio
+
+*Cinematic Scroll-Driven Web Animations*
+
+- **Status**: Archived
+- **Date**: 2024-09-01
+- **Categories**: Web, GSAP
+- **Tech Stack**: GSAP (ScrollTrigger), Lenis, Vanilla JavaScript
+- **Device Support**: desktop
+- **Links**:
+  - [Live Demo](https://ducklin.de/projects/scrub/)
+  - [Case Study (HTML)](https://ducklin.de/case-studies/scrub-gsap.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/scrub-gsap.md)
+
+#### Overview
+This project is a high-impact portfolio concept developed for a second-semester HfK course. It was built entirely around the concept of scroll-scrubbed animation, utilizing GSAP and its ScrollTrigger plugin to synchronize complex sequences precisely with the user's scroll position. Key features include cinematic horizontal parallax for the 'Work' section, dynamic text manipulation linked to scroll progress, and immersive pinning mechanics. The goal was to create a modern, engaging, and visually polished narrative experience that demonstrates advanced front-end animation and performance optimization techniques.
+
+#### Key Features & Architecture
+- Cinematic Horizontal Parallax: A wide 'Work' section is scrubbed horizontally into view while the main page is pinned vertically.
+- Dynamic Text Scaffolding: Large typography is used as a visual anchor, with elements like letter-spacing and font-weight being continuously mapped and animated by the scroll progress.
+- Immersive Section Transitions: Utilizes pinning to keep core content centered while background elements or foreground animations (like the zooming heading) transition dramatically.
+- Custom Utility Framework: A lean, project-specific CSS utility framework (`framework.css`) accelerates layout construction and design iteration.
+- Optimized Background Elements: Subtle animation on background SVG icons creates dynamic depth without impacting scroll performance.
+
+---
+
+### 13. Particles Portfolio
+
+*Immersive Three.js Experience*
+
+- **Status**: Archived
+- **Date**: 2024-08-01
+- **Categories**: Web, Three.js
+- **Tech Stack**: Three.js, GSAP (ScrollTrigger), GLTFLoader
+- **Device Support**: desktop
+- **Links**:
+  - [Live Demo](https://ducklin.de/projects/particles/)
+  - [Case Study (HTML)](https://ducklin.de/case-studies/particles.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/particles.md)
+
+#### Overview
+This project is a visually stunning interactive portfolio concept created for a second-semester HfK course. It uses Three.js to render a series of complex 3D models composed entirely of point clouds. The experience is driven by smooth vertical scrolling, utilizing GSAP's ScrollTrigger plugin to link the scroll position directly to dynamic transformations and particle displacement. As the user scrolls past sections, the 3D models dissolve into chaotic particle fields, creating a memorable and high-performance immersive browsing experience that showcases advanced web graphics capabilities.
+
+#### Key Features & Architecture
+- Real-time rendering of multiple complex 3D point cloud models simultaneously using custom Buffer Geometries for high performance.
+- Scroll-based particle dissolution effect: GSAP ScrollTrigger directly manipulates particle positions via Buffer Attribute offsets.
+- Custom vertex coloring applied to particles based on their initial Y-position, adding depth and visual variation to the models.
+- Continuous 'idle' animation, applying subtle sinusoidal movement and rotation to the particles and models when not being dissolved by scroll.
+- Implementation of post-processing effects (RenderPass, BokehPass) and additive blending for cinematic depth-of-field and glowing neon aesthetics.
+
+---
+
+### 14. Portal
+
+*A demonstration of transparent video encoding and synchronization*
+
+- **Status**: Completed
+- **Date**: 2025-07-01
+- **Categories**: Web
+- **Tech Stack**: HTML5 Video API, JavaScript, HEVC (H.265), WebM
+- **Device Support**: desktop, mobile
+- **Links**:
+  - [Live Demo](https://ducklin.de/projects/portal/)
+  - [Case Study (HTML)](https://ducklin.de/case-studies/portal.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/portal.md)
+
+#### Overview
+This project demonstrates a seamless, interactive UI transition built entirely with HTML5 Video elements, designed to mimic a character scanning process that initiates a portal effect. Conceptualized as an animation for the TileQuest project, it utilizes two video streams: an "idle" looping background and a crucial "scanned" transition video encoded with an alpha channel for transparent playback. The application manages the transition logic via JavaScript, ensuring the transition video (representing the portal glow and fly-through) plays once over the idle loop before smoothly fading back to the seamless idle state. This showcases advanced video synchronization and transparent video techniques for high-end web interfaces.
+
+#### Key Features & Architecture
+- Seamless crossfade between a looping "idle" video and a one-shot "scanned" transition video.
+- Utilization of HEVC (H.265) video encoding with alpha channel for transparent video playback where supported, enabling the fly-through effect to sit cleanly over the background.
+- Robust JavaScript logic to manage video synchronization, ensuring the idle loop pauses/resumes correctly during the transition play cycle.
+- Event-driven UI: A user action (simulating an NFC scan) triggers the visually compelling portal glow and fly-through sequence.
+- Mobile-optimized design that positions the video as a fixed, full-screen background element, providing an immersive experience.
+
+---
+
+### 15. Text Fall Animation
+
+*A kinetic typography experiment*
+
+- **Status**: Completed
+- **Date**: 2025-03-01
+- **Categories**: Web
+- **Tech Stack**: HTML5 Canvas API, Vanilla JavaScript, requestAnimationFrame
+- **Device Support**: desktop
+- **Links**:
+  - [Live Demo](https://ducklin.de/projects/textfall/)
+  - [Case Study (HTML)](https://ducklin.de/case-studies/textfall.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/textfall.md)
+
+#### Overview
+This project is a bespoke animation module built using the HTML5 Canvas API and vanilla JavaScript. It simulates a wall of text dynamically segmenting and falling into place, piece by piece. Unlike simple gravity, the animation employs precise, staggered timing, physics-like sine-wave motion for horizontal drift, and a final smoothing interpolation phase to achieve a chaotic yet controlled landing effect. The entire text block is pre-wrapped and the spawn/settlement timings for every chunk are calculated ahead of the animation loop, ensuring high performance and a complex, synchronized visual sequence.
+
+#### Key Features & Architecture
+- Advanced timing control: Chunks are scheduled to land sequentially with fixed frame intervals, creating a rain-like, staggered waterfall effect.
+- Physics Simulation: Uses sine-wave motion with dynamic damping (falloff as the chunk approaches its target Y-position) to create organic, floating horizontal drift.
+- Two-Phase Animation: Features a "Falling" phase driven by speed and sine-wave physics, followed by a "Landing" phase using linear interpolation (LERP) to smoothly snap the chunk to its precise final X/Y coordinates.
+- Pre-calculation Pipeline: Text wrapping, chunk segmentation (2-5 words per chunk), and all animation timing parameters (speed, amplitude, spawn frame) are calculated once during setup.
+- Performance: Achieves high frame rates necessary for smooth animation by offloading rendering to the GPU-accelerated Canvas context and minimizing DOM manipulation.
+
+---
+
+### 16. TileQuest
+
+*A Phygital Cooperative RPG*
+
+- **Status**: Archived
+- **Date**: April 2025
+- **Tech Stack**: Raspberry Pi, Flask, React, ESP32, RFID
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/tilequest.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/tilequest.md)
+
+#### Overview
+Tile Quest is a cooperative board game that blends physical interaction with the depth of a digital RPG. Developed as a major 4th-semester university project by a group of four, it offloads complex rules and state tracking to a mobile web app, keeping the physical gameplay fast and tactile. The system is designed to be a self-contained, offline-first experience hosted on a Raspberry Pi, allowing players to connect and play with zero installation or internet access required.
+
+#### Key Features & Architecture
+- **Full-Stack Architecture:** A complete, containerized monorepo houses the Python backend and React frontend, with real-time communication established via WebSockets.
+- **Physical-Digital Sync:** A full hardware-to-software pipeline is functional. The system reads NFC data from all tiles, transmits the board state via Bluetooth, and the backend validates player moves in real time.
+- **Core RPG Systems:** The Python backend includes robust systems for player progression (levels and skills), character classes with unique abilities, a data-driven economy (items, crafting, shops), and a deep gear upgrade and reforge system.
+- **Interactive Web App:** The frontend provides a full UI for the game loop, including a lobby, character selection, and an active game view with a HUD, inventory management, and action modals.
+- **Developer Tooling:** A web-based developer panel allows for debugging, hardware simulation, and live manipulation of the game state.
+
+---
+
+### 17. Duckslayer
+
+*Global Game Jam 2025 Winner*
+
+- **Status**: Completed
+- **Date**: January 2025
+- **Tech Stack**: Godot, GDScript
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/duckslayer.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/duckslayer.md)
+  - [Read Article](https://www.kreiszeitung.de/lokales/bremen/bubble-in-der-badewanne-an-der-bremer-uni-93538378.html)
+
+#### Overview
+The vision for Duck Slayer was to create a high-energy arcade game inspired by classics like _Tony Hawk's Pro Skater_, but set within a chaotic and playful bathtub environment. Developed in 48 hours as a group project for Global Game Jam 2025, the core idea was to transform a simple "clean-'em-up" objective into an extreme sports challenge, where players must chain together stunts, grinds, and bounces to build combos and master the level. The game won First Place at its Global Game Jam site in Bremen.
+
+#### Key Features & Architecture
+- **Core Gameplay:** Players control a bubble character surfing on a bar of soap, cleaning the tub while fighting enemy ducks.
+- **Trick-Based Movement:** A deep movement system allows players to perform stunts, grind on objects, and bounce off sponges to gain air and speed.
+- **Combo System:** An integrated combo mechanic rewards players for chaining tricks together, increasing cleaning efficiency and score.
+- **Health Management:** The soap surfboard acts as the player's health, constantly shrinking. Players must collect soap pickups to extend their run.
+- **Award-Winning Recognition:** The project won **First Place** at the Global Game Jam 2025 site at the University of Bremen.
+
+---
+
+### 18. VeinMining
+
+*Advanced ore vein & excavation pattern mining mod for Hytale (Updated for v0.6)*
+
+- **Status**: Completed
+- **Date**: January 2026
+- **Tech Stack**: Java, Hytale Plugin API, Gradle
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/veinmining.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/veinmining.md)
+  - [View on CurseForge](https://www.curseforge.com/hytale/mods/veinmining)
+  - [Source on GitHub](https://github.com/aaronpostels/VeinMining)
+
+#### Overview
+VeinMining is a versatile utility mod for Hytale that streamlines gathering by letting players mine entire connected ore veins or excavate geometric shapes in one coordinated break action. Players activate veinmining simply by holding an activation key (defaulting to Left Alt / Walk) while mining with an appropriate tool.
+
+            
+
+The mod has been fully migrated and updated to remain compatible with **Hytale v0.6** (with special thanks to contributor *ItsRiprod* for migration support). It features a custom in-game UI configuration window, deep chat command flag parsing, tool durability balance, and smart drop consolidation.
+
+#### Key Features & Architecture
+- **Activation on Demand:** Hold the Walk key (Left Alt) while mining to activate veinmining without interrupting standard single-block mining.
+- **Interactive In-Game GUI:** Open a visual settings dashboard at any time with /vm to adjust targeting mode, patterns, orientation, and activation triggers.
+- **Durability Balance:** Equipped tools lose durability based on the total count of broken blocks, keeping server economies and survival progression balanced.
+- **Loot Consolidation:** Collect all block drops and ores from the broken vein into a single consolidated stack placed at the player's feet or at the source block.
+
+---
+
+### 19. Flashdash
+
+*An Interactive LED Installation Game*
+
+- **Status**: Completed
+- **Date**: 2024 - 2025
+- **Tech Stack**: ESP32, C++, WS2813B LEDs, 3D Printing
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/flashdash.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/flashdash.md)
+
+#### Overview
+The vision for Flash Dash was to transform a communal space with an engaging, physical, and plug-and-play gaming experience. Developed as a personal project with [Andrii (@and_lsk)](https://www.instagram.com/and_lsk/), the goal was to create a game that is immediately intuitive—a simple game of 1D ping-pong—but with enough depth through dynamic speed and audio feedback to encourage friendly competition and social interaction. It serves as an ambient, interactive art piece for the classroom at HfK Bremen.
+
+#### Key Features & Architecture
+- **Complete Gameplay Loop:** A complete and playable 1D ping-pong game is implemented on the 15-meter LED strip.
+- **Dynamic Difficulty:** The 'ball' of light dynamically changes speed during play, increasing the challenge and excitement.
+- **Custom Display:** A self-built LED matrix display shows the score, game status, and other visual feedback.
+- **Spatial Audio:** The game features spatial audio, providing auditory cues that correspond to the ball's position and in-game events.
+- **Custom Hardware & Installation:** The entire system is a permanent, plug-and-play installation with custom-fabricated wooden button stands and 3D-printed enclosures.
+
+---
+
+### 20. Aurora
+
+*A Web-Based Visual Page Editor*
+
+- **Status**: Archived
+- **Date**: August 2025
+- **Tech Stack**: Next.js, TypeScript, Turborepo, pnpm, React
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/aurora.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/aurora.md)
+
+#### Overview
+The vision for Aurora is to create a powerful, no-code visual editor for building websites directly in the browser. It follows a block-based architecture where users construct pages by combining, nesting, and styling a library of pre-defined components. The editor aims to provide an intuitive user experience with features like drag-and-drop, a context-aware inspector panel, and a live global theming system, empowering users to create custom designs without writing a single line of code.
+
+#### Key Features & Architecture
+- **Monorepo Foundation:** The entire project is structured as a scalable monorepo, with a clear separation between the main web app and shared UI/block libraries.
+- **Core Editor UI:** A classic three-panel editor layout is implemented, featuring a left sidebar (for layers, adding blocks, and theming), a central canvas, and a right-side inspector panel.
+- **Block System:** The system can render a full webpage from a JSON structure. It includes a library of primitive blocks (Container, Heading, Button, etc.) and pre-composed templates (Hero Section, CTA).
+- **Drag & Drop:** Full drag-and-drop functionality is implemented for reordering and nesting blocks, both within the "Layers" panel and directly on the visual canvas.
+- **Dynamic Inspector Panel:** A context-aware inspector sidebar is functional. When a block is selected, its specific settings (e.g., text alignment, colors, spacing) are dynamically displayed and are fully editable.
+- **Live Theming:** A global theme editor is implemented. Users can adjust CSS variables for colors, typography, and border radius across the entire page in real-time and switch between pre-defined theme presets.
+- **Content Editing:** Inline, live editing for text-based blocks like `Heading` and `TextBlock` is fully functional.
+- **Persistence API:** A simulated backend API is in place to save both the page structure (JSON) and the global theme data.
+
+---
+
+### 21. Webbox
+
+*A Component-Driven Eleventy & Tailwind CSS Starter*
+
+- **Status**: Archived
+- **Date**: April 2025
+- **Tech Stack**: Nunjucks, Python, HTML, CSS, JavaScript
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/webbox.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/webbox.md)
+
+#### Overview
+The vision for Webbox is to create a robust, reusable template that accelerates the development of bespoke websites for clients. It follows a block-based architecture where developers can rapidly assemble complex pages by combining a rich library of pre-built, customizable "Blocks." This approach streamlines the creation of common web patterns, while the integrated DaisyUI theming system allows for quick and easy branding adjustments.
+
+#### Key Features & Architecture
+- **Extensive Component Library:** The core of the project is a library of over 30 reusable UI Blocks, including heroes, feature grids, testimonials, pricing tables, contact forms, and more.
+- **Dynamic Theming System:** A fully functional theme switcher is implemented using Alpine.js and DaisyUI, allowing users to cycle through dozens of pre-configured themes in real-time.
+- **Complete Demonstration Site:** A multi-page website has been built using the template's own blocks, serving as a live demonstration of its capabilities.
+- **CMS Integration:** The project is ready for content management out-of-the-box with a pre-written configuration for Decap CMS.
+- **Interactive UI Elements:** Several components are enhanced with Alpine.js, including a functional FAQ accordion, a cookie consent banner, and an image gallery with a lightbox.
+
+---
+
+### 22. Modernized Rotary Telephone
+
+*An Interactive Audio Guide*
+
+- **Status**: Completed
+- **Date**: 2024 - 2025
+- **Tech Stack**: ESP32, C++
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/modernized-rotary-telephone.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/modernized-rotary-telephone.md)
+
+#### Overview
+The vision was to seamlessly blend the nostalgic, tactile experience of a vintage rotary telephone with the versatility of modern technology. The goal was to create a unique and memorable interface for an audio guide that encourages playful interaction. Beyond its initial use, the project demonstrates how classic objects can be repurposed as novel, multi-functional Bluetooth peripherals, preserving their iconic design while giving them a new lease on life.
+
+#### Key Features & Architecture
+- **Rotary Dial Input:** The original rotary dial has been successfully integrated with the ESP32 to accurately read dialed numbers.
+- **Audio Guide System:** When a specific number is dialed, a corresponding audio track is played through the phone's original earpiece.
+- **Authentic Ringer:** The vintage electro-mechanical bell has been successfully interfaced with, providing an authentic ringing sound to attract users.
+- **Bluetooth Connectivity:** The phone can function as a Bluetooth headset, allowing users to make and receive calls from a paired smartphone.
+- **Self-Contained and Portable:** The entire system is self-powered by rechargeable 18650 batteries, making it a fully portable installation.
+- **Exhibition-Ready:** The telephone was successfully deployed as an interactive audio guide at an exhibition.
+
+---
+
+### 23. Unity ML-Agents Parkour
+
+*An AI Locomotion Experiment*
+
+- **Status**: Completed
+- **Date**: November 2023
+- **Tech Stack**: Unity, C#, ML-Agents (Python, TensorFlow)
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/unity-ml-agents-parkour.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/unity-ml-agents-parkour.md)
+
+#### Overview
+As a project for a first-semester HfK course, the vision was to explore emergent AI behavior by training physics-based agents to master complex physical tasks. The goal was not just to have an AI solve a parkour course, but to create agents that could develop their own unique and robust locomotion strategies to navigate unpredictable environments and even participate in simple games like soccer or tag.
+
+#### Key Features & Architecture
+- **Complex Parkour Environment:** A multi-stage parkour course was built in Unity, featuring dynamic obstacles like cannons and moving platforms.
+- **Robust Agent Training:** Using reinforcement learning, a humanoid agent was trained to navigate the course from start to finish, learning resilient and adaptive movements.
+- **Diverse Skill Sets:** Beyond the main parkour course, agents were successfully trained on several other objectives, including a basic version of soccer and a simple game of catch.
+- **Emergent Locomotion:** A self-taught agent developed a unique, non-human "jump-step" gait that proved to be more stable and effective for withstanding obstacles, showcasing true emergent problem-solving.
+
+---
+
+### 24. Unstable Diffusion
+
+*An AI-Driven Animation Experiment*
+
+- **Status**: Completed
+- **Date**: October 2024
+- **Tech Stack**: Blender, Python, Stable Diffusion, Flux
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/unstable-diffusion.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/unstable-diffusion.md)
+
+#### Overview
+The vision for "Unstable Diffusion" was to explore the creative potential of generative AI as an interpretive tool. As a group project for a university class, it tests the AI's ability to perceive and construct recognizable forms—specifically human faces and figures—from purely abstract and ambiguous motion data provided by a depth map. The goal was to generate a unique, fluid animation where human-like forms appear to emerge and dissolve from a chaotic source.
+
+#### Key Features & Architecture
+- **Abstract Animation:** An abstract, continuously deforming 3D sculpture was created and animated in Blender to serve as the motion source.
+- **Depth Map Generation:** The animation was rendered as a sequence of depth map images, creating a video that encodes spatial information without recognizable features.
+- **AI Interpretation with ControlNet:** The depth map video was fed into a Stable Diffusion model using ControlNet, which forced the AI to adhere to the structure and motion of the depth map.
+- **Final Animation:** By prompting the AI to generate human faces and figures, the process resulted in a surreal animation where abstract shapes fluidly resolve into recognizable, yet constantly shifting, human-like forms.
+
+---
+
+### 25. HueTogether
+
+*A 2D Cooperative Puzzle-Platformer*
+
+- **Status**: Completed
+- **Date**: November 2024
+- **Tech Stack**: Unreal Engine 5, Blueprints, C++
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/huetogether.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/huetogether.md)
+
+#### Overview
+The vision for Hue Together is to create a delightful and engaging two-player cooperative puzzle-platformer, reminiscent of classics like _Fireboy & Watergirl_. As a group project for a university "Mediaengineering" course, it was designed to challenge players' communication and teamwork skills through intuitive, color-based mechanics. Its charming and tangible "desktop world" art style, where characters and levels are made of paper and office supplies, aims to provide a warm and accessible experience for all ages.
+
+#### Key Features & Architecture
+- **Two-Player Co-op System:** Built from the ground up for local two-player gameplay with controls for two distinct characters.
+- **Color-Based Puzzle Mechanics:** The central gameplay loop is fully implemented. Each player controls a character of a specific color and can only interact with objects that match their own color.
+- **Platforming Movement:** Standard 2D platformer controls (moving and jumping) are functional, allowing players to navigate the level.
+- **Custom Art and Animation:** A complete set of custom-designed art assets and animations has been created and integrated, establishing the game's unique papercraft aesthetic.
+- **Interactive Elements:** The game world includes essential puzzle components like color-coded keys and locked doors, which are key to level progression.
+
+---
+
+### 26. MI2 3D Integration
+
+*A VFX and Game Development Pipeline*
+
+- **Status**: Completed
+- **Date**: August 2024
+- **Tech Stack**: Blender, Unreal Engine 5
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/mi2-3d-integration.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/mi2-3d-integration.md)
+
+#### Overview
+This semester-long project demonstrates a comprehensive understanding of the entire 3D digital content creation pipeline. It follows the journey of a single concept—a whimsical traffic light on wheels—from a simple sketch to two distinct final products: a realistic visual effects composite and a playable game prototype. This showcases the ability to take an idea from a basic drawing to a fully realized, interactive experience.
+
+#### Key Features & Architecture
+- **Concept & Sketching:** The project began with initial concept sketches, establishing the design for the mobile traffic light character.
+- **3D Modeling:** A detailed 3D model of the "Ampel Racer" character was created from scratch in Blender.
+- **Texturing & Rendering:** The model was fully textured and rendered in Blender, producing a high-quality showcase image with realistic materials and lighting.
+- **VFX Integration:** A real-world video was motion-tracked in Blender, and the animated 3D model was then composited into the footage with realistic lighting and shadows.
+- **Game Implementation:** The final asset was imported into Unreal Engine 5, where a playable speedrun-style parkour game was developed.
+
+---
+
+### 27. NPC Engine
+
+*Local Large Language Model Persona Framework*
+
+- **Status**: Completed
+- **Date**: November 2025
+- **Tech Stack**: Python, PyTorch, FastAPI, Transformers, LoRA
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/npc-engine.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/npc-engine.md)
+
+#### Overview
+The NPC Engine is a sophisticated local AI platform designed to create, manage, and interact with highly stable AI personas. Unlike generic chatbots, this system focuses on **role-playing fidelity**, ensuring characters stay strictly in character even under "interrogation" or complex dialogue scenarios.
+
+
+            
+
+It features a custom-built Web UI that provides full control over the LLM pipeline, from loading different quantized models (Gemma, Llama, Mistral) to fine-tuning specific character behaviors using **Low-Rank Adaptation (LoRA)** directly within the interface.
+
+#### Key Features & Architecture
+- **Stable Personalities:** Utilizes advanced system prompts and context injection to maintain character consistency, preventing the AI from breaking character or reverting to "AI Assistant" mode.
+- **Integrated LoRA Training:** A "One-Click" training pipeline that generates synthetic datasets based on character definitions and fine-tunes the model locally to adopt specific speech patterns and knowledge.
+- **Model Agnostic:** Supports hot-swapping between various open-source models (e.g., Gemma 2, Llama 3) with support for 4-bit and 8-bit quantization for efficiency on consumer hardware.
+- **Full Control:** A bespoke dark-mode UI giving access to all generation parameters (Temperature, Top-P, Repetition Penalty) and system settings in real-time.
+
+---
+
+### 28. Reinforcement Learning Racer
+
+*Evolution of an Autonomous Agent*
+
+- **Status**: Completed
+- **Date**: November 2025
+- **Tech Stack**: Python, Stable Baselines 3, Pygame, Gymnasium
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/racing-ai.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/racing-ai.md)
+
+#### Overview
+This project demonstrates the development of a Reinforcement Learning agent trained to master 2D racing lines. Built using Python and Stable Baselines 3 (PPO), it documents the AI's evolution from basic obstacle avoidance on procedurally generated tracks to precision time-attack racing.
+
+ 
+            
+
+By upgrading the neural network inputs from simple Raycasts to include relative localization data (Checkpoint Angle/Distance), the agent optimized its lap times by over 9%, breaking the 10-second barrier. The project culminates in a custom "Draw & Drive" interface, allowing real-time testing on user-generated splines.
+
+#### Key Features & Architecture
+- **Reinforcement Learning (PPO):** Utilized Proximal Policy Optimization to train a continuous control agent for steering and throttle.
+- **Procedural Generation:** Developed a robust map generator creating infinite unique track layouts to prevent the AI from overfitting/memorizing maps.
+- **Input Optimization:** Improved lap times by ~10% by augmenting LIDAR-style raycasts with "GPS" features (Next Checkpoint Angle, Distance, and Lap Progress).
+- **Interactive "Draw & Drive":** A custom Pygame interface that processes user-drawn lines into driveable physics meshes, allowing instant simulation of the pre-trained agent on novel geometry.
+
+---
+
+### 29. Gunners Gauntlet
+
+*A Pseudo-3D Arcade Shooter*
+
+- **Status**: Completed
+- **Date**: November 2023
+- **Tech Stack**: Java, Processing 4
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/gunners-gauntlet.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/gunners-gauntlet.md)
+
+#### Overview
+The vision for Gunners Gauntlet was to create a fast-paced, minimalist, top-down arcade shooter with a retro-inspired aesthetic. Developed as a solo project for the first-semester university course "Grundlagen der Programmierung," the game challenges the player to navigate a series of increasingly difficult mazes, surviving waves of enemies and culminating in a complex, multi-phase boss battle. The core gameplay loop is centered on classic twin-stick shooter mechanics.
+
+#### Key Features & Architecture
+- **Custom Pseudo-3D Renderer:** A fully functional rendering system draws the game world, giving a distinct 3D feel to the 2D grid-based levels.
+- **Classic Twin-Stick Controls:** The game implements responsive twin-stick shooter controls (keyboard for movement, mouse for aiming).
+- **Level Progression:** The game features a state machine that manages progression through four distinct levels, each with a unique layout and enemy configuration.
+- **Complex Boss Battle:** The final level features a multi-phase boss fight where the boss is protected by a shield that must be deactivated by pressing buttons throughout the arena.
+- **Complete Audio-Visual Package:** The game includes custom UI, a dynamic music system that changes with each level, and a comprehensive set of sound effects.
+
+---
+
+### 30. Neosliders
+
+*A Minimalist Gravity-Flipping Speedrunner*
+
+- **Status**: Completed
+- **Date**: 2022 - 2024
+- **Tech Stack**: Unity, C#
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/neosliders.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/neosliders.md)
+
+#### Overview
+The vision for Neo Sliders is to create a skill-based arcade game that is easy to learn but difficult to master. By reducing player control to a single mechanic—flipping gravity—the gameplay focuses entirely on mastering momentum to speedrun through challenging, curved levels.
+
+#### Key Features & Architecture
+- **Core Gravity Mechanic:** A one-touch control system allows the player to instantly change the direction of gravity.
+- **Physics-Based Movement:** The ball's movement is physics-driven, requiring the player to build and maintain momentum to navigate tracks efficiently.
+- **Level Pack:** The game includes 8 unique, handcrafted levels designed to test the player's control and speed.
+- **Speedrunning System:** A timer tracks the current run, and a "Best Time" is saved for each level to encourage replayability.
+- **Polished Visuals:** A cohesive neon art style gives the game a distinct, minimalist look.
+
+---
+
+### 31. Birkenhirten
+
+*A Top-Down Herding Game*
+
+- **Status**: Completed
+- **Date**: December 2023
+- **Tech Stack**: Java, Processing 4
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/birkenhirten.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/birkenhirten.md)
+
+#### Overview
+The goal for Birkenhirten was to create a simple top-down arcade game as a group project for the first-semester university course "Grundlagen der Programmierung." The core vision was to make the player a sheepdog, using their presence and movement to nudge and guide a flock of skittish sheep while protecting them from an encroaching threat, creating a constant, gentle pressure and a clear objective.
+
+#### Key Features & Architecture
+- **Custom Game Logic:** All game logic, including player controls, sheep herding behavior, and enemy AI, was implemented from the ground up.
+- **Creative Coding Environment:** Built using Java within the Processing 4 creative coding environment, which is ideal for rapidly prototyping 2D graphics and interactive applications.
+- **Clear Arcade Gameplay:** A simple and intuitive top-down arcade experience focused on a single, clear objective.
+
+---
+
+### 32. Web Platformer
+
+*A Competitive 2D Platformer & Level Editor*
+
+- **Status**: Archived
+- **Date**: November 2025
+- **Tech Stack**: Next.js, Turborepo, TypeScript, Docker
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/web-platformer.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/web-platformer.md)
+
+#### Overview
+The vision for "The King's Canvas" is to create a competitive 2D platformer with a unique, community-driven gameplay loop summarized by the motto: "Beat the King, Become the King." Players compete to achieve the fastest time on a single, official level designed by the current "King." The first player to beat that time is crowned the new King, and their own pre-designed level becomes the new official challenge for the entire community, creating a dynamic and endlessly evolving game.
+
+#### Key Features & Architecture
+- **Monorepo Architecture:** Fully set up as a scalable Turborepo monorepo, with separate apps for the frontend and backend, and shared packages for the game engine and types.
+- **Deterministic Game Engine:** A sophisticated, tick-based 2D platforming physics engine has been implemented, featuring coyote time, jump buffering, wall sliding, dashing, and more.
+- **Playable Game Client:** A functional game client built with Pixi.js that can load and render level maps, featuring a sophisticated autotiling system.
+- **Interactive Physics Tuning Menu:** A complete UI allowing for real-time adjustment of over 40 physics and camera parameters.
+- **API & Database Foundation:** A foundational API server using Fastify is in place, with a database schema defined using Drizzle ORM for users, maps, and records.
+
+---
+
+### 33. Panzer
+
+*A Real-Time Multiplayer Arena*
+
+- **Status**: Archived
+- **Date**: October 2025
+- **Tech Stack**: React, TypeScript, Tailwind CSS, Socket.io
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/panzer.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/panzer.md)
+
+#### Overview
+The vision is to create a fast-paced, 2D top-down tank arena game that is seamlessly integrated into Discord. Players can easily invite friends and jump into public or private lobbies directly within the social platform. The project goes beyond just the game itself, aiming to provide a complete ecosystem including a robust lobby system, game browser, and a powerful, web-based map editor for creating and sharing custom levels.
+
+#### Key Features & Architecture
+- **Full Discord Integration:** The game fully supports being run as a Discord Activity, handling authentication and invites through the official SDK.
+- **Complete Lobby System:** Players can create public/private lobbies, browse open games, and join via codes. The host has full control over game settings.
+- **Authoritative Gameplay Core:** A cheat-resistant server dictates all game logic, synchronizing state to clients in real-time. The client uses state interpolation for smooth rendering.
+- **In-Browser Map Editor:** A comprehensive, standalone map editor allows users to place objects, use a snapping grid, manage history with undo/redo, and export maps as JSON.
+- **Admin & Debug Tools:** An admin dashboard provides a real-time overview of active lobbies, and an in-game debug menu allows for live tweaking of physics variables.
+
+---
+
+### 34. Scribes
+
+*A Modern Static Site Generator for Documentation*
+
+- **Status**: Archived
+- **Date**: October 2025
+- **Tech Stack**: Vite, React, TypeScript, Tailwind CSS
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/scribes.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/scribes.md)
+
+#### Overview
+The vision for Scribes is to create a minimalist, modern, and elegant documentation tool that enables developers to quickly set up and publish beautiful documentation sites with minimal configuration. By focusing on a simple file-based routing system with MDX, it allows authors to concentrate on writing content while the tool handles the complexities of building a polished, feature-rich website.
+
+#### Key Features & Architecture
+- **Complete CLI Tool:** A functional CLI with `init`, `dev`, and `build` commands to manage the entire documentation workflow from scaffolding to deployment.
+- **Static Site Generation (SSR):** A robust build process performs Server-Side Rendering to generate a fully static, SEO-friendly, and performant website.
+- **MDX Support:** Full support for MDX allows interactive React components to be used directly within Markdown content.
+- **Core UI Components:** The generated site features a responsive, collapsible sidebar for navigation and an auto-generating Table of Contents that tracks scroll position.
+- **Powerful Theming System:** An easily configurable theming system offers over a dozen pre-built light and dark themes that can be selected in a configuration file.
+
+---
