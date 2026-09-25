@@ -499,7 +499,38 @@ The mod has been fully migrated and updated to remain compatible with **Hytale v
 
 ---
 
-### 19. Flashdash
+### 19. FrogYou!
+
+*A Fast-Paced 2D Precision Platformer in Unity*
+
+- **Status**: Completed
+- **Date**: June 2026
+- **Categories**: Game, 2D
+- **Tech Stack**: Unity, C#, LootLocker, Universal Render Pipeline (URP), Cinemachine
+- **Device Support**: desktop
+- **Links**:
+  - [Case Study (HTML)](https://ducklin.de/case-studies/frogyou.html)
+  - [Case Study (Markdown)](https://ducklin.de/case-studies/frogyou.md)
+  - [Watch Gameplay](https://youtu.be/sbkclr6FPLk)
+
+#### Overview
+FrogYou! is a fast-paced 2D precision platformer where players control a nimble ninja frog navigating increasingly hazardous mechanical environments. The objective in each level is simple yet demanding: collect every fruit as quickly as possible to earn up to 3 stars per stage.
+
+Along with responsive ground and aerial movement, the frog possesses two core abilities: the Spore Blast (an explosive directional dash) and the Vine Grappler (a tether for swinging across yawning chasms and slingshotting through enemies). A key mechanic for speedrunning is that collecting any fruit instantly resets all ability cooldowns, rewarding players who chain dashes and grappling maneuvers into continuous, high-speed routes.
+
+The game features 8 hand-crafted levels that transition from vibrant organic landscapes into hostile robotic factories, complete with chasing drone Spyders, rotating saws, ghost run recording, and online global leaderboards.
+
+#### Key Features & Architecture
+- **Precision Movement & Abilities:** Responsive jump physics complemented by an 8-directional Spore Blast dash and dynamic Vine Grappler tether.
+- **Fruit Cooldown Reset:** Collecting fruit instantly replenishes ability charges, unlocking high-skill route optimization and momentum chaining.
+- **Ghost Recording System:** Custom telemetry system records player run trajectories and renders ghost replays against personal bests.
+- **Online Leaderboards:** Integrated LootLocker backend syncing high scores, best completion times, and star progression.
+- **Adaptive Audio & Visuals:** Velocity-scaled camera framing, screen shake on impacts, pitch-incrementing collection chimes, and retro pixel art aesthetic.
+- **8 Progressive Levels:** Stages scale from open routing tutorials to high-density gauntlets featuring moving platforms, pendulums, and flying Spyders.
+
+---
+
+### 20. Flashdash
 
 *An Interactive LED Installation Game*
 
@@ -522,7 +553,7 @@ The vision for Flash Dash was to transform a communal space with an engaging, ph
 
 ---
 
-### 20. Aurora
+### 21. Aurora
 
 *A Web-Based Visual Page Editor*
 
@@ -548,7 +579,7 @@ The vision for Aurora is to create a powerful, no-code visual editor for buildin
 
 ---
 
-### 21. Webbox
+### 22. Webbox
 
 *A Component-Driven Eleventy & Tailwind CSS Starter*
 
@@ -571,7 +602,7 @@ The vision for Webbox is to create a robust, reusable template that accelerates 
 
 ---
 
-### 22. Modernized Rotary Telephone
+### 23. Modernized Rotary Telephone
 
 *An Interactive Audio Guide*
 
@@ -595,7 +626,7 @@ The vision was to seamlessly blend the nostalgic, tactile experience of a vintag
 
 ---
 
-### 23. Unity ML-Agents Parkour
+### 24. Unity ML-Agents Parkour
 
 *An AI Locomotion Experiment*
 
@@ -617,7 +648,7 @@ As a project for a first-semester HfK course, the vision was to explore emergent
 
 ---
 
-### 24. Unstable Diffusion
+### 25. Unstable Diffusion
 
 *An AI-Driven Animation Experiment*
 
@@ -639,7 +670,7 @@ The vision for "Unstable Diffusion" was to explore the creative potential of gen
 
 ---
 
-### 25. HueTogether
+### 26. HueTogether
 
 *A 2D Cooperative Puzzle-Platformer*
 
@@ -662,7 +693,7 @@ The vision for Hue Together is to create a delightful and engaging two-player co
 
 ---
 
-### 26. MI2 3D Integration
+### 27. MI2 3D Integration
 
 *A VFX and Game Development Pipeline*
 
@@ -685,7 +716,7 @@ This semester-long project demonstrates a comprehensive understanding of the ent
 
 ---
 
-### 27. NPC Engine
+### 28. NPC Engine
 
 *Local Large Language Model Persona Framework*
 
@@ -712,7 +743,7 @@ It features a custom-built Web UI that provides full control over the LLM pipeli
 
 ---
 
-### 28. Reinforcement Learning Racer
+### 29. Reinforcement Learning Racer
 
 *Evolution of an Autonomous Agent*
 
@@ -739,7 +770,7 @@ By upgrading the neural network inputs from simple Raycasts to include relative 
 
 ---
 
-### 29. Gunners Gauntlet
+### 30. Gunners Gauntlet
 
 *A Pseudo-3D Arcade Shooter*
 
@@ -762,7 +793,7 @@ The vision for Gunners Gauntlet was to create a fast-paced, minimalist, top-down
 
 ---
 
-### 30. Neosliders
+### 31. Neosliders
 
 *A Minimalist Gravity-Flipping Speedrunner*
 
@@ -785,7 +816,7 @@ The vision for Neo Sliders is to create a skill-based arcade game that is easy t
 
 ---
 
-### 31. Birkenhirten
+### 32. Birkenhirten
 
 *A Top-Down Herding Game*
 
@@ -806,7 +837,7 @@ The goal for Birkenhirten was to create a simple top-down arcade game as a group
 
 ---
 
-### 32. Web Platformer
+### 33. Web Platformer
 
 *A Competitive 2D Platformer & Level Editor*
 
@@ -829,7 +860,7 @@ The vision for "The King's Canvas" is to create a competitive 2D platformer with
 
 ---
 
-### 33. Panzer
+### 34. Panzer
 
 *A Real-Time Multiplayer Arena*
 
@@ -852,7 +883,7 @@ The vision is to create a fast-paced, 2D top-down tank arena game that is seamle
 
 ---
 
-### 34. Scribes
+### 35. Scribes
 
 *A Modern Static Site Generator for Documentation*
 

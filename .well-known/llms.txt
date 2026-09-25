@@ -30,6 +30,7 @@ This file serves as the canonical table of contents for AI agents and LLMs. Belo
 - [TileQuest](https://ducklin.de/case-studies/tilequest.md): A physical/digital co-op board game using RFID figures on a custom electronic grid. A 4th-semester university group project.
 - [Duckslayer](https://ducklin.de/case-studies/duckslayer.md): A 3D trick-based soap-surfing game developed in a group for Global Game Jam 2025. Winner of the Bremen site.
 - [VeinMining](https://ducklin.de/case-studies/veinmining.md): A feature-rich Hytale mod that lets players mine connected ore veins and excavate custom patterns with full in-game GUI and chat configuration.
+- [FrogYou!](https://ducklin.de/case-studies/frogyou.md): A fast-paced 2D precision platformer featuring a ninja frog navigating mechanical hazards, with directional spore dashes, vine grappling, and online speedrun leaderboards.
 - [Flashdash](https://ducklin.de/case-studies/flashdash.md): A 15-meter interactive LED strip game of 1D ping-pong. A collaborative HfK project with a custom display and spatial audio.
 - [Aurora](https://ducklin.de/case-studies/aurora.md): A modern, visual website editor architected as a monorepo for modularity and scalability.
 - [Webbox](https://ducklin.de/case-studies/webbox.md): A static site generator that creates full websites from a single config file using pre-built templates.
@@ -67,6 +68,7 @@ This file serves as the canonical table of contents for AI agents and LLMs. Belo
 - [TileQuest](https://ducklin.de/case-studies/tilequest.md) [Raspberry Pi, Flask, React, ESP32]: A physical/digital co-op board game using RFID figures on a custom electronic grid. A 4th-semester university group project.
 - [Duckslayer](https://ducklin.de/case-studies/duckslayer.md) [Godot, GDScript]: A 3D trick-based soap-surfing game developed in a group for Global Game Jam 2025. Winner of the Bremen site.
 - [VeinMining](https://ducklin.de/case-studies/veinmining.md) [Java, Hytale Plugin API, Gradle]: A feature-rich Hytale mod that lets players mine connected ore veins and excavate custom patterns with full in-game GUI and chat configuration.
+- [FrogYou!](https://ducklin.de/case-studies/frogyou.md) [Unity, C#, LootLocker, Universal Render Pipeline (URP)]: A fast-paced 2D precision platformer featuring a ninja frog navigating mechanical hazards, with directional spore dashes, vine grappling, and online speedrun leaderboards.
 - [Flashdash](https://ducklin.de/case-studies/flashdash.md) [ESP32, C++, WS2813B LEDs, 3D Printing]: A 15-meter interactive LED strip game of 1D ping-pong. A collaborative HfK project with a custom display and spatial audio.
 - [Aurora](https://ducklin.de/case-studies/aurora.md) [Next.js, TypeScript, Turborepo, pnpm]: A modern, visual website editor architected as a monorepo for modularity and scalability.
 - [Webbox](https://ducklin.de/case-studies/webbox.md) [Nunjucks, Python, HTML, CSS]: A static site generator that creates full websites from a single config file using pre-built templates.

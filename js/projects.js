@@ -261,6 +261,19 @@ const projects = [
     techStack: ["Java","Hytale Plugin API","Gradle"],
   },
   {
+    name: "FrogYou!",
+    description:
+      "A fast-paced 2D precision platformer featuring a ninja frog navigating mechanical hazards, with directional spore dashes, vine grappling, and online speedrun leaderboards.",
+    image: "./images/frogyou_thumbnail.webp",
+    status: "Completed",
+    docHref: "./case-studies/frogyou.html",
+    relevance: 82,
+    date: "June 2026",
+    deviceSupport: ["desktop"],
+    tags: ["Game", "2D"],
+    techStack: ["Unity", "C#", "LootLocker", "Universal Render Pipeline (URP)", "Cinemachine"],
+  },
+  {
     name: "Flashdash",
     description:
       "A 15-meter interactive LED strip game of 1D ping-pong. A collaborative HfK project with a custom display and spatial audio.",
