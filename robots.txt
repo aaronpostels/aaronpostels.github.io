@@ -15,6 +15,18 @@ User-agent: GPTBot
 Disallow: /projects/
 Allow: /
 
+User-agent: OAI-SearchBot
+Disallow: /projects/
+Allow: /
+
+User-agent: Claude-SearchBot
+Disallow: /projects/
+Allow: /
+
+User-agent: Claude-User
+Disallow: /projects/
+Allow: /
+
 User-agent: ChatGPT-User
 Disallow: /projects/
 Allow: /
@@ -39,10 +51,12 @@ User-agent: Applebot-Extended
 Disallow: /projects/
 Allow: /
 
-# Bulk unvetted training crawlers
+# Training crawlers: welcome, at a polite rate
 User-agent: CCBot
-Disallow: /
+Disallow: /projects/
+Crawl-delay: 10
 
+# Blocked only because of aggressive crawl rates
 User-agent: Bytespider
 Disallow: /
 

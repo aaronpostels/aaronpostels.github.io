@@ -261,6 +261,19 @@ const projects = [
     techStack: ["Java","Hytale Plugin API","Gradle"],
   },
   {
+    name: "Bachelor Thesis: Robot Goal Celebrations",
+    description:
+      "A workflow from video to autonomous goal celebrations on a humanoid football robot: Blender add-on, reinforcement learning in Isaac Lab, and integration into the B-Human system. Tested on the real Booster K1.",
+    image: "./images/thesis_thumbnail.webp",
+    status: "Completed",
+    docHref: "./case-studies/bachelor-thesis.html",
+    relevance: 96,
+    date: "July 2026",
+    deviceSupport: [],
+    tags: ["AI", "3D", "Robotics"],
+    techStack: ["Blender (Python add-on)", "Isaac Lab", "Reinforcement Learning (PPO)", "B-Human", "Booster K1"],
+  },
+  {
     name: "FrogYou!",
     description:
       "A fast-paced 2D precision platformer featuring a ninja frog navigating mechanical hazards, with directional spore dashes, vine grappling, and online speedrun leaderboards.",
@@ -449,28 +462,6 @@ const projects = [
     date: "October 2025",
     techStack: ["Vite","React","TypeScript","Tailwind CSS"],
   },
-  /*
-  {
-    name: "Mining Grid Game",
-    description:
-      "A 2D platformer focused on procedural world generation and advanced sprite manipulation techniques.",
-    status: "Archived",
-    date: "March 2025",
-    docHref: "./case-studies/mining-grid-game.html",
-    techStack: ["Godot", "GDScript"],
-  },
-  */
-  /*
-  {
-    name: "Calculator Game Engine Dev",
-    description:
-      "Developed a game engine and several games (2048, Flappy Bird, Chess) from scratch for TI-83 graphing calculators using TI-BASIC.",
-    status: "Completed",
-    date: "2021 - 2022",
-    docHref: "./case-studies/calculator-game-engine-dev.html",
-    techStack: ["TI-BASIC"],
-  },
-  */
 
   // --- Skills & Tools ---
   /*

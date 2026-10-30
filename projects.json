@@ -589,12 +589,47 @@
     "caseStudyHtmlUrl": "https://ducklin.de/case-studies/veinmining.html",
     "caseStudyMarkdownUrl": "https://ducklin.de/case-studies/veinmining.md",
     "githubUrl": "https://github.com/aaronpostels/VeinMining",
-    "overview": "VeinMining is a versatile utility mod for Hytale that streamlines gathering by letting players mine entire connected ore veins or excavate geometric shapes in one coordinated break action. Players activate veinmining simply by holding an activation key (defaulting to Left Alt / Walk) while mining with an appropriate tool.\n\n            \n\nThe mod has been fully migrated and updated to remain compatible with **Hytale v0.6** (with special thanks to contributor *ItsRiprod* for migration support). It features a custom in-game UI configuration window, deep chat command flag parsing, tool durability balance, and smart drop consolidation.",
+    "overview": "VeinMining is a versatile utility mod for Hytale that streamlines gathering by letting players mine entire connected ore veins or excavate geometric shapes in one coordinated break action. Players activate veinmining simply by holding an activation key (defaulting to Left Alt / Walk) while mining with an appropriate tool.\n\n\r\n            \n\nThe mod has been fully migrated and updated to remain compatible with **Hytale v0.6** (with special thanks to contributor *ItsRiprod* for migration support). It features a custom in-game UI configuration window, deep chat command flag parsing, tool durability balance, and smart drop consolidation.",
     "features": [
       "**Activation on Demand:** Hold the Walk key (Left Alt) while mining to activate veinmining without interrupting standard single-block mining.",
       "**Interactive In-Game GUI:** Open a visual settings dashboard at any time with /vm to adjust targeting mode, patterns, orientation, and activation triggers.",
       "**Durability Balance:** Equipped tools lose durability based on the total count of broken blocks, keeping server economies and survival progression balanced.",
       "**Loot Consolidation:** Collect all block drops and ores from the broken vein into a single consolidated stack placed at the player's feet or at the source block."
+    ]
+  },
+  {
+    "id": "bachelor-thesis-robot-goal-celebrations",
+    "name": "Bachelor Thesis: Robot Goal Celebrations",
+    "description": "A workflow from video to autonomous goal celebrations on a humanoid football robot: Blender add-on, reinforcement learning in Isaac Lab, and integration into the B-Human system. Tested on the real Booster K1.",
+    "featured": false,
+    "relevance": 96,
+    "date": "July 2026",
+    "status": "Completed",
+    "deviceSupport": [],
+    "tags": [
+      "AI",
+      "3D",
+      "Robotics"
+    ],
+    "techStack": [
+      "Blender (Python add-on)",
+      "Isaac Lab",
+      "Reinforcement Learning (PPO)",
+      "B-Human",
+      "Booster K1"
+    ],
+    "liveDemoUrl": null,
+    "caseStudyHtmlUrl": "https://ducklin.de/case-studies/bachelor-thesis.html",
+    "caseStudyMarkdownUrl": "https://ducklin.de/case-studies/bachelor-thesis.md",
+    "githubUrl": null,
+    "overview": "With the move from the small NAO to the larger Booster K1, robot football looks more technical and less playful. This bachelor thesis at the University of Bremen (B.Sc. Digital Media, 2026, written in German) gives the robot personality: visible reactions and a goal celebration.\n\nThe result is a complete workflow from a motion reference to execution on the real robot. A video is reconstructed as 3D human motion and retargeted to the K1. A custom Blender add-on, **K1 Animator**, makes the motion visible and editable on a constrained robot rig, and also lets you create motions by hand. The Macarena dance runs through every step as the example.\n\nTwo kinds of celebrations come out of the same editor. Dynamic full-body dances are trained with reinforcement learning in Isaac Lab, so a control policy executes the motion in simulation. Simpler head and arm gestures run as keyframe animations without training. Both are integrated into the behavior and motion architecture of the B-Human robot football system and can be triggered by game events, test commands or a controller. They were tested on the physical K1.\n\nTitle: *Entwicklung eines ereignisgesteuerten Animationssystems für performative Bewegungsabläufe am Beispiel autonomer Torjubel im Roboterfußball*. Supervisors: Prof. Dr.-Ing. Udo Frese and Nuri Ovüc.",
+    "features": [
+      "**Video to robot motion:** a single video is reconstructed as 3D human motion and retargeted to the K1 skeleton.",
+      "**K1 Animator:** a custom Blender add-on to inspect, edit and hand-author motions on a constrained robot rig, with export for training and for the robot.",
+      "**Learned dances:** dynamic full-body motions are trained in Isaac Lab with reinforcement learning so a policy can reproduce them in simulation.",
+      "**Keyframe gestures:** simple head and arm emotes need no training and run directly as keyframe animations.",
+      "**B-Human integration:** celebrations hook into the existing behavior and motion architecture and fire on game events, test commands or a controller.",
+      "**Real-robot test:** the visible motion on the physical K1 matched what was checked in simulation."
     ]
   },
   {

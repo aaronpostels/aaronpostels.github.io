@@ -13,6 +13,7 @@
 
 VeinMining is a versatile utility mod for Hytale that streamlines gathering by letting players mine entire connected ore veins or excavate geometric shapes in one coordinated break action. Players activate veinmining simply by holding an activation key (defaulting to Left Alt / Walk) while mining with an appropriate tool.
 
+
             
 
 The mod has been fully migrated and updated to remain compatible with **Hytale v0.6** (with special thanks to contributor *ItsRiprod* for migration support). It features a custom in-game UI configuration window, deep chat command flag parsing, tool durability balance, and smart drop consolidation.

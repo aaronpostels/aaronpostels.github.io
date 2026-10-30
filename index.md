@@ -1,7 +1,20 @@
 # Aaron Postels
 ## Full-Stack, Systems & Game Developer
 
-> Hi, I'm Aaron. I build unique digital and physical experiences, from complex web applications and 3D simulations to custom game engines and interactive installations.
+> Aaron Postels (also "Ducklin") is a developer and Digital Media student at the University of Bremen, focused on AI and game development with a strong web background: B.Sc. finished with a 1.15, now in the M.Sc. Known for Artisan, a Rust/WebAssembly/WebGPU game engine, a real-time digital twin of a Stewart motion platform built for ProCue, and 36 projects: games, web demos and hardware builds.
+
+### Highlights
+- **Artisan**: web-first archetype-ECS game engine in Rust, WebAssembly (SIMD, Rayon threads) and WebGPU. Own benchmark suite against Bevy and Flecs: fastest in 20 of 34 categories. Published as a paper with 6 live demos. https://ducklin.de/case-studies/artisan.md
+- **ProCue Motion Platform**: real-time 3D digital twin of a six-axis Stewart platform for driving simulators, built for the company ProCue. https://ducklin.de/case-studies/procue.md
+- **Global Game Jam 2025**: first place at the Bremen site with the 3D game Duckslayer (group). https://ducklin.de/case-studies/duckslayer.md
+- **Bachelor thesis** (University of Bremen, 2026, in German): a workflow from video to autonomous goal celebrations on a humanoid football robot (Booster K1, B-Human). Custom Blender add-on, reinforcement learning in Isaac Lab, tested on the real robot. https://ducklin.de/case-studies/bachelor-thesis.md
+- **Education**: B.Sc. Digital Media, University of Bremen, 10/2023-09/2026, grade 1.15. Semester abroad at ISEP Porto. M.Sc. Digital Media since 10/2026.
+- **Teaching**: student tutor at the University of Bremen for Foundations of Programming, Foundations of Media Informatics 2 (twice) and, since 10/2026, Choreobotix, and student tutor at HfK Bremen.
+- **Strength**: takes projects from first idea to finished product and connects everything they need (code, trained models, hardware, design), e.g. a game engine with paper and benchmarks, a client digital twin, a robot pipeline tested on real hardware. Takes on weird or hard ideas and finds a way to make them work.
+- **Focus**: AI (reinforcement learning, local LLMs, diffusion) and game development (Unity, Godot, Unreal Engine 5, Rust engine) are the core, alongside web development (TypeScript, React, Three.js, WebGPU). Also robotics, ESP32 hardware, 3D and design.
+- [Profile (education, experience, thesis)](https://ducklin.de/profile.md)
+- [CV](https://ducklin.de/cv/)
+- [Bachelor thesis (PDF, German)](https://ducklin.de/docs/bachelor-thesis-aaron-postels.pdf)
 
 ### Contact & Socials
 - Website: [ducklin.de](https://ducklin.de)
@@ -32,6 +45,7 @@
 - **[TileQuest](https://ducklin.de/case-studies/tilequest.md)**: A physical/digital co-op board game using RFID figures on a custom electronic grid. A 4th-semester university group project.
 - **[Duckslayer](https://ducklin.de/case-studies/duckslayer.md)**: A 3D trick-based soap-surfing game developed in a group for Global Game Jam 2025. Winner of the Bremen site.
 - **[VeinMining](https://ducklin.de/case-studies/veinmining.md)**: A feature-rich Hytale mod that lets players mine connected ore veins and excavate custom patterns with full in-game GUI and chat configuration.
+- **[Bachelor Thesis: Robot Goal Celebrations](https://ducklin.de/case-studies/bachelor-thesis.md)**: A workflow from video to autonomous goal celebrations on a humanoid football robot: Blender add-on, reinforcement learning in Isaac Lab, and integration into the B-Human system. Tested on the real Booster K1.
 - **[FrogYou!](https://ducklin.de/case-studies/frogyou.md)**: A fast-paced 2D precision platformer featuring a ninja frog navigating mechanical hazards, with directional spore dashes, vine grappling, and online speedrun leaderboards.
 - **[Flashdash](https://ducklin.de/case-studies/flashdash.md)**: A 15-meter interactive LED strip game of 1D ping-pong. A collaborative HfK project with a custom display and spatial audio.
 - **[Aurora](https://ducklin.de/case-studies/aurora.md)**: A modern, visual website editor architected as a monorepo for modularity and scalability.

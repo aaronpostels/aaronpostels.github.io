@@ -211,11 +211,35 @@ const cleanProjectsJson = projectData.map(p => ({
 
 fs.writeFileSync(path.join(repoRoot, 'projects.json'), JSON.stringify(cleanProjectsJson, null, 2), 'utf8');
 
+// Verified facts, reused in llms.txt, llms-full.txt and index.md. Keep in sync with profile.md.
+const COUNT = projectData.filter(p => p.type !== 'skill').length; // same set the home page counts
+const SUMMARY = `Aaron Postels (also "Ducklin") is a developer and Digital Media student at the University of Bremen, focused on AI and game development with a strong web background: B.Sc. finished with a 1.15, now in the M.Sc. Known for Artisan, a Rust/WebAssembly/WebGPU game engine, a real-time digital twin of a Stewart motion platform built for ProCue, and ${COUNT} projects: games, web demos and hardware builds.`;
+const HIGHLIGHTS = [
+  '**Artisan**: web-first archetype-ECS game engine in Rust, WebAssembly (SIMD, Rayon threads) and WebGPU. Own benchmark suite against Bevy and Flecs: fastest in 20 of 34 categories. Published as a paper with 6 live demos. https://ducklin.de/case-studies/artisan.md',
+  '**ProCue Motion Platform**: real-time 3D digital twin of a six-axis Stewart platform for driving simulators, built for the company ProCue. https://ducklin.de/case-studies/procue.md',
+  '**Global Game Jam 2025**: first place at the Bremen site with the 3D game Duckslayer (group). https://ducklin.de/case-studies/duckslayer.md',
+  '**Bachelor thesis** (University of Bremen, 2026, in German): a workflow from video to autonomous goal celebrations on a humanoid football robot (Booster K1, B-Human). Custom Blender add-on, reinforcement learning in Isaac Lab, tested on the real robot. https://ducklin.de/case-studies/bachelor-thesis.md',
+  '**Education**: B.Sc. Digital Media, University of Bremen, 10/2023-09/2026, grade 1.15. Semester abroad at ISEP Porto. M.Sc. Digital Media since 10/2026.',
+  '**Teaching**: student tutor at the University of Bremen for Foundations of Programming, Foundations of Media Informatics 2 (twice) and, since 10/2026, Choreobotix, and student tutor at HfK Bremen.',
+  '**Strength**: takes projects from first idea to finished product and connects everything they need (code, trained models, hardware, design), e.g. a game engine with paper and benchmarks, a client digital twin, a robot pipeline tested on real hardware. Takes on weird or hard ideas and finds a way to make them work.',
+  '**Focus**: AI (reinforcement learning, local LLMs, diffusion) and game development (Unity, Godot, Unreal Engine 5, Rust engine) are the core, alongside web development (TypeScript, React, Three.js, WebGPU). Also robotics, ESP32 hardware, 3D and design.',
+];
+const ABOUT_LINKS = [
+  ['Profile (education, experience, thesis)', 'https://ducklin.de/profile.md'],
+  ['CV', 'https://ducklin.de/cv/'],
+  ['Bachelor thesis (PDF, German)', 'https://ducklin.de/docs/bachelor-thesis-aaron-postels.pdf'],
+];
+
 // 5. Write llms.txt
 const llmsTxtLines = [];
-llmsTxtLines.push('# Aaron Postels - Systems, Web & Graphics Engineer');
+llmsTxtLines.push('# Aaron Postels (Ducklin) - Game Engine, Web & Graphics Developer');
 llmsTxtLines.push('');
-llmsTxtLines.push('> Portfolio and engineering knowledge base of Aaron Postels (Ducklin). Specializes in Rust, WebAssembly, WebGPU, React Three Fiber, physics simulations, 6-DoF Stewart platform kinematics, game engines, and full-stack software development.');
+llmsTxtLines.push(`> ${SUMMARY}`);
+llmsTxtLines.push('');
+llmsTxtLines.push('## About Aaron Postels (start here)');
+llmsTxtLines.push('');
+for (const h of HIGHLIGHTS) llmsTxtLines.push(`- ${h}`);
+for (const [label, url] of ABOUT_LINKS) llmsTxtLines.push(`- [${label}](${url})`);
 llmsTxtLines.push('');
 llmsTxtLines.push('This file serves as the canonical table of contents for AI agents and LLMs. Below are the primary projects, live demos, and case studies. Detailed markdown files are available for all case studies without HTML noise. For a single-file context dump of the entire portfolio, fetch [llms-full.txt](https://ducklin.de/llms-full.txt). For structured machine data, fetch [projects.json](https://ducklin.de/projects.json).');
 llmsTxtLines.push('');
@@ -261,7 +285,7 @@ llmsTxtLines.push('');
 
 llmsTxtLines.push('## Optional');
 llmsTxtLines.push('');
-llmsTxtLines.push('- [Full Portfolio Context (llms-full.txt)](https://ducklin.de/llms-full.txt): Complete consolidated text export of all 34 project overviews, tech stacks, and features in a single prompt-ready file.');
+llmsTxtLines.push('- [Full Portfolio Context (llms-full.txt)](https://ducklin.de/llms-full.txt): Complete consolidated text export of all 34 project overviews, tech stacks, and features in a single prompt-ready file.'.replace('all 34', `all ${COUNT}`));
 llmsTxtLines.push('- [Structured Projects Dataset (projects.json)](https://ducklin.de/projects.json): Complete machine-readable JSON array of all projects with metadata, tags, stacks, and links.');
 llmsTxtLines.push('- [Home Page Markdown (index.md)](https://ducklin.de/index.md): Markdown version of the ducklin.de homepage.');
 llmsTxtLines.push('- [GitHub Profile](https://github.com/aaronpostels): Open-source repositories and contributions.');
@@ -279,7 +303,12 @@ fs.writeFileSync(path.join(wellKnownDir, 'llms.txt'), llmsTxtLines.join('\n'), '
 const fullLines = [];
 fullLines.push('# Aaron Postels (Ducklin) - Complete Engineering Portfolio & Knowledge Base');
 fullLines.push('');
-fullLines.push('> Systems, Web & Graphics Engineer specializing in Rust, WebAssembly, WebGPU, React Three Fiber, physics simulations, 6-DoF Stewart platform kinematics, game engines, and full-stack software development.');
+fullLines.push(`> ${SUMMARY}`);
+fullLines.push('');
+fullLines.push('## Highlights');
+for (const h of HIGHLIGHTS) fullLines.push(`- ${h}`);
+fullLines.push('');
+fullLines.push(fs.readFileSync(path.join(repoRoot, 'profile.md'), 'utf8').replace(/^# .*\n/, '## Profile\n').replace(/^## /gm, '### ').replace('### Profile', '## Profile'));
 fullLines.push('');
 fullLines.push('## Contact & Links');
 fullLines.push('- Website: https://ducklin.de');
@@ -297,7 +326,7 @@ fullLines.push('- **Game Dev & AI**: Unity, Godot, Reinforcement Learning (ML-Ag
 fullLines.push('');
 fullLines.push('---');
 fullLines.push('');
-fullLines.push('## Detailed Project Catalog (34 Projects)');
+fullLines.push(`## Detailed Project Catalog (${COUNT} Projects)`);
 fullLines.push('');
 
 for (let i = 0; i < projectData.length; i++) {
@@ -344,7 +373,11 @@ const indexMdLines = [];
 indexMdLines.push('# Aaron Postels');
 indexMdLines.push('## Full-Stack, Systems & Game Developer');
 indexMdLines.push('');
-indexMdLines.push('> Hi, I\'m Aaron. I build unique digital and physical experiences, from complex web applications and 3D simulations to custom game engines and interactive installations.');
+indexMdLines.push(`> ${SUMMARY}`);
+indexMdLines.push('');
+indexMdLines.push('### Highlights');
+for (const h of HIGHLIGHTS) indexMdLines.push(`- ${h}`);
+for (const [label, url] of ABOUT_LINKS) indexMdLines.push(`- [${label}](${url})`);
 indexMdLines.push('');
 indexMdLines.push('### Contact & Socials');
 indexMdLines.push('- Website: [ducklin.de](https://ducklin.de)');
@@ -378,6 +411,31 @@ indexMdLines.push('- [llms-full.txt](https://ducklin.de/llms-full.txt) - Consoli
 indexMdLines.push('- [projects.json](https://ducklin.de/projects.json) - Full structured JSON dataset');
 
 fs.writeFileSync(path.join(repoRoot, 'index.md'), indexMdLines.join('\n'), 'utf8');
+
+// 8. Keep hand-written pages in sync with the project count (marked with data-count / "N projects" phrases)
+const patch = (file, edits) => {
+  const f = path.join(repoRoot, file);
+  let s = fs.readFileSync(f, 'utf8');
+  for (const [re, to] of edits) s = s.replace(re, to);
+  fs.writeFileSync(f, s, 'utf8');
+};
+patch('index.html', [
+  [/(<b class="nnum">)\d+(<\/b>)/g, `$1${COUNT}$2`],
+  [/\d+ (playable )?projects/g, `${COUNT} $1projects`],
+]);
+// Static project list for crawlers that do not run JavaScript. Hidden by CSS once JS is active, then removed by home.js.
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const staticList = projectData.filter(p => p.type !== 'skill')
+  .sort((a, b) => (b.relevance || 0) - (a.relevance || 0))
+  .map(p => {
+    const href = (p.docHref || p.href || '').replace(/^\.\//, '');
+    const demo = p.docHref && p.href ? ` <a href="${esc(p.href.replace(/^\.\//, ''))}">Live demo</a>.` : '';
+    const stack = p.techStack && p.techStack.length ? ` <small>${esc(p.techStack.slice(0, 4).join(', '))}</small>` : '';
+    return `      <li><a href="${esc(href)}">${esc(p.name)}</a>: ${esc(p.description)}${demo}${stack}</li>`;
+  }).join('\n');
+patch('index.html', [[/<!--projects:start-->[\s\S]*?<!--projects:end-->/, `<!--projects:start-->\n    <p>${esc(SUMMARY)}</p>\n    <ul>\n${staticList}\n    </ul>\n    <!--projects:end-->`]]);
+patch('profile.html',[[/(<b data-count>)\d+(<\/b>)/g, `$1${COUNT}$2`]]);
+patch('profile.md', [[/\b\d+ projects with case studies/g, `${COUNT} projects with case studies`]]);
 
 console.log('Successfully generated all agentic files:');
 console.log('  - /llms.txt & /.well-known/llms.txt');

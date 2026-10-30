@@ -7,13 +7,14 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<title>Aaron Postels - Full-Stack & Game Developer</title>
-<meta name="description" content="Explore the portfolio of Aaron Postels, a technologist and full-stack developer specializing in interactive web applications, game development, and unique hardware projects." />
+<title>Aaron Postels (Ducklin) - Game Engine & Full-Stack Developer, Digital Media M.Sc. Bremen</title>
+<meta name="description" content="Aaron Postels is an AI and game developer and Digital Media student at the University of Bremen (B.Sc. 1.15). Builds a Rust/WebGPU game engine, a digital twin for a Stewart motion platform, and 36 playable projects. Global Game Jam 2025 Bremen winner. CV, bachelor thesis and live demos." />
 <meta name="author" content="Aaron Postels" />
 <meta name="keywords" content="Aaron Postels, Ducklin, Portfolio, Full-Stack Developer, Game Developer, Creative Technologist, React, TypeScript, Three.js, Python, Unity, Godot" />
 <link rel="canonical" href="https://ducklin.de/" />
   <link rel="alternate" type="text/markdown" href="index.md" title="Homepage Markdown">
   <link rel="describedby" href="llms.txt" type="text/markdown" title="LLM Overview (llms.txt)">
+  <link rel="alternate" type="text/plain" href="llms-full.txt" title="Full portfolio context (llms-full.txt)">
   <link rel="alternate" type="application/json" href="projects.json" title="Projects Dataset (JSON)">
 <meta property="og:title" content="Aaron Postels - Developer Portfolio" />
 <meta property="og:description" content="A showcase of web, game, and hardware projects by Aaron Postels." />
@@ -26,9 +27,9 @@
 <meta name="twitter:description" content="A showcase of web, game, and hardware projects by Aaron Postels." />
 <meta name="twitter:image" content="https://ducklin.de/images/aaron_postels_profile_2x.webp" />
 <link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/home.css?v=20260925">
+<link rel="stylesheet" href="css/home.css?v=20261031">
 <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Person","name":"Aaron Postels","alternateName":"Ducklin","url":"https://ducklin.de","image":"https://ducklin.de/images/aaron_postels_profile_2x.webp","sameAs":["https://github.com/aaronpostels","https://www.linkedin.com/in/aaronpostels","https://www.instagram.com/apos.tels/"],"jobTitle":"Full-Stack & Creative Developer","description":"A developer passionate about creating unique digital and physical experiences, from complex web applications and games to interactive hardware installations.","knowsAbout":["Rust","WebAssembly","WebGPU","React","TypeScript","Three.js","React Three Fiber (R3F)","Inverse Kinematics","Physics Simulations","Stewart Motion Platforms","Game Engines","Entity Component Systems (ECS)","Python","Unity","Godot","C++"]}
+    {"@context":"https://schema.org","@type":"Person","name":"Aaron Postels","alternateName":"Ducklin","url":"https://ducklin.de","image":"https://ducklin.de/images/aaron_postels_profile_2x.webp","sameAs":["https://github.com/aaronpostels","https://www.linkedin.com/in/aaronpostels","https://www.instagram.com/apos.tels/"],"mainEntityOfPage":"https://ducklin.de/profile.html","jobTitle":"Full-Stack & Game Engine Developer","alumniOf":{"@type":"CollegeOrUniversity","name":"University of Bremen"},"award":"Global Game Jam 2025, first place at the Bremen site (Duckslayer)","description":"A developer passionate about creating unique digital and physical experiences, from complex web applications and games to interactive hardware installations.","knowsAbout":["Rust","WebAssembly","WebGPU","React","TypeScript","Three.js","React Three Fiber (R3F)","Inverse Kinematics","Physics Simulations","Stewart Motion Platforms","Game Engines","Entity Component Systems (ECS)","Python","Unity","Godot","C++"]}
     </script>
 </head>
 <body>
@@ -36,7 +37,8 @@
 <div class="wrap">
   <header class="top">
     <button class="face" type="button" aria-label="Open my photo and draw on it"><img src="images/aaron_postels_profile_2x.webp" alt=""></button>
-    <div><b>Aaron Postels</b><span>Full-Stack &amp; Game Developer</span></div>
+    <div><a class="me" href="profile.html"><b>Aaron Postels</b></a><span>Full-Stack &amp; Game Developer</span></div>
+    <nav class="seg" aria-label="Pages"><a href="index.html" class="on" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Projects</span></a><a href="profile.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>About</span></a></nav>
     <div class="icons"><span id="soc" style="display:contents"></span>
     </div>
   </header>
@@ -44,17 +46,17 @@
 <section class="hero" id="hero">
     <div class="body">
       <h1 class="sent">
-        <span class="ln hi"><span class="wd" style="--i:0">Hi,</span> <span class="wd" style="--i:1">I'm</span> <span class="wd" style="--i:2">Aaron.</span></span>
+        <span class="ln hi"><span class="wd" style="--i:0">Hi,</span> <span class="wd" style="--i:1">I'm</span> <span class="wd" style="--i:2"><a class="me" href="profile.html">Aaron.</a></span></span>
         <span class="ln"><span class="wd" style="--i:3">I</span> <span class="wd" style="--i:4">build</span> <span class="wd" style="--i:5"><button class="w" data-slot="what" aria-haspopup="true" aria-expanded="false"></button></span></span>
         <span class="ln"><span class="wd" style="--i:6">that</span> <span class="wd" style="--i:7">run</span> <span class="wd" style="--i:8"><button class="w" data-slot="where" aria-haspopup="true" aria-expanded="false"></button>.</span></span>
       </h1>
-      <p class="meta"><b class="nnum">35</b><span class="nlbl">projects</span></p>
+      <p class="meta"><b class="nnum">36</b><span class="nlbl">projects</span></p>
     </div>
     <a class="cue" href="#main">See the projects<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
 </section>
 <div class="dock" id="dock" aria-hidden="true"><div class="wrap">
   <p>I build <button class="w" data-slot="what" tabindex="-1"></button> that run <button class="w" data-slot="where" tabindex="-1"></button></p>
-  <span class="n"><b class="nnum">35</b> <span class="nlbl">projects</span></span>
+  <span class="n"><b class="nnum">36</b> <span class="nlbl">projects</span></span>
 </div></div>
 
 <main class="wrap" id="main">
@@ -63,19 +65,66 @@
     <section class="grp"><div class="gh"><h2>Live demos<sup id="dc"></sup></h2><p>Try them right in your browser. The ones that work on a phone come first.</p></div><div class="demos" id="demos"></div></section>
     <section class="grp"><div class="gh"><h2>More projects<sup id="mc"></sup></h2><p>Game design, hardware engineering, AI and more, each with a write-up.</p></div><div class="strip" id="strip"></div><div class="dots" id="dots" aria-hidden="true"></div></section>
   </div>
+  <section class="static-list" id="static-list" aria-label="All projects">
+    <h2>All projects</h2>
+    <p>See also the <a href="profile.html">profile</a>, <a href="cv/">CV</a> and <a href="llms-full.txt">full text version</a>.</p>
+    <!--projects:start-->
+    <p>Aaron Postels (also &quot;Ducklin&quot;) is a developer and Digital Media student at the University of Bremen, focused on AI and game development with a strong web background: B.Sc. finished with a 1.15, now in the M.Sc. Known for Artisan, a Rust/WebAssembly/WebGPU game engine, a real-time digital twin of a Stewart motion platform built for ProCue, and 36 projects: games, web demos and hardware builds.</p>
+    <ul>
+      <li><a href="case-studies/artisan.html">Artisan</a>: A web-first game engine built on an archetype ECS in Rust, compiled to WebAssembly and rendered with WebGPU, with a written paper and six live demos. <a href="projects/artisan-paper/demos.html">Live demo</a>. <small>Rust, WebAssembly, WebGPU, Rayon</small></li>
+      <li><a href="case-studies/tilequest.html">TileQuest</a>: A physical/digital co-op board game using RFID figures on a custom electronic grid. A 4th-semester university group project. <small>Raspberry Pi, Flask, React, ESP32</small></li>
+      <li><a href="case-studies/procue.html">ProCue Motion Platform</a>: A real-time 3D digital twin of a six-axis Stewart motion platform for driving simulators, built for ProCue alongside their website. <a href="projects/motion-platform/">Live demo</a>. <small>React, TypeScript, React Three Fiber (R3F), Three.js</small></li>
+      <li><a href="case-studies/island.html">Island</a>: An interactive 3D portfolio where you sail a ship between islands, featuring custom water shaders and spatial audio. <a href="projects/island/">Live demo</a>. <small>React Three Fiber (R3F), Three.js, GLSL (Shaders), Zustand</small></li>
+      <li><a href="case-studies/bachelor-thesis.html">Bachelor Thesis: Robot Goal Celebrations</a>: A workflow from video to autonomous goal celebrations on a humanoid football robot: Blender add-on, reinforcement learning in Isaac Lab, and integration into the B-Human system. Tested on the real Booster K1. <small>Blender (Python add-on), Isaac Lab, Reinforcement Learning (PPO), B-Human</small></li>
+      <li><a href="case-studies/duckslayer.html">Duckslayer</a>: A 3D trick-based soap-surfing game developed in a group for Global Game Jam 2025. Winner of the Bremen site. <small>Godot, GDScript</small></li>
+      <li><a href="case-studies/platform.html">Platform Kinematics</a>: A real-time 3D web simulator of a 3-axis Stewart platform, created as part of a collaborative hardware project for an electronic systems course. <a href="projects/platform/">Live demo</a>. <small>React, Three.js, React Three Fiber (R3F), Drei</small></li>
+      <li><a href="case-studies/veinmining.html">VeinMining</a>: A feature-rich Hytale mod that lets players mine connected ore veins and excavate custom patterns with full in-game GUI and chat configuration. <small>Java, Hytale Plugin API, Gradle</small></li>
+      <li><a href="case-studies/frogyou.html">FrogYou!</a>: A fast-paced 2D precision platformer featuring a ninja frog navigating mechanical hazards, with directional spore dashes, vine grappling, and online speedrun leaderboards. <small>Unity, C#, LootLocker, Universal Render Pipeline (URP)</small></li>
+      <li><a href="case-studies/flashdash.html">Flashdash</a>: A 15-meter interactive LED strip game of 1D ping-pong. A collaborative HfK project with a custom display and spatial audio. <small>ESP32, C++, WS2813B LEDs, 3D Printing</small></li>
+      <li><a href="case-studies/aurora.html">Aurora</a>: A modern, visual website editor architected as a monorepo for modularity and scalability. <small>Next.js, TypeScript, Turborepo, pnpm</small></li>
+      <li><a href="case-studies/webbox.html">Webbox</a>: A static site generator that creates full websites from a single config file using pre-built templates. <small>Nunjucks, Python, HTML, CSS</small></li>
+      <li><a href="case-studies/phaseup.html">Phase Up</a>: An installable phone app for the card game Phase 10 that generates fresh phase sets and keeps score, fully offline. <a href="projects/phaseup/">Live demo</a>. <small>JavaScript, HTML, CSS, PWA</small></li>
+      <li><a href="case-studies/modernized-rotary-telephone.html">Modernized Rotary Telephone</a>: A vintage rotary telephone retrofitted with modern electronics (Bluetooth, battery, custom ringer) to act as an interactive audio guide. <small>ESP32, C++</small></li>
+      <li><a href="case-studies/unity-ml-agents-parkour.html">Unity ML-Agents Parkour</a>: Trained AI agents using machine learning to navigate a parkour. A solo project for a first-semester HfK university course. <small>Unity, C#, ML-Agents (Python, TensorFlow)</small></li>
+      <li><a href="case-studies/toolbox.html">Toolbox</a>: A web app featuring a suite of polished utilities like a QR Code Generator and JSON Formatter. <a href="projects/toolbox/">Live demo</a>. <small>React 19, TypeScript, Tailwind CSS v4, Motion</small></li>
+      <li><a href="case-studies/unstable-diffusion.html">Unstable Diffusion</a>: A university group art project using Stable Diffusion to generate figures from abstract 3D depth maps. <small>Blender, Python, Stable Diffusion, Flux</small></li>
+      <li><a href="case-studies/huetogether.html">HueTogether</a>: A two-player co-op puzzle game developed as a group project for a university course, which won its project showcase. <small>Unreal Engine 5, Blueprints, C++</small></li>
+      <li><a href="case-studies/mi2-3d-integration.html">MI2 3D Integration</a>: A solo university project for Medieninformatik 2, involving modeling, animating, and compositing a 3D model into a live-action video. <small>Blender, Unreal Engine 5</small></li>
+      <li><a href="case-studies/eneida.html">Eneida</a>: An interactive portfolio simulating a retro sci-fi desktop with a CLI, window manager, and playable games with online leaderboards. <a href="projects/eneida/">Live demo</a>. <small>Vanilla JavaScript (ES6+), Firebase (Firestore), Canvas API</small></li>
+      <li><a href="case-studies/npc-engine.html">NPC Engine</a>: A local AI platform for creating stable, role-playing NPCs. Features custom LoRA training, advanced prompt engineering, and a bespoke Web UI. <small>Python, PyTorch, FastAPI, Transformers</small></li>
+      <li><a href="case-studies/combat.html">RPG Combat Minigame</a>: A tech demo for a turn-based combat system, prototyped for the TileQuest project, featuring skill-based minigames. <a href="projects/combat/">Live demo</a>. <small>Vanilla JavaScript, CSS Animations, DOM API</small></li>
+      <li><a href="case-studies/racing-ai.html">Reinforcement Learning Racer</a>: A self-driving racing agent trained via PPO. Features procedural track generation, 'GPS' spatial awareness optimization, and a custom 'Draw &amp; Drive' interface. <small>Python, Stable Baselines 3, Pygame, Gymnasium</small></li>
+      <li><a href="case-studies/useek.html">uSeek</a>: An award-winning university group project: a pirate-themed puzzle campaign using scroll-based animations and 3D models. <a href="projects/uSeek/">Live demo</a>. <small>GSAP (ScrollTrigger), Spline (3D), Lenis, Vanilla JavaScript</small></li>
+      <li><a href="case-studies/gunners-gauntlet.html">Gunners Gauntlet</a>: A pseudo-3D shooter built with a self-made rendering engine in Java. A solo project for a first-semester university course. <small>Java, Processing 4</small></li>
+      <li><a href="case-studies/ascii.html">ASCII Video Renderer</a>: A high-performance, real-time video-to-ASCII art converter using Web Workers to prevent UI blocking. <a href="projects/ASCII/">Live demo</a>. <small>JavaScript, Web Workers API, HTML5 Canvas API, HTML5 Video</small></li>
+      <li><a href="case-studies/neosliders.html">Neosliders</a>: A mobile game where you roll a ball along curves, changing gravity to navigate the course as fast as possible. <small>Unity, C#</small></li>
+      <li><a href="case-studies/lockpick.html">Lockpicking Minigame</a>: A tech demo for a timing-based lockpicking minigame, prototyped for the TileQuest project, with dynamic difficulty. <a href="projects/lockpick/">Live demo</a>. <small>Vanilla JavaScript, CSS3, requestAnimationFrame</small></li>
+      <li><a href="case-studies/birkenhirten.html">Birkenhirten</a>: A game about herding sheep and protecting them from wolves. A group project for a first-semester university course. <small>Java, Processing 4</small></li>
+      <li><a href="case-studies/scrub-gsap.html">Scrub GSAP Portfolio</a>: An HfK university project prototyping a portfolio with scroll-scrubbed animations for cinematic parallax effects. <a href="projects/scrub/">Live demo</a>. <small>GSAP (ScrollTrigger), Lenis, Vanilla JavaScript</small></li>
+      <li><a href="case-studies/particles.html">Particles Portfolio</a>: An HfK university project where scrolling dissolves 3D point cloud models into chaotic particle fields. <a href="projects/particles/">Live demo</a>. <small>Three.js, GSAP (ScrollTrigger), GLTFLoader</small></li>
+      <li><a href="case-studies/web-platformer.html">Web Platformer</a>: A web game to build and play speedrun platformer levels with highly tweakable player controls and competitive leaderboards. <small>Next.js, Turborepo, TypeScript, Docker</small></li>
+      <li><a href="case-studies/portal.html">Portal</a>: A UI demo using transparent video (HEVC with alpha channel), conceptualized for the TileQuest project's figure scanning animation. <a href="projects/portal/">Live demo</a>. <small>HTML5 Video API, JavaScript, HEVC (H.265), WebM</small></li>
+      <li><a href="case-studies/panzer.html">Panzer</a>: A real-time 2D multiplayer top-down tank game with online lobbies and a map builder, also adapted as a Discord Activity. <small>React, TypeScript, Tailwind CSS, Socket.io</small></li>
+      <li><a href="case-studies/scribes.html">Scribes</a>: A minimalist documentation site generator for Markdown/MDX with an extensive, hot-swappable theming system. <small>Vite, React, TypeScript, Tailwind CSS</small></li>
+      <li><a href="case-studies/textfall.html">Text Fall Animation</a>: A kinetic typography experiment using the Canvas API to simulate text falling into place with physics-like motion. <a href="projects/textfall/">Live demo</a>. <small>HTML5 Canvas API, Vanilla JavaScript, requestAnimationFrame</small></li>
+    </ul>
+    <!--projects:end-->
+  </section>
   <section class="res" id="res" hidden><div class="in">
-    <div class="rh"><p><b class="nnum">0</b> <span class="nlbl">projects</span></p><button type="button" id="reset">Clear filter</button></div>
+    <div class="rh"><p><b class="nnum">36</b> <span class="nlbl">projects</span></p><button type="button" id="reset">Clear filter</button></div>
     <div class="rlist" id="rl"></div>
   </div></section>
 </main>
 
 <footer class="foot"><div class="wrap">
   <button class="face" type="button" aria-label="Open my photo and draw on it"><img src="images/aaron_postels_profile_2x.webp" alt=""></button>
-  <div class="who"><b>Aaron Postels</b><span>Full-Stack &amp; Game Developer</span></div>
+  <div class="who"><a class="me" href="profile.html"><b>Aaron Postels</b></a><span>Full-Stack &amp; Game Developer</span></div>
+  <nav class="more" aria-label="About and machine-readable"><a href="profile.html">Profile</a><a href="cv/">CV</a><a href="docs/bachelor-thesis-aaron-postels.pdf" target="_blank" rel="noopener">Bachelor thesis</a></nav>
   <nav class="soc" id="fsoc" aria-label="Social profiles"></nav>
   <div class="legal"><span>&copy; 2026 Ducklin</span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
 </div></footer>
 
+<div class="pcur" id="pcur" aria-hidden="true"><div class="pc"><img src="images/aaron_postels_profile_2x.webp" alt=""></div></div>
 <div class="scrim" id="scrim"></div>
 <div class="sheet" id="sheet" role="menu"></div>
 
@@ -87,7 +136,8 @@
   </div>
 </dialog>
 <button class="totop" id="totop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
-<script src="js/projects.js?v=20260925e"></script>
-<script src="js/home.js?v=20260925e"></script>
+<script src="js/projects.js?v=20261031"></script>
+<script src="js/doodle.js?v=20261031"></script>
+<script src="js/home.js?v=20261031"></script>
 </body>
 </html>

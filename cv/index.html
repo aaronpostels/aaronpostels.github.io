@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV - Aaron Postels</title>
+<link rel="canonical" href="https://ducklin.de/cv/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<style>
+@font-face { font-family: "Bricolage Grotesque"; src: url("../fonts/bricolage-grotesque.woff2") format("woff2"); font-weight: 200 800; }
+@page { size: A4; margin: 0; }
+:root { --ink: #0a0a0a; --mu: #4d4d4d; --dim: #737373; --ln: #e7e7e5; --sf: #f5f5f4; --ac: #1d6b47; --acbg: #e6f2eb; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; background: #e9e9e7; font: 9.4pt/1.45 "Bricolage Grotesque", system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, p, ul, ol, dl { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+
+.page { width: 210mm; height: 297mm; margin: 0 auto; background: #fff; display: grid; grid-template-columns: 1fr 62mm; overflow: hidden; }
+@media screen { .page { margin: 24px auto; box-shadow: 0 6px 30px rgba(0,0,0,.12); } }
+
+/* ---------- main column ---------- */
+.main { padding: 16mm 11mm 14mm 14mm; }
+.top { display: flex; gap: 6mm; align-items: center; }
+.photo { width: 27mm; height: 27mm; flex: none; border-radius: 50%; object-fit: cover; }
+h1 { font-size: 29pt; line-height: 1; letter-spacing: -.015em; word-spacing: .08em; font-weight: 700; }
+.role { margin-top: 2.2mm; font-size: 10.5pt; font-weight: 600; color: var(--ac); }
+.role span { color: var(--mu); font-weight: 400; }
+.bio { margin-top: 5mm; font-size: 10.2pt; line-height: 1.5; max-width: 118mm; }
+
+h2 { margin: 6mm 0 3mm; font-size: 8pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ac); display: flex; align-items: center; gap: 3mm; }
+h2::after { content: ""; flex: 1; height: 1px; background: var(--ln); }
+
+.tl { display: grid; gap: 2.4mm; }
+.tl li { display: grid; grid-template-columns: 27mm 1fr; gap: 0 4mm; }
+.tl time { color: var(--dim); font-size: 8.2pt; padding-top: .35mm; font-variant-numeric: tabular-nums; }
+.tl h3 { font-size: 10pt; font-weight: 600; letter-spacing: -.01em; }
+.tl p { color: var(--mu); }
+.badge { margin-left: 1.5mm; padding: .4mm 2mm; border-radius: 99px; background: var(--acbg); color: #0f4a30; font-size: 7.8pt; font-weight: 600; vertical-align: .3mm; }
+
+.proj { display: grid; gap: 2.4mm; }
+.proj li { display: grid; grid-template-columns: 27mm 1fr; gap: 0 4mm; }
+.proj time { color: var(--dim); font-size: 8.2pt; padding-top: .35mm; }
+.proj h3 { font-size: 10pt; font-weight: 600; }
+.proj p { color: var(--mu); }
+
+/* ---------- side column ---------- */
+.side { background: var(--sf); padding: 16mm 9mm 14mm 8mm; }
+.side h2 { margin-top: 0; }
+.side h2:not(:first-child) { margin-top: 6mm; }
+.side h2::after { background: #dcdcd9; }
+.contact { display: grid; gap: 2.2mm; font-size: 8.8pt; }
+.contact small { display: block; font-size: 7pt; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); margin-bottom: .2mm; }
+.contact a { color: var(--ink); }
+.skills { display: grid; gap: 3.4mm; }
+.skills dt { font-weight: 600; font-size: 9.2pt; }
+.skills dd { margin: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 1.3mm; margin-top: 1.2mm; }
+.chips li { padding: .5mm 2.1mm; border-radius: 99px; background: #fff; font-size: 7.9pt; font-weight: 500; }
+.lang li { display: flex; justify-content: space-between; }
+.lang span { color: var(--mu); }
+.proj h3 a { color: inherit; text-decoration: none; border-bottom: .2mm solid currentColor; }
+</style>
+</head>
+<body>
+<div class="page">
+  <main class="main">
+    <header class="top">
+      <img class="photo" src="../images/aaron_postels_profile_2x.webp" alt="">
+      <div>
+        <h1>Aaron Postels</h1>
+        <p class="role">M.Sc. Digital Media <span>· University of Bremen</span></p>
+      </div>
+    </header>
+    <p class="bio">Digital Media student at the University of Bremen. My focus is AI and game development, with a strong web background. I take projects from first idea to finished product, no matter how wild the idea.</p>
+
+    <h2>Education</h2>
+    <ol class="tl">
+      <li><time>since 10/2026</time><div><h3>M.Sc. Digital Media</h3><p>University of Bremen</p></div></li>
+      <li><time>10/2023 – 09/2026</time><div><h3>B.Sc. Digital Media <span class="badge">Grade 1.15</span></h3><p>University of Bremen. Thesis: autonomous goal celebrations for a humanoid football robot.</p></div></li>
+      <li><time>10/2025 – 03/2026</time><div><h3>Semester abroad</h3><p>ISEP, Instituto Superior de Engenharia do Porto</p></div></li>
+      <li><time>08/2014 – 06/2023</time><div><h3>Abitur</h3><p>St.-Viti-Gymnasium Zeven</p></div></li>
+    </ol>
+
+    <h2>Selected projects</h2>
+    <ul class="proj">
+      <li><time>2026</time><div><h3><a href="https://ducklin.de/case-studies/artisan.html">Artisan</a></h3><p>General-purpose web game engine in Rust and WebGPU. Fastest in most benchmarks, with native tooling for AI agents for very fast AI-driven development.</p></div></li>
+      <li><time>2026</time><div><h3><a href="https://ducklin.de/case-studies/procue.html">ProCue Motion Platform</a></h3><p>Real-time digital twin of a six-axis Stewart platform, built for a client with React Three Fiber.</p></div></li>
+      <li><time>2026</time><div><h3><a href="https://ducklin.de/case-studies/bachelor-thesis.html">Bachelor thesis</a></h3><p>Pipeline from video to goal celebration on the humanoid robot Booster K1: Blender add-on, reinforcement learning in Isaac Lab, tested on the real robot.</p></div></li>
+      <li><time>2025</time><div><h3><a href="https://ducklin.de/case-studies/duckslayer.html">Duckslayer</a></h3><p>3D game in Godot. Global Game Jam 2025, first place at the Bremen site.</p></div></li>
+      <li><time>2025</time><div><h3><a href="https://ducklin.de/case-studies/tilequest.html">TileQuest</a></h3><p>Cooperative board game with a mobile web app for rules and state. Team of four.</p></div></li>
+    </ul>
+
+    <h2>Experience</h2>
+    <ol class="tl">
+      <li><time>09/2024 – now</time><div><h3>Student Tutor</h3><p>University of Bremen: Foundations of Programming, Foundations of Media Informatics 2 (twice), Uni-Start Programming, Choreobotix</p></div></li>
+      <li><time>04/2024 – 02/2025</time><div><h3>Student Tutor</h3><p>HfK Bremen, two terms</p></div></li>
+    </ol>
+  </main>
+
+  <aside class="side">
+    <h2>Contact</h2>
+    <ul class="contact">
+      <li><small>Email</small><a id="email" href="mailto:postels.aaron@gmail.com">postels.aaron@gmail.com</a></li>
+      <li id="phone-row" hidden><small>Phone</small><span id="phone"></span></li>
+      <li><small>Web</small><a href="https://ducklin.de">ducklin.de</a></li>
+      <li><small>GitHub</small><a href="https://github.com/aaronpostels">aaronpostels</a></li>
+      <li><small>LinkedIn</small><a href="https://www.linkedin.com/in/aaronpostels">in/aaronpostels</a></li>
+    </ul>
+
+    <h2>Skills</h2>
+    <dl class="skills">
+      <div ><dt>AI</dt><dd><ul class="chips"><li>PyTorch</li><li>Stable Baselines 3</li><li>ML-Agents</li><li>Local LLMs</li><li>Python</li></ul></dd></div>
+      <div ><dt>Game development</dt><dd><ul class="chips"><li>Unity</li><li>Godot</li><li>Unreal Engine 5</li><li>C#</li><li>Rust</li></ul></dd></div>
+      <div ><dt>Web development</dt><dd><ul class="chips"><li>TypeScript</li><li>React</li><li>Three.js</li><li>WebGPU</li><li>Next.js</li></ul></dd></div>
+      <div><dt>Robotics &amp; hardware</dt><dd><ul class="chips"><li>Isaac Lab</li><li>ESP32</li><li>Arduino</li><li>C++</li></ul></dd></div>
+      <div><dt>3D &amp; design</dt><dd><ul class="chips"><li>Blender</li><li>Figma</li><li>Fusion</li><li>Photoshop</li></ul></dd></div>
+    </dl>
+
+    <h2>Languages</h2>
+    <ul class="lang"><li>German <span>Native</span></li><li>English <span>C1</span></li></ul>
+  </aside>
+</div>
+<script>
+  // optional contact overrides for the build: ?phone=+49...&email=name@example.com
+  const q = new URLSearchParams(location.search);
+  if (q.get('email')) { const a = document.getElementById('email'); a.textContent = q.get('email'); a.href = 'mailto:' + q.get('email'); }
+  if (q.get('phone')) { document.getElementById('phone').textContent = q.get('phone'); document.getElementById('phone-row').hidden = false; }
+  // scale the fixed A4 page down on narrow screens
+  const fit = () => { const pg = document.querySelector(".page"), v = document.documentElement.clientWidth; pg.style.zoom = ""; pg.style.zoom = v < pg.offsetWidth ? v / pg.offsetWidth : ""; };
+  addEventListener("resize", fit); fit();
+</script>
+</body>
+</html>

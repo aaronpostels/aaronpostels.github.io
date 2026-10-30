@@ -37,6 +37,7 @@ const ICONS = {
 
 { // page script (own block: its projects const shadows the global list)
 const {person:P, featured, projects, archive} = DATA, I = ICONS;
+document.getElementById('static-list')?.remove(); // crawler fallback, replaced by the rendered sections below
 const mob = p => p.devices.includes('mobile');
 const demos = [...projects.filter(mob), ...projects.filter(p => !mob(p))];
 const all = [...featured, ...demos, ...archive];
@@ -179,7 +180,7 @@ if (!reduce && matchMedia('(pointer:fine)').matches) {
   }, { passive: false });
 
   // magnet: header icons, the two sentence words and "See the projects" lean slightly toward a close pointer
-  const mags = [...document.querySelectorAll('.top .ib, .w, .cue, .totop')].map(el => ({ el, x: 0, y: 0, max: el.matches('.ib') ? 4 : 6 }));
+  const mags = [...document.querySelectorAll('.top .ib, .foot .soc a, .w, .cue, .totop, a.me')].map(el => ({ el, x: 0, y: 0, max: el.matches('.ib') ? 4 : 6 }));
   let mf = 0;
   addEventListener('pointermove', e => {
     if (mf) return;
@@ -199,65 +200,16 @@ if (!reduce && matchMedia('(pointer:fine)').matches) {
     });
   }, { passive: true });
 }
-/* ---------- draw on my photo ---------- */
-{
-  const cv = document.getElementById('ddc'), g = cv.getContext('2d'), strokes = [];
-  const COLORS = [['#0a0a0a', 'Black'], ['#ffffff', 'White'], ['#e5484d', 'Red'], ['#f5b301', 'Yellow'], ['#1d6b47', 'Green'], ['#2f6fed', 'Blue']];
-  let color = COLORS[2][0], size = 10, live = null, frame = 0;
-  ddsw.innerHTML = COLORS.map(([c, n]) => `<button type="button" role="radio" aria-checked="${c === color}" aria-label="${n}" data-c="${c}" style="--c:${c}"></button>`).join('');
-  const brush = () => {
-    const d = size, s = Math.ceil(d) + 4, h = s / 2;
-    ddsz.style.setProperty('--d', d + 'px'); ddsz.style.setProperty('--x', (3 + (d - 6) / 22 * 93) + 'px'); ddsz.style.setProperty('--c', color);
-    ddsz.setAttribute('aria-valuenow', Math.round(d));
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}"><circle cx="${h}" cy="${h}" r="${d / 2}" fill="${color}" fill-opacity=".35" stroke="#fff" stroke-width="1.5"/><circle cx="${h}" cy="${h}" r="${d / 2 + .75}" fill="none" stroke="#000" stroke-opacity=".45"/></svg>`;
-    cv.style.cursor = `url("data:image/svg+xml,${encodeURIComponent(svg)}") ${h} ${h}, crosshair`;
-  };
-  ddsw.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; color = b.dataset.c; ddsw.querySelectorAll('button').forEach(x => x.setAttribute('aria-checked', x === b)); brush(); });
-  // cone slider: the knob sits where the cone is exactly as thick as the brush
-  const setSize = e => { const r = ddsz.getBoundingClientRect(), t = Math.max(0, Math.min(1, (e.clientX - r.left - 3) / 93)); size = 6 + t * 22; brush(); };
-  ddsz.addEventListener('pointerdown', e => { try { ddsz.setPointerCapture(e.pointerId); } catch (err) {} setSize(e); ddsz.addEventListener('pointermove', setSize); });
-  const endSize = () => ddsz.removeEventListener('pointermove', setSize);
-  ddsz.addEventListener('pointerup', endSize); ddsz.addEventListener('pointercancel', endSize);
-  ddsz.addEventListener('keydown', e => { const k = { ArrowLeft: -2, ArrowDown: -2, ArrowRight: 2, ArrowUp: 2 }[e.key]; if (!k) return; e.preventDefault(); size = Math.max(6, Math.min(28, Math.round(size) + k)); brush(); });
-  brush();
-  // points are stored relative to the canvas width, so drawings survive a resize
-  const line = s => {
-    const W = cv.width, p = s.p;
-    g.strokeStyle = s.c; g.lineWidth = s.w * W; g.lineCap = g.lineJoin = 'round';
-    g.beginPath(); g.moveTo(p[0][0] * W, p[0][1] * W);
-    if (p.length === 1) g.lineTo(p[0][0] * W + .1, p[0][1] * W);
-    for (let i = 1; i < p.length; i++) g.lineTo(p[i][0] * W, p[i][1] * W);
-    g.stroke();
-  };
-  const redraw = () => { frame = 0; g.clearRect(0, 0, cv.width, cv.height); strokes.forEach(line); if (live) line(live); };
-  const fit = () => { const r = cv.getBoundingClientRect(), d = devicePixelRatio || 1; cv.width = Math.round(r.width * d); cv.height = Math.round(r.height * d); redraw(); };
-  const pt = e => { const r = cv.getBoundingClientRect(); return [(e.clientX - r.left) / r.width, (e.clientY - r.top) / r.width]; };
-  cv.addEventListener('pointerdown', e => { cv.setPointerCapture(e.pointerId); live = { c: color, w: size / cv.getBoundingClientRect().width, p: [pt(e)] }; redraw(); });
-  cv.addEventListener('pointermove', e => { if (!live) return; const cs = e.getCoalescedEvents?.(); for (const c of cs?.length ? cs : [e]) live.p.push(pt(c)); if (!frame) frame = requestAnimationFrame(redraw); });
-  const end = () => { if (live) { strokes.push(live); live = null; redraw(); paintFaces(); } };
-  cv.addEventListener('pointerup', end); cv.addEventListener('pointercancel', end);
-  const shut = () => {
-    if (!doodle.open || doodle.classList.contains('closing')) return;
-    doodle.classList.add('closing');
-    setTimeout(() => { doodle.classList.remove('closing'); doodle.close(); }, reduce ? 0 : 280);
-  };
-  ddx.onclick = shut;
-  doodle.addEventListener('click', e => { if (e.target === doodle) shut(); });
-  doodle.addEventListener('cancel', e => { e.preventDefault(); shut(); });
-  // the painted photo stays on the avatars until the page is left
-  const paintFaces = () => {
-    const url = strokes.length ? cv.toDataURL() : '';
-    document.querySelectorAll('.face').forEach(f => {
-      let ink = f.querySelector('.ink');
-      if (!url) return ink?.remove();
-      if (!ink) { ink = document.createElement('img'); ink.className = 'ink'; ink.alt = ''; f.append(ink); }
-      ink.src = url;
-    });
-  };
-  document.querySelectorAll('.face').forEach(b => b.addEventListener('click', () => { doodle.showModal(); fit(); }));
-  addEventListener('resize', () => { if (doodle.open) fit(); });
+/* ---------- photo cursor over the name links ---------- */
+if (matchMedia('(pointer:fine)').matches) {
+  let px = 0, py = 0, pf = 0;
+  const place = () => { pf = 0; pcur.style.transform = 'translate(' + px + 'px,' + py + 'px)'; };
+  addEventListener('pointermove', e => { px = e.clientX; py = e.clientY; if (!pf) pf = requestAnimationFrame(place); }, { passive: true });
+  document.querySelectorAll('a.me').forEach(a => {
+    a.addEventListener('pointerenter', e => { px = e.clientX; py = e.clientY; place(); pcur.classList.add('on'); });
+    a.addEventListener('pointerleave', () => pcur.classList.remove('on'));
+  });
 }
-
 // back-to-top button: shown once the visitor is well past the first screen
 const upd = () => totop.classList.toggle('on', scrollY > innerHeight * 1.2);
 let uf = 0; addEventListener('scroll', () => { if (!uf) uf = requestAnimationFrame(() => { uf = 0; upd(); }); }, { passive: true }); upd();
