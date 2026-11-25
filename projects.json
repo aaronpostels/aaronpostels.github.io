@@ -25,7 +25,7 @@
     "liveDemoUrl": "https://ducklin.de/projects/artisan-paper/demos.html",
     "caseStudyHtmlUrl": "https://ducklin.de/case-studies/artisan.html",
     "caseStudyMarkdownUrl": "https://ducklin.de/case-studies/artisan.md",
-    "githubUrl": "https://github.com/aaronpostels/Artisan-Publish",
+    "githubUrl": null,
     "overview": "Artisan explores how far data-heavy games and real-time simulations can be pushed in the browser when they are designed for modern web technology from the start, instead of being exported to the web as an afterthought. It combines a data-oriented archetype Entity Component System written in Rust, compiled to WebAssembly with SIMD and multi-threaded Rayon workers, with a WebGPU renderer.\n\nA planetary civilization simulation serves as the main use case, and targeted benchmarks measure the core data paths. The full write-up is published as a paper (in German) alongside the demos.",
     "features": [
       "Archetype ECS with contiguous columnar component storage for cache-friendly, vectorized iteration and O(1) entity removal.",

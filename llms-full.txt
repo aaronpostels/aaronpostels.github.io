@@ -101,7 +101,6 @@ Main focus (strongest first): AI, game development, web development. Also: robot
   - [Case Study (HTML)](https://ducklin.de/case-studies/artisan.html)
   - [Case Study (Markdown)](https://ducklin.de/case-studies/artisan.md)
   - [Read the Paper (German)](https://ducklin.de/projects/artisan-paper/)
-  - [Source on GitHub](https://github.com/aaronpostels/Artisan-Publish)
 
 #### Overview
 Artisan explores how far data-heavy games and real-time simulations can be pushed in the browser when they are designed for modern web technology from the start, instead of being exported to the web as an afterthought. It combines a data-oriented archetype Entity Component System written in Rust, compiled to WebAssembly with SIMD and multi-threaded Rayon workers, with a WebGPU renderer.

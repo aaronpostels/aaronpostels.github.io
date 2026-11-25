@@ -8,7 +8,6 @@
 - [Case Study (HTML)](https://ducklin.de/case-studies/artisan.html)
 - [Case Study (Markdown)](https://ducklin.de/case-studies/artisan.md)
 - [Read the Paper (German)](https://ducklin.de/projects/artisan-paper/)
-- [Source on GitHub](https://github.com/aaronpostels/Artisan-Publish)
 
 ## Project Overview
 
