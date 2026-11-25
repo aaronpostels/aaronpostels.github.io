@@ -13,7 +13,7 @@
 
 ## Project Overview
 
-The vision for Duck Slayer was to create a high-energy arcade game inspired by classics like _Tony Hawk's Pro Skater_, but set within a chaotic and playful bathtub environment. Developed in 48 hours as a group project for Global Game Jam 2025, the core idea was to transform a simple "clean-'em-up" objective into an extreme sports challenge, where players must chain together stunts, grinds, and bounces to build combos and master the level. The game won First Place at its Global Game Jam site in Bremen.
+The vision for Duck Slayer was to create a high-energy arcade game inspired by classics like Tony Hawk's Pro Skater, but set within a chaotic and playful bathtub environment. Developed in 48 hours as a group project for Global Game Jam 2025, the core idea was to transform a simple "clean-'em-up" objective into an extreme sports challenge, where players must chain together stunts, grinds, and bounces to build combos and master the level. The game won First Place at its Global Game Jam site in Bremen.
 
 ## Tech Stack
 
