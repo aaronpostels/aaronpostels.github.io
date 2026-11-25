@@ -44,7 +44,7 @@ This file serves as the canonical table of contents for AI agents and LLMs. Belo
 ## Project Archive
 
 - [TileQuest](https://ducklin.de/case-studies/tilequest.md): A physical/digital co-op board game using RFID figures on a custom electronic grid. A 4th-semester university group project.
-- [VeinMining](https://ducklin.de/case-studies/veinmining.md): A feature-rich Hytale mod that lets players mine connected ore veins and excavate custom patterns with full in-game GUI and chat configuration.
+- [VeinMining](https://ducklin.de/case-studies/veinmining.md): A Hytale mod that lets players mine whole connected ore veins and dig out patterns in one go.
 - [Bachelor Thesis: Robot Goal Celebrations](https://ducklin.de/case-studies/bachelor-thesis.md): A workflow from video to autonomous goal celebrations on a humanoid football robot: Blender add-on, reinforcement learning in Isaac Lab, and integration into the B-Human system. Tested on the real Booster K1.
 - [Flashdash](https://ducklin.de/case-studies/flashdash.md): A 15-meter interactive LED strip game of 1D ping-pong. A collaborative HfK project with a custom display and spatial audio.
 - [Aurora](https://ducklin.de/case-studies/aurora.md): A modern, visual website editor architected as a monorepo for modularity and scalability.
@@ -82,7 +82,7 @@ This file serves as the canonical table of contents for AI agents and LLMs. Belo
 - [Text Fall Animation](https://ducklin.de/case-studies/textfall.md) [HTML5 Canvas API, Vanilla JavaScript, requestAnimationFrame]: A kinetic typography experiment using the Canvas API to simulate text falling into place with physics-like motion.
 - [TileQuest](https://ducklin.de/case-studies/tilequest.md) [Raspberry Pi, Flask, React, ESP32]: A physical/digital co-op board game using RFID figures on a custom electronic grid. A 4th-semester university group project.
 - [Duckslayer](https://ducklin.de/case-studies/duckslayer.md) [Godot, GDScript]: A 3D trick-based soap-surfing game developed in a group for Global Game Jam 2025. Winner of the Bremen site.
-- [VeinMining](https://ducklin.de/case-studies/veinmining.md) [Java, Hytale Plugin API, Gradle]: A feature-rich Hytale mod that lets players mine connected ore veins and excavate custom patterns with full in-game GUI and chat configuration.
+- [VeinMining](https://ducklin.de/case-studies/veinmining.md) [Java, Hytale Plugin API, Gradle]: A Hytale mod that lets players mine whole connected ore veins and dig out patterns in one go.
 - [Bachelor Thesis: Robot Goal Celebrations](https://ducklin.de/case-studies/bachelor-thesis.md) [Blender (Python add-on), Isaac Lab, Reinforcement Learning (PPO), B-Human]: A workflow from video to autonomous goal celebrations on a humanoid football robot: Blender add-on, reinforcement learning in Isaac Lab, and integration into the B-Human system. Tested on the real Booster K1.
 - [FrogYou!](https://ducklin.de/case-studies/frogyou.md) [Unity, C#, Google Apps Script, Universal Render Pipeline (URP)]: A fast-paced 2D precision platformer featuring a ninja frog navigating mechanical hazards, with directional spore dashes, vine grappling, and online speedrun leaderboards.
 - [Flashdash](https://ducklin.de/case-studies/flashdash.md) [ESP32, C++, WS2813B LEDs, 3D Printing]: A 15-meter interactive LED strip game of 1D ping-pong. A collaborative HfK project with a custom display and spatial audio.

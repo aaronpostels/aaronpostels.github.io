@@ -45,7 +45,7 @@
 
 ### Project Archive
 - **[TileQuest](https://ducklin.de/case-studies/tilequest.md)**: A physical/digital co-op board game using RFID figures on a custom electronic grid. A 4th-semester university group project.
-- **[VeinMining](https://ducklin.de/case-studies/veinmining.md)**: A feature-rich Hytale mod that lets players mine connected ore veins and excavate custom patterns with full in-game GUI and chat configuration.
+- **[VeinMining](https://ducklin.de/case-studies/veinmining.md)**: A Hytale mod that lets players mine whole connected ore veins and dig out patterns in one go.
 - **[Bachelor Thesis: Robot Goal Celebrations](https://ducklin.de/case-studies/bachelor-thesis.md)**: A workflow from video to autonomous goal celebrations on a humanoid football robot: Blender add-on, reinforcement learning in Isaac Lab, and integration into the B-Human system. Tested on the real Booster K1.
 - **[Flashdash](https://ducklin.de/case-studies/flashdash.md)**: A 15-meter interactive LED strip game of 1D ping-pong. A collaborative HfK project with a custom display and spatial audio.
 - **[Aurora](https://ducklin.de/case-studies/aurora.md)**: A modern, visual website editor architected as a monorepo for modularity and scalability.

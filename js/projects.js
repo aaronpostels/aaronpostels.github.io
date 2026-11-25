@@ -256,7 +256,7 @@ const projects = [
   {
     name: "VeinMining",
     description:
-      "A feature-rich Hytale mod that lets players mine connected ore veins and excavate custom patterns with full in-game GUI and chat configuration.",
+      "A Hytale mod that lets players mine whole connected ore veins and dig out patterns in one go.",
     image: "./images/veinmining_thumbnail.webp",
     status: "Completed",
     docHref: "./case-studies/veinmining.html",
