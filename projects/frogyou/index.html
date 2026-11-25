@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Play FrogYou! | ducklin.de</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #unity-container {
+        position: relative;
+        width: min(100vw, calc(100vh * 16 / 9));
+        height: min(100vh, calc(100vw * 9 / 16));
+        background: #000;
+      }
+      #unity-canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #000;
+      }
+      #unity-loading-bar {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+        transition: opacity 0.35s ease;
+        z-index: 10;
+      }
+      #start {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        padding: 16px;
+        color: #fff;
+        font: 15px/1.5 system-ui, sans-serif;
+        text-align: center;
+        background: #000;
+        z-index: 20;
+      }
+      #start p { margin: 0; max-width: 52ch; }
+      #start a { color: #8fe388; }
+      #start button, #fullscreen {
+        font: 700 16px system-ui, sans-serif;
+        padding: 10px 28px;
+        color: #000;
+        background: #8fe388;
+        border: 0;
+        cursor: pointer;
+      }
+      #fullscreen { position: absolute; left: 50%; bottom: 2px; transform: translateX(-50%); padding: 2px 12px; font-size: 12px; z-index: 5; display: none; }
+      #ducklin-logo {
+        width: min(36%, 320px);
+        height: auto;
+        margin-bottom: 24px;
+        user-select: none;
+        pointer-events: none;
+      }
+      #unity-progress-bar-empty {
+        width: min(40%, 300px);
+        height: 14px;
+        border: 2px solid #fff;
+        background: #111;
+      }
+      #unity-progress-bar-full {
+        width: 0%;
+        height: 100%;
+        background: #fff;
+        transition: width 0.1s linear;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="unity-container">
+      <canvas id="unity-canvas" width="1920" height="1080" tabindex="-1"></canvas>
+      <div id="start">
+        <button type="button" id="play">Play FrogYou!</button>
+        <p>Keyboard and mouse needed. WASD move, Space jump, left click Spore Blast, right click Vine Grapple, R restart, P / Tab pause. Download about 30 MB.</p>
+        <p>The online leaderboard runs on Google Apps Script. After you start, your IP address, a random player ID, your player name, times and ghost runs are sent to Google. Names are public, so do not use your real name. <a href="../../privacy.html#frogyou">Privacy</a></p>
+        <p><a href="../../case-studies/frogyou.html">Back to case study</a></p>
+      </div>
+      <button type="button" id="fullscreen">Fullscreen</button>
+      <div id="unity-loading-bar">
+        <img id="ducklin-logo" src="logo.png" alt="Ducklin">
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/Build_WebGL.loader.js";
+      var config = {
+        arguments: [],
+        dataUrl: buildUrl + "/Build_WebGL.data.unityweb",
+        frameworkUrl: buildUrl + "/Build_WebGL.framework.js.unityweb",
+        codeUrl: buildUrl + "/Build_WebGL.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Ducklin",
+        productName: "FrogYou!",
+        productVersion: "1.0",
+        matchWebGLToCanvasSize: false,
+      };
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          document.querySelector("#unity-progress-bar-full").style.width = (100 * progress) + "%";
+        }).then((unityInstance) => {
+          var fs = document.querySelector("#fullscreen");
+          fs.style.display = "block";
+          fs.onclick = () => { unityInstance.SetFullscreen(1); canvas.focus(); };
+          loadingBar.style.opacity = "0";
+          setTimeout(() => { loadingBar.style.display = "none"; }, 350);
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      // Desktop only: phones and tablets never load the game.
+      if (matchMedia("(hover: none) and (pointer: coarse)").matches) {
+        document.querySelector("#play").remove();
+        document.querySelector("#start p").textContent = "FrogYou! is playable on desktop only. It needs keyboard and mouse.";
+        document.querySelector("#start p + p").remove();
+      } else document.querySelector("#play").onclick = () => {
+        document.querySelector("#start").remove();
+        document.body.appendChild(script);
+      };
+    </script>
+  </body>
+</html>

@@ -40,13 +40,13 @@
 - **[Particles Portfolio](https://ducklin.de/projects/particles/)** ([Case Study](https://ducklin.de/case-studies/particles.md)): An HfK university project where scrolling dissolves 3D point cloud models into chaotic particle fields.
 - **[Portal](https://ducklin.de/projects/portal/)** ([Case Study](https://ducklin.de/case-studies/portal.md)): A UI demo using transparent video (HEVC with alpha channel), conceptualized for the TileQuest project's figure scanning animation.
 - **[Text Fall Animation](https://ducklin.de/projects/textfall/)** ([Case Study](https://ducklin.de/case-studies/textfall.md)): A kinetic typography experiment using the Canvas API to simulate text falling into place with physics-like motion.
+- **[Duckslayer](https://ducklin.de/projects/duckslayer/)** ([Case Study](https://ducklin.de/case-studies/duckslayer.md)): A 3D trick-based soap-surfing game developed in a group for Global Game Jam 2025. Winner of the Bremen site.
+- **[FrogYou!](https://ducklin.de/projects/frogyou/)** ([Case Study](https://ducklin.de/case-studies/frogyou.md)): A fast-paced 2D precision platformer featuring a ninja frog navigating mechanical hazards, with directional spore dashes, vine grappling, and online speedrun leaderboards.
 
 ### Project Archive
 - **[TileQuest](https://ducklin.de/case-studies/tilequest.md)**: A physical/digital co-op board game using RFID figures on a custom electronic grid. A 4th-semester university group project.
-- **[Duckslayer](https://ducklin.de/case-studies/duckslayer.md)**: A 3D trick-based soap-surfing game developed in a group for Global Game Jam 2025. Winner of the Bremen site.
 - **[VeinMining](https://ducklin.de/case-studies/veinmining.md)**: A feature-rich Hytale mod that lets players mine connected ore veins and excavate custom patterns with full in-game GUI and chat configuration.
 - **[Bachelor Thesis: Robot Goal Celebrations](https://ducklin.de/case-studies/bachelor-thesis.md)**: A workflow from video to autonomous goal celebrations on a humanoid football robot: Blender add-on, reinforcement learning in Isaac Lab, and integration into the B-Human system. Tested on the real Booster K1.
-- **[FrogYou!](https://ducklin.de/case-studies/frogyou.md)**: A fast-paced 2D precision platformer featuring a ninja frog navigating mechanical hazards, with directional spore dashes, vine grappling, and online speedrun leaderboards.
 - **[Flashdash](https://ducklin.de/case-studies/flashdash.md)**: A 15-meter interactive LED strip game of 1D ping-pong. A collaborative HfK project with a custom display and spatial audio.
 - **[Aurora](https://ducklin.de/case-studies/aurora.md)**: A modern, visual website editor architected as a monorepo for modularity and scalability.
 - **[Webbox](https://ducklin.de/case-studies/webbox.md)**: A static site generator that creates full websites from a single config file using pre-built templates.

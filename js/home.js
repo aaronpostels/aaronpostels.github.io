@@ -16,7 +16,9 @@ const shape = p => {
   const hay = [p.name, p.description, ...(p.tags || []), ...(p.techStack || [])].join(' ');
   return { name: p.name, desc: p.description, href: p.href || null, doc: p.docHref || null, image: p.image, status: p.status, statusSlug: slug(p.status), date: fmt(p.date), year: year(p.date), devices: p.deviceSupport || [], stack: p.techStack || [], cats: Object.keys(CATS).filter(c => CATS[c].test(hay)) };
 };
-const list = projects.filter(p => p.type !== 'skill');
+// desktopOnly demos lose their demo link on touch devices and show as write-ups
+const touch = matchMedia('(hover: none) and (pointer: coarse)').matches;
+const list = projects.filter(p => p.type !== 'skill').map(p => touch && p.desktopOnly ? { ...p, href: null } : p);
 const DATA = {
   person: { socials: [
     { name: 'GitHub', url: 'https://github.com/aaronpostels' },

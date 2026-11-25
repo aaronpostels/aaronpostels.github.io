@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Duck Slayer | ducklin.de</title>
+  <link rel="icon" href="game/index.icon.png">
+  <style>
+    html, body { margin: 0; height: 100%; background: #000; overflow: hidden; color: #fff; font: 15px/1.5 system-ui, sans-serif; }
+    #start { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 16px; box-sizing: border-box; text-align: center; }
+    #start p { margin: 0; max-width: 52ch; }
+    a { color: #7fe3ee; }
+    button { font: 700 16px system-ui, sans-serif; padding: 10px 28px; color: #000; background: #7fe3ee; border: 0; cursor: pointer; }
+    iframe { width: 100%; height: 100%; border: 0; display: block; }
+  </style>
+</head>
+<body>
+  <div id="start">
+    <button type="button" id="play">Play Duck Slayer</button>
+    <p>Keyboard or gamepad. WASD move, arrow keys camera, Space jump, Shift or B dash. F11 for fullscreen. Download about 80 MB. The first level start can take up to a minute while the browser prepares graphics.</p>
+    <p><a href="../../case-studies/duckslayer.html">Back to case study</a></p>
+  </div>
+  <script>
+    // Desktop only: phones and tablets never load the game.
+    if (matchMedia("(hover: none) and (pointer: coarse)").matches) {
+      document.querySelector("#play").remove();
+      document.querySelector("#start p").textContent = "Duck Slayer is playable on desktop only. It needs a keyboard or gamepad.";
+    } else document.querySelector("#play").onclick = () => {
+      const game = document.createElement("iframe");
+      game.src = "game/index.html";
+      game.title = "Duck Slayer";
+      game.allow = "fullscreen; gamepad; autoplay";
+      game.onload = () => game.contentWindow.focus();
+      document.querySelector("#start").replaceWith(game);
+    };
+  </script>
+</body>
+</html>

@@ -4,6 +4,7 @@
 
 ## Links
 
+- [Live Demo](https://ducklin.de/projects/duckslayer/)
 - [Case Study (HTML)](https://ducklin.de/case-studies/duckslayer.html)
 - [Case Study (Markdown)](https://ducklin.de/case-studies/duckslayer.md)
 - [Read Article](https://www.kreiszeitung.de/lokales/bremen/bubble-in-der-badewanne-an-der-bremer-uni-93538378.html)
@@ -24,3 +25,7 @@ The vision for Duck Slayer was to create a high-energy arcade game inspired by c
 - **Combo System:** An integrated combo mechanic rewards players for chaining tricks together, increasing cleaning efficiency and score.
 - **Health Management:** The soap surfboard acts as the player's health, constantly shrinking. Players must collect soap pickups to extend their run.
 - **Award-Winning Recognition:** The project won **First Place** at the Global Game Jam 2025 site at the University of Bremen.
+
+## Platform & Device Support
+
+Supported devices: desktop

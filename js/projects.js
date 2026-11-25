@@ -242,6 +242,9 @@ const projects = [
     name: "Duckslayer",
     description:
       "A 3D trick-based soap-surfing game developed in a group for Global Game Jam 2025. Winner of the Bremen site.",
+    href: "./projects/duckslayer/",
+    desktopOnly: true,
+    deviceSupport: ["desktop"],
     image: "./images/game_icon.webp",
     status: "Completed",
     docHref: "./case-studies/duckslayer.html",
@@ -277,6 +280,8 @@ const projects = [
     name: "FrogYou!",
     description:
       "A fast-paced 2D precision platformer featuring a ninja frog navigating mechanical hazards, with directional spore dashes, vine grappling, and online speedrun leaderboards.",
+    href: "./projects/frogyou/",
+    desktopOnly: true,
     image: "./images/frogyou_thumbnail.webp",
     status: "Completed",
     docHref: "./case-studies/frogyou.html",
@@ -284,7 +289,7 @@ const projects = [
     date: "June 2026",
     deviceSupport: ["desktop"],
     tags: ["Game", "2D"],
-    techStack: ["Unity", "C#", "LootLocker", "Universal Render Pipeline (URP)", "Cinemachine"],
+    techStack: ["Unity", "C#", "Google Apps Script", "Universal Render Pipeline (URP)", "Cinemachine"],
   },
   {
     name: "Flashdash",
