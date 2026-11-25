@@ -41,7 +41,8 @@ const ICONS = {
 const {person:P, featured, projects, archive} = DATA, I = ICONS;
 document.getElementById('static-list')?.remove(); // crawler fallback, replaced by the rendered sections below
 const mob = p => p.devices.includes('mobile');
-const demos = [...projects.filter(mob), ...projects.filter(p => !mob(p))];
+// phones list the demos that work there first, desktops go by relevance (projects is already sorted by it)
+const demos = matchMedia('(hover: none) and (pointer: coarse)').matches ? [...projects.filter(mob), ...projects.filter(p => !mob(p))] : projects;
 const all = [...featured, ...demos, ...archive];
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const car = '<svg class="car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';

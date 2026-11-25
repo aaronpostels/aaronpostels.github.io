@@ -7,7 +7,9 @@
 - [Live Demo](https://ducklin.de/projects/duckslayer/)
 - [Case Study (HTML)](https://ducklin.de/case-studies/duckslayer.html)
 - [Case Study (Markdown)](https://ducklin.de/case-studies/duckslayer.md)
+- [GitHub Repository](https://github.com/michaelcegielka/GlobalGameJam2025-DuckSlayer)
 - [Read Article](https://www.kreiszeitung.de/lokales/bremen/bubble-in-der-badewanne-an-der-bremer-uni-93538378.html)
+- [Global Game Jam](https://globalgamejam.org/games/2025/duck-slayer-1)
 
 ## Project Overview
 

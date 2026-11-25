@@ -525,7 +525,9 @@ Tile Quest is a cooperative board game that blends physical interaction with the
   - [Live Demo](https://ducklin.de/projects/duckslayer/)
   - [Case Study (HTML)](https://ducklin.de/case-studies/duckslayer.html)
   - [Case Study (Markdown)](https://ducklin.de/case-studies/duckslayer.md)
+  - [GitHub Repository](https://github.com/michaelcegielka/GlobalGameJam2025-DuckSlayer)
   - [Read Article](https://www.kreiszeitung.de/lokales/bremen/bubble-in-der-badewanne-an-der-bremer-uni-93538378.html)
+  - [Global Game Jam](https://globalgamejam.org/games/2025/duck-slayer-1)
 
 #### Overview
 The vision for Duck Slayer was to create a high-energy arcade game inspired by classics like _Tony Hawk's Pro Skater_, but set within a chaotic and playful bathtub environment. Developed in 48 hours as a group project for Global Game Jam 2025, the core idea was to transform a simple "clean-'em-up" objective into an extreme sports challenge, where players must chain together stunts, grinds, and bounces to build combos and master the level. The game won First Place at its Global Game Jam site in Bremen.

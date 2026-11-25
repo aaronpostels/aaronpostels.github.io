@@ -548,7 +548,7 @@
     "name": "Duckslayer",
     "description": "A 3D trick-based soap-surfing game developed in a group for Global Game Jam 2025. Winner of the Bremen site.",
     "featured": false,
-    "relevance": 95,
+    "relevance": 97,
     "date": "January 2025",
     "status": "Completed",
     "deviceSupport": [
@@ -562,7 +562,7 @@
     "liveDemoUrl": "https://ducklin.de/projects/duckslayer/",
     "caseStudyHtmlUrl": "https://ducklin.de/case-studies/duckslayer.html",
     "caseStudyMarkdownUrl": "https://ducklin.de/case-studies/duckslayer.md",
-    "githubUrl": null,
+    "githubUrl": "https://github.com/michaelcegielka/GlobalGameJam2025-DuckSlayer",
     "overview": "The vision for Duck Slayer was to create a high-energy arcade game inspired by classics like _Tony Hawk's Pro Skater_, but set within a chaotic and playful bathtub environment. Developed in 48 hours as a group project for Global Game Jam 2025, the core idea was to transform a simple \"clean-'em-up\" objective into an extreme sports challenge, where players must chain together stunts, grinds, and bounces to build combos and master the level. The game won First Place at its Global Game Jam site in Bremen.",
     "features": [
       "**Core Gameplay:** Players control a bubble character surfing on a bar of soap, cleaning the tub while fighting enemy ducks.",
@@ -639,7 +639,7 @@
     "name": "FrogYou!",
     "description": "A fast-paced 2D precision platformer featuring a ninja frog navigating mechanical hazards, with directional spore dashes, vine grappling, and online speedrun leaderboards.",
     "featured": false,
-    "relevance": 82,
+    "relevance": 91,
     "date": "June 2026",
     "status": "Completed",
     "deviceSupport": [
